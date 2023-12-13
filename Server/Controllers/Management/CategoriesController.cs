@@ -1,4 +1,5 @@
 ﻿using Common.Wrappers;
+using Microsoft.AspNetCore.Authorization;
 using Server.Abstract;
 using Server.Features.Categories.Create;
 using Server.Features.Categories.Delete;
@@ -9,8 +10,9 @@ using Server.Features.Categories.Update;
 
 namespace Server.Controllers.Management;
 
+[AllowAnonymous]
 [ApiController]
-public class CategoriesController:ManagementController
+public class CategoriesController: ManagementController
 {
     [HttpPost]
     public async Task<MessageResponse> Create([FromForm] CreateCategoryCommand request)
@@ -19,6 +21,8 @@ public class CategoriesController:ManagementController
     [HttpGet]
     public async Task<PagedResponse<FetchCategoriesQueryResponse>> Fetch([FromQuery] FetchCategoriesQuery request)
         => await Mediator.Send(request);
+    
+    
     [HttpPut("{id}")]
     public async Task<MessageResponse> Update(string id, [FromBody] UpdateCategoryCommand request)
     {
