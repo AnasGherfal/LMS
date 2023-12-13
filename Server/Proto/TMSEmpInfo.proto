@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "Management.Protos";
+
+service TMSEmpInfo {
+  rpc GetTMSEmpInfo(EmpInfoRequest) returns (EmpInfoResponse);
+}
+
+message EmpInfoRequest{
+	string emp_id = 1;
+}
+
+message EmpInfoResponse{
+	int32 emp_id = 1;
+	string emp_code = 2;
+	string full_name = 3;
+	string user_name = 4;
+	string job_desc = 5;
+	string entity = 6;
+	int32 entity_id = 7;
+	string act_entity = 8;
+	int32 act_entity_id = 9;
+	string act_job_desc = 10;
+}

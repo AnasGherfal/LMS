@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option csharp_namespace = "Management.Protos";
+
+service Users {
+  rpc GetAppUsersList (AppUsersListRequest) returns (AppUsersListResponse);
+  rpc CheckUser (CheckUserRequest) returns (CheckUserResponse);
+}
+
+message CheckUserRequest{
+	string user_id = 1;
+	int32 app_id = 2;
+}
+
+message CheckUserResponse{
+	bool has_app = 1;
+	int64 emp_id = 2;
+	string user_name = 3;
+	string full_name = 4;
+}
+
+
+
+message AppUsersListRequest{
+	int32 app_id = 1;
+}
+
+
+message AppUsersListResponse{
+	message UserItem { 
+		int32 user_id = 1;
+		int32 emp_id = 2;
+		string full_name = 3;
+	}
+	repeated UserItem users_list = 1;
+}

@@ -1,0 +1,55 @@
+﻿<v-card class="mx-auto">
+    <v-card-item>
+        <v-card-title class="d-flex align-center pa-2">
+            {{pageTitle}}
+        </v-card-title>
+    </v-card-item>
+
+    <v-card-text>
+        <v-form @submit.prevent ref="messionForm">
+            <v-row>
+                <v-col md="6">
+                    <text-field label="الموضوع / العنوان" v-model="mession.title" :rules="rules">
+                    </text-field>
+                </v-col>
+                <v-col md="6">
+                    <date-picker label="تاريخ إصدار المعاملة" v-model="mession.date">
+                    </date-picker>
+                </v-col>
+                <v-col md="12">
+                    <auto-complete label="الكيان الإداري" v-model="mession.entities" multiple :items="lookup.entitiesLookup">
+                    </auto-complete>
+                </v-col>
+                <v-col md="12">
+                    <text-area label="تعليمات المهمة" v-model="mession.content" counter rows="3" auto_grow :rules="rules">
+                    </text-area>
+                </v-col>
+
+                <v-col md="6">
+                    <date-picker label="التاريخ المتوقع لإنجاز المهمة" v-model="mession.expectedEndDate">
+                    </date-picker>
+                </v-col>
+                <v-col md="6">
+                    <v-file-input v-model="mession.file"
+                                  label="ملف الفرار"
+                                  hide-details
+                                  density="compact"
+                                  class="rounded-xl"
+                                  variant="outlined"></v-file-input>
+                </v-col>
+                <v-col md="12">
+                    <text-area label="ملاحظات" v-model="mession.remarks" counter rows="2" auto_grow>
+                    </text-area>
+                </v-col>
+                
+            </v-row>
+            <v-row>
+                <v-col class="d-flex justify-end">
+                    <v-btn type="submit" rounded="1" class="mx-2" @click="create()">حفظ</v-btn>
+
+                    <v-btn type="cancel" color="error" variant="outlined" rounded="1" class="mx-2" @click="router.back()">رجوع</v-btn>
+                </v-col>
+            </v-row>
+        </v-form>
+    </v-card-text>
+</v-card>
