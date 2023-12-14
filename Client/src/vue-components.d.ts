@@ -9,7 +9,13 @@ declare module 'vue' {
   export interface GlobalComponents {
     Alert: typeof import('./components/general/alert.vue')['default']
     AutoComplete: typeof import('./components/form/autoComplete.vue')['default']
+    DatePicker: typeof import('./components/form/datePicker.vue')['default']
     FileUpload: typeof import('./components/form/fileUpload.vue')['default']
+    IconCommunity: typeof import('./components/icons/IconCommunity.vue')['default']
+    IconDocumentation: typeof import('./components/icons/IconDocumentation.vue')['default']
+    IconEcosystem: typeof import('./components/icons/IconEcosystem.vue')['default']
+    IconSupport: typeof import('./components/icons/IconSupport.vue')['default']
+    IconTooling: typeof import('./components/icons/IconTooling.vue')['default']
     Loading: typeof import('./components/general/loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

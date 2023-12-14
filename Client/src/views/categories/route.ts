@@ -4,7 +4,7 @@
         name: 'Categories',
         component: () => import('./index.vue'),
         meta: {
-            title: 'Categories',
+            title: 'الفئات',
             hasChildren: false,
             icon: "mdi-file-document-multiple-outline",
             // roles: [1,2] 
@@ -15,7 +15,7 @@
                 name: 'CategoriesList',
                 component: () => import('./list/list.vue'),
                 meta: {
-                    title: 'Categories list',
+                    title: 'قائمة الفئات',
                     isSideBar: true,
                 },
             },

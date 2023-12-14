@@ -1,3 +1,65 @@
-﻿<v-card class="pa-6">
+﻿<v-row>
+  <v-col cols="1" >
+    <v-btn color="#007ecc"     
+    icon="mdi mdi-plus"   size="large"
+    > </v-btn>
 
-</v-card>
+  </v-col>
+  <v-col >
+    <v-btn  color="#007ecc"       
+    icon="mdi mdi-magnify"   size="large"
+    > </v-btn>
+
+  </v-col>
+</v-row>
+<v-data-iterator :items="pp" item-value="name">
+  <template v-slot:default="{ items }">
+    <v-row>
+      <v-col
+        v-for="item in pp"
+        :key="item.category"
+        cols="12"
+        sm="12"
+        md="12"
+        class="mb-4"
+      >
+        <v-card class="pa-6">
+          <v-row>
+            <v-col class="d-flex align-center" cols="1">
+              <v-icon
+                :color="item.color"
+                :icon="item.icon"
+                start
+                size="50"
+              ></v-icon>
+            </v-col>
+            <v-col>
+              <v-card-title class="d-flex align-center">
+                <h4>الفئة</h4>
+              </v-card-title>
+
+              <v-card-text class="d-flex align-center">dd</v-card-text>
+            </v-col>
+            <v-col>
+              <v-card-title>
+                <h4>عدد المنتجات</h4>
+              </v-card-title>
+              <v-card-text class="d-flex align-center">dd</v-card-text>
+            </v-col>
+
+            <v-col>
+              <v-card-title>
+                <h4>الاجرائات</h4>
+              </v-card-title>
+              <v-card-text>
+                <v-btn icon="mdi mdi-pencil" variant="text"> </v-btn>
+                <v-btn icon="mdi mdi-information" variant="text"> </v-btn>
+                <v-btn icon="mdi mdi-delete" color="delete" variant="text"> </v-btn>
+              </v-card-text>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-col>
+    </v-row>
+  </template>
+</v-data-iterator>

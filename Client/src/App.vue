@@ -7,11 +7,6 @@
 </template>
 
 <script setup lang="ts">
-// import signIn from "./views/login/signIn.vue";
+import signIn from "./views/login/signIn.vue";
 
-// export default {
-//   components: {
-//     signIn,
-//   },
-// };
 </script>

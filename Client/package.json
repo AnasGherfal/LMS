@@ -9,6 +9,8 @@
     "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/vue-fontawesome": "^3.0.5",
     "@mdi/font": "7.0.96",
     "@vueuse/core": "^10.7.0",
     "core-js": "^3.29.0",

@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import layouts from '@/layouts/Default.vue';
+import layouts from '@/layouts/default.vue';
 
 import licenses from "@/views/licenses/route";
 import products from "@/views/products/route";
