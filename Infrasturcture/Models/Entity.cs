@@ -1,10 +1,10 @@
 ﻿namespace Infrastructure.Models;
 
-public class Entity: BaseModel
+public abstract class Entity
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; } = default!;
-    public virtual IList<User> Users { get; set; } = default!;
-
+    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedOn { get; set; } = DateTime.UtcNow;
+    public bool IsDeleted { get; set; } = false;
+    public long Sequence { get; set; } = 1;
+    public byte[] RowVersion { get; set; } = { 1 };
 }
-
