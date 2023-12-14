@@ -1,8 +1,8 @@
-﻿using Common.Constants;
-using Infrastructure.Events.Abstracts;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using Common.Constants;
+using Common.Events.Abstracts;
 
-namespace Infrastructure.Events.Category;
+namespace Common.Events.Category;
 
 public class CategoryUnlockedEvent : EventStore<CategoryUnlockedEventData>
 {

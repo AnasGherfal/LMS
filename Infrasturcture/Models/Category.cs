@@ -1,12 +1,11 @@
 ﻿using Common;
 using Common.Constants;
-using Core.Events.Category;
-using Infrastructure.Events.Category;
 using Infrastructure.Models.Mappers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Net;
+using Common.Events.Category;
 
 namespace Infrastructure.Models;
 
@@ -16,7 +15,7 @@ public class Category : Entity
     public string Name { get; set; } = default!;
     public GeneralStatus Status { get; set; }
     public string? Description { get; set; }
-    public DocumentForCategory Icon { get; set; } = default!;
+    public string FileLink { get; set; } = string.Empty;
 
 
     public void Apply(CategoryCreatedEvent @event)
@@ -28,16 +27,7 @@ public class Category : Entity
         Status = GeneralStatus.Active;
         CreatedOn = @event.DateTime;
         UpdatedOn = @event.DateTime;
-        Icon = new DocumentForCategory()
-        {
-            Id = @event.Data.Icon.FileIdentifier,
-            CategoryId = @event.AggregateId,
-            FileLink = @event.Data.Icon.FileLink,
-            IconType = @event.Data.Icon.IconType,
-            IsActive = true,
-            CreatedOn = @event.DateTime
-        };
-     
+        FileLink = @event.Data.Icon.FileLink;
     }
     public void Apply(CategoryUpdatedEvent @event)
     {
@@ -75,20 +65,6 @@ public class Category : Entity
     {
         Sequence = @event.Sequence;
         UpdatedOn = @event.DateTime;
-        if (@event.Data.OldFileIdentifier != null)
-        {
-            if (Icon.Id == @event.Data.OldFileIdentifier)
-                Icon.IsActive = false;
-           
-        }
-        Icon =new DocumentForCategory()
-        {
-            CategoryId = @event.AggregateId,
-            Id = @event.Data.FileIdentifier,
-            FileLink = @event.Data.FileLink,
-            IconType = @event.Data.IconType,
-            IsActive = true,
-            CreatedOn = @event.DateTime,
-        };
+        FileLink = @event.Data.FileLink;
     }
 }

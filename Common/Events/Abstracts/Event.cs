@@ -1,6 +1,6 @@
 ﻿using Common.Constants;
 
-namespace Infrastructure.Events.Abstracts;
+namespace Common.Events.Abstracts;
 
 public abstract class Event
 {

@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Events.Abstracts;
+﻿namespace Common.Events.Abstracts;
 
 public abstract class EventStore<T> : Event where T : IEventData
 {

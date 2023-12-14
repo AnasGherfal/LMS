@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 using Common.Constants;
-using Infrastructure.Events.Abstracts;
+using Common.Events.Abstracts;
 
-namespace Core.Events.Category;
+namespace Common.Events.Category;
 
 public class CategoryCreatedEvent : EventStore<CategoryCreatedEventData>
 {

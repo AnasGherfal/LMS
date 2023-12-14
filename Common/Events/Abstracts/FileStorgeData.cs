@@ -1,6 +1,6 @@
 ﻿using Common.Constants;
 
-namespace Infrastructure.Events.Abstracts;
+namespace Common.Events.Abstracts;
 public class FileStorageData
 {
     public Guid FileIdentifier { get; set; } = Guid.Empty;
