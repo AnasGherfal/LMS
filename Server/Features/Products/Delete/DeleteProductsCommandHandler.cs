@@ -8,7 +8,7 @@ public class DeleteProductsCommandHandler : IRequestHandler<DeleteProductCommand
     {
         return new MessageResponse()
         {
-            Msg = "Category Deleted!",
+            Msg = "Product Deleted!",
         };
 
     }

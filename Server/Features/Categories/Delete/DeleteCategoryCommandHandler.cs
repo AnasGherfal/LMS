@@ -10,6 +10,5 @@ public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryComman
         {
             Msg = "Category Deleted!",
         };
-
     }
 }

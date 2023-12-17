@@ -8,7 +8,7 @@ public sealed record LockCategoryCommandHandler : IRequestHandler<LockProductCom
     {
         return new MessageResponse()
         {
-            Msg="Category Locked!",
+            Msg = "Product Locked!",
         };
     }
 }

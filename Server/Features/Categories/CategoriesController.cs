@@ -8,7 +8,7 @@ using Server.Features.Categories.Lock;
 using Server.Features.Categories.Unlock;
 using Server.Features.Categories.Update;
 
-namespace Server.Controllers.Management;
+namespace Server.Features.Categories;
 
 [AllowAnonymous]
 [ApiController]

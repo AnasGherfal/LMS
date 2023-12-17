@@ -7,9 +7,10 @@ public sealed record CreateProductCommandHandler : IRequestHandler<CreateProduct
 {
     public async Task<MessageResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-return new MessageResponse{
+        return new MessageResponse
+        {
 
-        Msg = "product Created ",
-    };    
-        }
+            Msg = "product Created ",
+        };
+    }
 }

@@ -8,7 +8,7 @@ public sealed record UnlockProductCommandHandler : IRequestHandler<UnlockProduct
     {
         return new MessageResponse()
         {
-            Msg = "Category Unlocked!",
+            Msg = "Product Unlocked!",
         };
     }
 }

@@ -8,7 +8,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
     {
         return new MessageResponse()
         {
-            Msg = "Category Updated!",
+            Msg = "Product Updated!",
         };
     }
 }

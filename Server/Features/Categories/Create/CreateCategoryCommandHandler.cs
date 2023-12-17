@@ -7,11 +7,9 @@ public sealed record CreateCategoryCommandHandler : IRequestHandler<CreateCatego
 {
     public async Task<MessageResponse> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
     {
-
         return new MessageResponse()
         {
             Msg = "Category Created ! | "+request.Name+" "+request.Description,
         };
-
     }
 }
