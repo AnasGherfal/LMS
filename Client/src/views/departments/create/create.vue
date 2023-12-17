@@ -2,28 +2,18 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import type { Product } from "./model";
+import type { Department } from "./model";
 
 // New product data to be filled in the form
-const newProduct = ref<Product>({
-  productName: "",
-  category: "",
-  totalLicense: 0,
-  availability: "",
+const newProduct = ref<Department>({
+  departmentName: "",
   contact: "",
-  provider: "",
-  impactLevel: "",
 });
 
 // Product details mapping
 const productDetails = {
-  "إسم المنتج": "productName",
-  الفئة: "category",
-  "إجمالي الرخصة": "totalLicense",
-  التوفر: "availability",
-  التواصل: "contact",
-  المزود: "provider",
-  "مستوى التأثير": "impactLevel",
+  "إسم القسم": "departmentName",
+  تواصل: "contact",
 };
 
 const router = useRouter();
@@ -33,8 +23,7 @@ const submitForm = () => {
   // Add validation logic if needed
   // Push the new product to the products array (or perform any other action)
   // In a real application, you might want to send this data to a server
-  console.log("New Product:", newProduct.value);
   // Navigate back to the product list page
-  router.push("/products");
+  router.push("/departments");
 };
 </script>

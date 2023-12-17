@@ -1,4 +1,4 @@
-﻿<template src="./list.html"></template>
+<template src="./list.html"></template>
 <script setup lang="ts">
 import { ref } from "vue";
 import { type Product } from "./model";
@@ -7,30 +7,20 @@ import { useRouter } from "vue-router";
 const products = ref<Product[]>([
   {
     productName: "Product 1",
-    category: "Category A",
-    totalLicense: 100,
-    availability: "In Stock",
-    contact: "أنس قرفال",
-    provider: "Provider 1",
-    impactLevel: "high",
+    contact: "Category A",
   },
 ]);
 
 const productDetails = {
-  "إسم المنتج": "productName",
-  الفئة: "category",
-  "إجمالي الرخصة": "totalLicense",
-  التوفر: "availability",
-  التواصل: "contact",
-  المزود: "provider",
-  "مستوى التأثير": "impactLevel",
+  "إسم القسم": "productName",
+  تواصل: "contact",
 };
 
 const router = useRouter();
 
-const navigateToAddProductPage = () => {
+const navigateToAddDepartmentPage = () => {
   console.log("sss");
-  router.push({ name: "CreateLicense" });
+  router.push({ name: "CreateDepartments" });
 };
 const deleteProduct = (index: number) => {
   products.value.splice(index, 1);
