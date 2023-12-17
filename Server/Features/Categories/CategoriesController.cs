@@ -4,6 +4,7 @@ using Server.Abstract;
 using Server.Features.Categories.Create;
 using Server.Features.Categories.Delete;
 using Server.Features.Categories.FetchAll;
+using Server.Features.Categories.FetchById;
 using Server.Features.Categories.Lock;
 using Server.Features.Categories.Unlock;
 using Server.Features.Categories.Update;
@@ -21,6 +22,13 @@ public class CategoriesController: ManagementController
     [HttpGet]
     public async Task<PagedResponse<FetchCategoriesQueryResponse>> Fetch([FromQuery] FetchCategoriesQuery request)
         => await Mediator.Send(request);
+    
+    [HttpGet("{id}")]
+    public async Task<ContentResponse<FetchCategoryQueryResponse>> FetchById(string id)
+        => await Mediator.Send(new FetchCategoryQuery()
+        {
+            Id = id,
+        });
     
     
     [HttpPut("{id}")]
