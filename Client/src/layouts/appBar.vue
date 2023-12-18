@@ -8,7 +8,7 @@
   
   </script>
 <template>
-    <v-app-bar>
+    <v-app-bar app fixed>
             <v-breadcrumbs :items="items">
                 <template v-slot:prepend>
                     <v-icon size="small" icon="item.icon"></v-icon>

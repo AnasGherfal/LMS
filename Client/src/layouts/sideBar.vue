@@ -21,19 +21,19 @@
     {
       title: "الفئات",
       icon: "",
-      path:"/Categories"
+      path:"/categories"
     },
     {
       title: "الأقسام",
       icon: "",
-      path:"/Departments"
+      path:"/departments"
     },
     
     ]
 </script>
 
 <template>
-    <v-navigation-drawer class="sidebar" permanent width="300">
+    <v-navigation-drawer  class="sidebar"  width="300" permanent>
       <v-list-item class="sidebar__brand" prepend-avatar="/ltt.jpg" title="نظام إدارة الرخص"></v-list-item>
       <hr class="sidebar__hr" />
       <v-list class="sidebar__nav pa-0">

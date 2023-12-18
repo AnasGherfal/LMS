@@ -1,5 +1,4 @@
 <template>
-  <div id="app"></div>
   <!-- <signIn></signIn> -->
   <v-app>
     <router-view />
