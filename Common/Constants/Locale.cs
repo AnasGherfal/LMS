@@ -23,5 +23,11 @@ public enum Locale
     ProductDeleted,
     ProductLocked,
     ProductUnlocked,
-    ProductUpdated
+    ProductUpdated,
+    LicenseCreated,
+    LicenseNotFound,
+    LicenseDeleted,
+    LicenseLocked,
+    LicenseUnlocked,
+    LicenseUpdated
 }

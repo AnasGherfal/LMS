@@ -7,4 +7,6 @@ public sealed record FetchLicensesQuery : IRequest<PagedResponse<FetchLicensesQu
 {
     public int? PageNumber { get; set; }
     public int? PageSize { get; set; }
+    public string? ProductId { get; set; }
+    public string? DepartmentId { get; set; }
 }
