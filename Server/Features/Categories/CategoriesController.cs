@@ -1,4 +1,5 @@
-﻿using Common.Wrappers;
+﻿using Common.Constants;
+using Common.Wrappers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
@@ -9,10 +10,11 @@ using Server.Features.Categories.FetchById;
 using Server.Features.Categories.Lock;
 using Server.Features.Categories.Unlock;
 using Server.Features.Categories.Update;
+using Server.Filters;
 
 namespace Server.Features.Categories;
 
-[AllowAnonymous]
+// [VerifiedUser]
 [ApiController]
 public class CategoriesController: ManagementController
 {

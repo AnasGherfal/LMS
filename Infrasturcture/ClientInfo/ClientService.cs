@@ -1,26 +1,19 @@
-﻿using Common.Exceptions;
+﻿using Common.Constants;
 using Common.Services;
 using Microsoft.AspNetCore.Http;
 
 namespace Infrastructure.ClientInfo;
 
-public class ClientService: IClientService
+public class ClientService(IHttpContextAccessor httpContextAccessor) : IClientService
 {
-    public string IdentityId { get; }
-    public string DisplayName { get; }
-    public string Email { get; }
-    public bool EmailVerified { get; }
-    public long Permission { get; }
-    public int UserType { get; }
+    public string IdentityId { get; } = httpContextAccessor.HttpContext?.User?.FindFirst(nameof(ClaimKey.empId))?.Value ?? "";
+    public string EmployeeNumber { get; } = httpContextAccessor.HttpContext?.User?.FindFirst(nameof(ClaimKey.empCode))?.Value ?? "";
+    public string DisplayName { get; } = httpContextAccessor.HttpContext?.User?.FindFirst(nameof(ClaimKey.fullName))?.Value ?? "";
+    public string Username { get; } = httpContextAccessor.HttpContext?.User?.FindFirst(nameof(ClaimKey.userName))?.Value ?? "";
+    public string[] Apps { get; } = ParseApps(httpContextAccessor.HttpContext?.User?.FindFirst(nameof(ClaimKey.apps))?.Value ?? "");
     
-    public ClientService(IHttpContextAccessor httpContextAccessor)
+    private static string[] ParseApps(string apps)
     {
-        IdentityId = string.Empty;
-        // IdentityId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.IdentityId.Key())?.Value ?? "";
-        // DisplayName = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.DisplayName.Key())?.Value ?? "User";
-        // Email = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.Email.Key())?.Value ?? "";
-        // Permission = long.Parse(httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.Permissions.Key())?.Value ?? "0");
-        // UserType = int.Parse(httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.UserType.Key())?.Value ?? "1");
-        // EmailVerified = bool.Parse(httpContextAccessor.HttpContext?.User?.FindFirst(ClaimsKey.EmailVerified.Key())?.Value ?? "False");
+        return string.IsNullOrEmpty(apps) ? Array.Empty<string>() : apps.Split(",");
     }
 }

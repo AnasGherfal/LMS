@@ -13,4 +13,6 @@ public enum EventType: short
     ProductLocked = 103,
     ProductUnlocked = 104,
     ProductDeleted = 105,
+    
+    UserCreated = 201,
 }
