@@ -1,4 +1,5 @@
 export interface Category {
-  categoryName: string;
-  description: string;
+  name: string | any;
+  description: string | any;
+  photo: any | any;
 }

@@ -33,7 +33,7 @@
 </script>
 
 <template>
-    <v-navigation-drawer  class="sidebar"  width="300" permanent>
+    <v-navigation-drawer  class="sidebar"   permanent>
       <v-list-item class="sidebar__brand" prepend-avatar="/ltt.jpg" title="نظام إدارة الرخص"></v-list-item>
       <hr class="sidebar__hr" />
       <v-list class="sidebar__nav pa-0">

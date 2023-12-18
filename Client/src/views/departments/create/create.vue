@@ -1,8 +1,8 @@
 <template src="./create.html"></template>
 <script setup lang="ts">
-import { ref } from "vue";
+
 import { useRouter } from "vue-router";
-import type { Department } from "./model";
+import type { Department } from "/.model";
 
 // New product data to be filled in the form
 const newProduct = ref<Department>({

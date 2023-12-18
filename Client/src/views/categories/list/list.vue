@@ -1,33 +1,85 @@
-﻿<script lang="ts" setup>
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
+﻿<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<script lang="ts" setup>
+import { jsonToQueryString } from "@/utils/handlers";
+import type {
+  categoryListItem,
+  CategoriesListFilter,
+  header,
+} from "./model.ts";
+import { categoryService } from "../service";
 
-const pp = ref([]);
+const router = useRouter();
+const tempId = ref<number | null>();
+  const doneDialog = ref<boolean>(false);
 
-// Fetch data from ASP.NET API
-const fetchData = async () => {
+onMounted(() => {
+  getAll();
+});
+const pageTitle = router.currentRoute.value.meta.title;
+
+const filter = reactive<CategoriesListFilter>({
+  pageNo: 1,
+  pageSize: 10,
+  title: null,
+  entityId: null,
+  status: null,
+  date: null,
+});
+const totalPages = ref(5);
+
+const categories = ref<categoryListItem[]>([]);
+const getAll = async (pageNo?: number) => {
   try {
-    const response = await fetch(
-      "https://localhost:7246/v1.0/management/Categories"
-    );
-    const data = await response.json();
-    pp.value = data; // Assuming data is an array of objects with the necessary properties
-    console.log(data);
-  } catch (error) {
-    console.error("Error fetching data:", error);
+    //loading.start();
+
+    filter.pageNo = pageNo ?? filter.pageNo;
+    console.log(filter.entityId);
+    const queryString = jsonToQueryString(filter);
+    const { data } = await categoryService.fetch(queryString);
+    //loading.stop();
+    categories.value = data.content;
+    totalPages.value = data.totalPages;
+  } catch {
+    //loading.stop();
   }
 };
 
-// Call fetchData when the component is mounted
-onMounted(() => {
-  fetchData();
-});
-const router = useRouter();
+const headers = ref<header[]>([
+  // { title: "#", key: "id" },
+  { title: "الاسم", key: "name" },
+  { title: "تاريخ الإنشاء", key: "createdOn" },
+  { title: "عدد الفئات", key: "numberOfCategories" },
+  { title: "الحالة", key: "isActive" },
+
+  { title: "الإجراءات", key: "actions" },
+]);
 
 // Method to navigate to the create category page
-const navigateToAddCategoryPage = () => {
+const create = () => {
   router.push({ name: "CreateCategories" });
 };
+const view = (id: number) => {
+  router.push({ name: "Category", params: { id } });
+};
+
+const showDialog = (val: number) => {
+  tempId.value = val;
+  doneDialog.value = true;
+};
+const canceleDialog = () => {
+  doneDialog.value = false;
+  tempId.value = null;
+};
+
+const deleteCategory = async () => {
+        try {
+            const { data } = await userService.deleteUser(tempId.value!);
+            getAll();
+            canceleDialog();
+        }
+        catch {
+        }
+    };
 </script>
 
 <template src="./list.html"></template>

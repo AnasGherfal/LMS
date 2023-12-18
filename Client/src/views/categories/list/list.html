@@ -1,64 +1,84 @@
-﻿<v-container>
-  <!-- Floating buttons -->
-  <v-row>
-    <v-col cols="1">
-      <!-- Search button -->
-      <v-btn fab dark color="blue" @click="openSearchDialog">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-col>
-
-    <v-col class="pr-0">
-      <!-- Add button -->
-      <v-btn fab dark color="blue" @click="navigateToAddCategoryPage">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-    </v-col>
-  </v-row>
-
-  <!-- Fixed title card -->
-  <v-row>
-    <v-col class="mb-6">
-      <v-card class="pa-6">
-        <v-row no-gutters>
-          <v-col class="pr-2">
-            <v-card-title>إسم الفئة</v-card-title>
-          </v-col>
-          <v-col class="pr-2">
-            <v-card-title>عدد المنتجات</v-card-title>
-          </v-col>
-          <v-col class="mr-2">
-            <v-card-title>الإجراءات</v-card-title>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
-
-  <!-- Product data cards -->
-  <v-card v-for="category in pp.content" :key="category.id" class="pa-6 mb-6">
-    <v-col>
-      <v-row no-gutters>
-        <v-col class="pr-2">
-          <v-card-text>{{ category.name }}</v-card-text>
-        </v-col>
-        <v-col class="pr-2">
-          <v-card-text>{{ category.name }}</v-card-text>
-        </v-col>
-        <v-col class="mr-2">
-          <v-card-actions>
-            <v-btn icon @click="deleteProduct(index)">
-              <v-icon style="color: #b00020">mdi-delete</v-icon>
+﻿<v-card class="pa-6">
+  <v-card-item>
+    <v-row>
+      <v-card-title class="d-flex align-center"> {{pageTitle}} </v-card-title>
+      <v-spacer></v-spacer>
+      <v-tooltip text="إضافة فئة">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            variant="outlined"
+            icon="mdi mdi-plus"
+            @click="create"
+          />
+        </template>
+      </v-tooltip>
+    </v-row>
+    <v-row>
+      <v-col md="3">
+        <text-field label="اسم الفئة"> </text-field>
+      </v-col>
+    </v-row>
+  </v-card-item>
+  <v-card-text>
+    <v-data-table :headers="headers" :items="categories">
+      <template v-slot:item.entity="{ item }">
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+            <span v-bind="props">{{noteTruncate(item.entity, 15)}}</span>
+          </template>
+          <span>{{item.entity}}</span>
+        </v-tooltip>
+      </template>
+      <template v-slot:item.isActive="{ item }">
+        <v-chip
+          :color="item.isActive == true ? 'green' : 'danger'"
+          :text="item.isActive == false ? 'منجزة' : ''"
+          label
+          size="small"
+        ></v-chip>
+      </template>
+      <template v-slot:item.actions="{ item }">
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+            <v-btn icon v-bind="props" variant="text" @click="view(item.id)">
+              <v-icon size="small" color="primary">mdi-eye-outline</v-icon>
             </v-btn>
-            <v-btn icon @click="editProduct(index)">
-              <v-icon style="color: #2196f3">mdi-pencil</v-icon>
-            </v-btn>
-            <v-btn icon @click="lockProduct(index)">
-              <v-icon style="color: #4caf50">mdi-lock</v-icon>
-            </v-btn>
-          </v-card-actions>
-        </v-col>
-      </v-row>
-    </v-col>
-  </v-card>
-</v-container>
+            
+          </template>
+          <span>عرض تفاصيل الفئة</span>
+        </v-tooltip>
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+              <v-btn icon variant="text" v-bind="props"
+                     @click="showDialog(item.id, 'delete', index)">
+                  <v-icon size="small" color="error">mdi-trash-can-outline</v-icon>
+              </v-btn>
+          </template>
+          <span>حذف</span>
+      </v-tooltip>
+      </template>
+    </v-data-table>
+    <v-pagination
+      v-model="filter.pageNo"
+      class="my-4"
+      :length="totalPages"
+    ></v-pagination>
+  </v-card-text>
+
+  <v-dialog v-model="doneDialog" persistent width="600">
+    <v-card>
+      <v-card-title> حذف مستخدم </v-card-title>
+      <v-card-text>
+        <span>هل أنت متأكد من إتمام انجاز المهمة</span>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" variant="text" @click="done"> اتمام </v-btn>
+        <v-btn color="error" variant="text" @click="canceleDialog()">
+          الغاء
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</v-card>

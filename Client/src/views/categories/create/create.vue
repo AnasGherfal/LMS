@@ -1,34 +1,40 @@
 <template src="./create.html"></template>
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+
 import type { Category } from "./model";
-
-// New product data to be filled in the form
-const newCategory = ref<Category>({
-  categoryName: "",
-  description: "",
-});
-
+import { categoryService} from '../service'
+const category = reactive<Category>({
+    name: null,
+    description: null,
+    photo:null,
+})
 const router = useRouter();
+const pageTitle = router.currentRoute.value.meta.title;
 
 // Method to submit the form and add the new Category
-const submitForm = async () => {
-  try {
-    // Send a POST request to the API endpoint with newCategory data
-    await fetch("https://localhost:7246/v1.0/management/Categories", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newCategory.value),
-    });
+const create = async () => {
+    console.log('ff')
+const categoryForm = new FormData();
 
-    // Navigate back to the product list page
-    router.push("/categories");
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    // Handle error (show a message or take appropriate action)
-  }
+for (const [key, value] of Object.entries(category)) {
+   
+        if (key === 'photo') {       
+            //messionForm.append(`${key}`, value[0] as any);
+            continue;
+        }
+        categoryForm.append(`${key}`, value as any);
+    }
+    if (category.photo != null) {
+        categoryForm.append(`photo`, category.photo[0] as any)
+    }
+  
+    try {
+        const { data } = await categoryService.create(categoryForm);
+        //showNotification(data.msg);
+        //loading.stop();
+        router.go(-1);
+    } catch {
+        //loading.stop();
+    }
 };
 </script>

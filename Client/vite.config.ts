@@ -1,13 +1,13 @@
 // Plugins
-import vue from '@vitejs/plugin-vue'
-import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import vue from "@vitejs/plugin-vue";
+import vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 import { VuetifyResolver } from "unplugin-vue-components/resolvers";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 
 // Utilities
-import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
+import { defineConfig } from "vite";
+import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,7 +19,7 @@ export default defineConfig({
     vuetify({
       autoImport: true,
       styles: {
-        configFile: 'src/assets/styles/global/settings.scss',
+        configFile: "src/assets/styles/global/settings.scss",
       },
     }),
     AutoImport({
@@ -28,22 +28,30 @@ export default defineConfig({
       dirs: ["src/composables/**", "src/store", "src/view/"],
       vueTemplate: true,
       resolvers: [VuetifyResolver()],
-  }),
-  Components({
-    extensions: ["vue"],
-    dts: "src/vue-components.d.ts",
-    resolvers: [VuetifyResolver()],
-}),
-
+    }),
+    Components({
+      extensions: ["vue"],
+      dts: "src/vue-components.d.ts",
+      resolvers: [VuetifyResolver()],
+    }),
   ],
-  define: { 'process.env': {} },
+  define: { "process.env": {} },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+    extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
   server: {
-    port: 5173,
+    proxy: {
+      host: '127.0.0.1',
+
+      "/v1.0/management": {
+        
+        changeOrigin: false,
+        secure: false,
+        target: "http:/localhost:7144",
+      },
+    },
   },
-})
+});

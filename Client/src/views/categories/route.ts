@@ -24,15 +24,15 @@
                 name: 'CreateCategories',
                 component: () => import('./create/create.vue'),
                 meta: {
-                    title: ' جديدة',
+                    title: ' فئة جديدة',
                 },
             },
             {
                 path: ':id',
-                name: 'Categories',
+                name: 'Category',
                 component: () => import('./view/view.vue'),
                 meta: {
-                    title: 'عرض ',
+                    title: ' عرض الفئة',
                 },
             },
             
