@@ -1,0 +1,26 @@
+<v-container>
+  <v-card>
+    <!-- Display product details and editable fields -->
+    <v-row>
+      <v-col class="pa-6">
+        <v-card-title>إسم الفئة</v-card-title>
+        <v-card-text>
+          <!-- Editable field for new information -->
+          <v-text-field v-model="newCategory.categoryName"></v-text-field>
+        </v-card-text>
+      </v-col>
+      <v-col class="pa-6">
+        <v-card-title>تفاصيل</v-card-title>
+        <v-card-text>
+          <!-- Editable field for new information -->
+          <v-text-field v-model="newCategory.description"></v-text-field>
+        </v-card-text>
+      </v-col>
+    </v-row>
+
+    <!-- Submit button to add the new product -->
+    <v-card-actions>
+      <v-btn @click="submitForm">Submit</v-btn>
+    </v-card-actions>
+  </v-card>
+</v-container>

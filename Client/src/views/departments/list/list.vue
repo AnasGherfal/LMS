@@ -9,6 +9,7 @@ const products = ref<Product[]>([
     productName: "Product 1",
     contact: "Category A",
   },
+  { productName: "Product 2", contact: "Category B" },
 ]);
 
 const productDetails = {

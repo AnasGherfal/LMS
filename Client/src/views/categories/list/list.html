@@ -1,65 +1,64 @@
-﻿<v-row>
-  <v-col cols="1" >
-    <v-btn color="#007ecc"     
-    icon="mdi mdi-plus"   size="large"
-    > </v-btn>
+﻿<v-container>
+  <!-- Floating buttons -->
+  <v-row>
+    <v-col cols="1">
+      <!-- Search button -->
+      <v-btn fab dark color="blue" @click="openSearchDialog">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+    </v-col>
 
-  </v-col>
-  <v-col >
-    <v-btn  color="#007ecc"       
-    icon="mdi mdi-magnify"   size="large"
-    > </v-btn>
+    <v-col class="pr-0">
+      <!-- Add button -->
+      <v-btn fab dark color="blue" @click="navigateToAddCategoryPage">
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
+    </v-col>
+  </v-row>
 
-  </v-col>
-</v-row>
-<v-data-iterator :items="pp" item-value="name">
-  <template v-slot:default="{ items }">
-    <v-row>
-      <v-col
-        v-for="item in pp"
-        :key="item.category"
-        cols="12"
-        sm="12"
-        md="12"
-        class="mb-4"
-      >
-        <v-card class="pa-6">
-          <v-row>
-            <v-col class="d-flex align-center" cols="1">
-              <v-icon
-                :color="item.color"
-                :icon="item.icon"
-                start
-                size="50"
-              ></v-icon>
-            </v-col>
-            <v-col>
-              <v-card-title class="d-flex align-center">
-                <h4>الفئة</h4>
-              </v-card-title>
+  <!-- Fixed title card -->
+  <v-row>
+    <v-col class="mb-6">
+      <v-card class="pa-6">
+        <v-row no-gutters>
+          <v-col class="pr-2">
+            <v-card-title>إسم الفئة</v-card-title>
+          </v-col>
+          <v-col class="pr-2">
+            <v-card-title>عدد المنتجات</v-card-title>
+          </v-col>
+          <v-col class="mr-2">
+            <v-card-title>الإجراءات</v-card-title>
+          </v-col>
+        </v-row>
+      </v-card>
+    </v-col>
+  </v-row>
 
-              <v-card-text class="d-flex align-center">dd</v-card-text>
-            </v-col>
-            <v-col>
-              <v-card-title>
-                <h4>عدد المنتجات</h4>
-              </v-card-title>
-              <v-card-text class="d-flex align-center">dd</v-card-text>
-            </v-col>
-
-            <v-col>
-              <v-card-title>
-                <h4>الاجرائات</h4>
-              </v-card-title>
-              <v-card-text>
-                <v-btn icon="mdi mdi-pencil" variant="text"> </v-btn>
-                <v-btn icon="mdi mdi-information" variant="text"> </v-btn>
-                <v-btn icon="mdi mdi-delete" color="delete" variant="text"> </v-btn>
-              </v-card-text>
-            </v-col>
-          </v-row>
-        </v-card>
-      </v-col>
-    </v-row>
-  </template>
-</v-data-iterator>
+  <!-- Product data cards -->
+  <v-card v-for="category in pp.content" :key="category.id" class="pa-6 mb-6">
+    <v-col>
+      <v-row no-gutters>
+        <v-col class="pr-2">
+          <v-card-text>{{ category.name }}</v-card-text>
+        </v-col>
+        <v-col class="pr-2">
+          <v-card-text>{{ category.name }}</v-card-text>
+        </v-col>
+        <v-col class="mr-2">
+          <v-card-actions>
+            <v-btn icon @click="deleteProduct(index)">
+              <v-icon style="color: #b00020">mdi-delete</v-icon>
+            </v-btn>
+            <v-btn icon @click="editProduct(index)">
+              <v-icon style="color: #2196f3">mdi-pencil</v-icon>
+            </v-btn>
+            <v-btn icon @click="lockProduct(index)">
+              <v-icon style="color: #4caf50">mdi-lock</v-icon>
+            </v-btn>
+          </v-card-actions>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-card>
+</v-container>
