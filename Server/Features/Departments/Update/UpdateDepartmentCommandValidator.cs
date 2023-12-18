@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Departments.Update;
+﻿using FluentValidation;
+
+namespace Server.Features.Departments.Update;
 
 public class UpdateDepartmentCommandValidator:AbstractValidator<UpdateDepartmentCommand>
 {

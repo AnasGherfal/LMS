@@ -1,4 +1,4 @@
-using Server.Options;
+using Common.Options;
 
 namespace Server.Extensions;
 

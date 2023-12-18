@@ -1,3 +1,6 @@
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+
 namespace Server.Abstract;
 
 [Route("v1.0/[controller]")]

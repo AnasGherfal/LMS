@@ -1,4 +1,5 @@
 ﻿using Common.Wrappers;
+using MediatR;
 
 namespace Server.Features.Departments.FetchAll;
 public sealed record FetchDepartmentsQueryResponse : IRequest<PagedResponse<FetchDepartmentsQueryResponse>>

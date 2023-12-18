@@ -40,4 +40,13 @@ public static class HttpContextExtensions
         // Log.Fatal(roleId.ToString());
         return roleId;
     }
+    
+    
+    
+    public static string ApiUrl(this IHttpContextAccessor context, string source, string destination)
+    {
+        var url = $"{context?.HttpContext?.Request.Scheme}://{context?.HttpContext?.Request.Host.ToUriComponent()}{context?.HttpContext?.Request.PathBase}{context?.HttpContext?.Request.Path}".Replace(source, destination);
+        return url;
+    }
+    
 }

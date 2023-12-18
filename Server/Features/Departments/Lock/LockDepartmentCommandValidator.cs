@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Departments.Lock;
+﻿using FluentValidation;
+
+namespace Server.Features.Departments.Lock;
 
 public class LockDepartmentCommandValidator:AbstractValidator<LockDepartmentCommand>
 {

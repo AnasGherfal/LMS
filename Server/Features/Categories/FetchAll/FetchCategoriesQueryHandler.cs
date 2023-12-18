@@ -1,25 +1,47 @@
-﻿using Bogus;
+﻿using Common.Constants;
+using Common.Helpers;
 using Common.Wrappers;
+using Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Server.Features.Categories.FetchAll;
 
 public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategoriesQuery, PagedResponse<FetchCategoriesQueryResponse>>
 {
+    private readonly IHttpContextAccessor _httpContext;
+    private readonly AppDbContext _dbContext;
+    public FetchCategoriesQueryHandler(AppDbContext dbContext, IHttpContextAccessor httpContextAccessor)
+    {
+        _dbContext = dbContext;
+        _httpContext = httpContextAccessor;
+    }
+    
     public async Task<PagedResponse<FetchCategoriesQueryResponse>> Handle(FetchCategoriesQuery request, CancellationToken cancellationToken)
     {
-        var faker = new Faker();
-        var mockList = new List<FetchCategoriesQueryResponse>();
-        for (var i = 0; i < 10; i++)
-        {
-            mockList.Add(new FetchCategoriesQueryResponse()
-                    {
-                        Id = Guid.NewGuid(),
-                        Icon = faker.Image.PlaceImgUrl(),
-                        Name = faker.Name.JobType(),
-                        IsActive = faker.Random.Bool(),
-                        CreatedOn = faker.Date.Past(),
-                    });
-        }
-        return new PagedResponse<FetchCategoriesQueryResponse>("", mockList, 10);
+        
+        var pageNumber = request.PageNumber ?? 1;
+        var pageSize = request.PageSize ?? 5;
+        var query = _dbContext.Categories
+            .Where(p => string.IsNullOrWhiteSpace(request.Search)
+                        || p.Name.Contains(request.Search));
+        var data = await query
+            .OrderBy(p => p.CreatedOn)
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .AsNoTracking()
+            .Select(p => new FetchCategoriesQueryResponse()
+            {
+                Id = p.Id,
+                Icon = _httpContext.ApiUrl("Categories", "Files") + "/" +p.Photo,
+                Name = p.Name,
+                IsActive = p.Status == EntityStatus.Active,
+                NumberOfCategories = 0,
+                CreatedOn = p.CreatedOn,
+            })
+            .ToListAsync(cancellationToken: cancellationToken);
+        var count = await query.CountAsync(cancellationToken: cancellationToken);
+        var totalPages = (int) Math.Ceiling(count / (double) pageSize);
+        return new PagedResponse<FetchCategoriesQueryResponse>("", data, totalPages);
     }
 }

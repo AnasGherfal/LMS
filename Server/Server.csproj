@@ -57,4 +57,8 @@
     <Protobuf Include="Proto\Users.proto" GrpcServices="Client" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

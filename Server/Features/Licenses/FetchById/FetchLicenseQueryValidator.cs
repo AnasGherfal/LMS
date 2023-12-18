@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Licenses.FetchById;
+﻿using FluentValidation;
+
+namespace Server.Features.Licenses.FetchById;
 
 public class FetchLicenseQueryValidator : AbstractValidator<FetchLicenseQuery>
 {

@@ -1,9 +1,11 @@
 ﻿using Common.Wrappers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
 using Server.Features.Products.Create;
 using Server.Features.Products.Delete;
 using Server.Features.Products.FetchAll;
+using Server.Features.Products.FetchById;
 using Server.Features.Products.Lock;
 using Server.Features.Products.Unlock;
 using Server.Features.Products.Update;
@@ -21,6 +23,13 @@ public class ProductsController: ManagementController
     [HttpGet]
     public async Task<PagedResponse<FetchProductsQueryResponse>> Fetch([FromQuery] FetchProductsQuery request)
         => await Mediator.Send(request);
+    
+    [HttpGet("{id}")]
+    public async Task<ContentResponse<FetchProductByIdQueryResponse>> FetchById(string id)
+        => await Mediator.Send(new FetchProductByIdQuery()
+        {
+            Id = id,
+        });
     
     
     [HttpPut("{id}")]
@@ -51,4 +60,3 @@ public class ProductsController: ManagementController
             Id = id,
         });
 }
-

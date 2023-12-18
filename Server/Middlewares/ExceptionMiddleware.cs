@@ -1,4 +1,5 @@
-﻿using Common.Exceptions;
+﻿using System.Net;
+using Common.Exceptions;
 using Common.Wrappers;
 using Serilog;
 using ValidationException = Common.Exceptions.ValidationException;

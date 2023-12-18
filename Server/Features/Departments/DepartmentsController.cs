@@ -1,5 +1,6 @@
 ﻿using Common.Wrappers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
 using Server.Features.Departments.Create;
 using Server.Features.Departments.Delete;

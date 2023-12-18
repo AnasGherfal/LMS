@@ -1,0 +1,37 @@
+2023-12-18 10:10:55 [INF] User profile is available. Using '/Users/fmansur/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-12-18 10:10:56 [INF] No SPA development server running at https://localhost:5173 found.
+2023-12-18 10:10:56 [INF] Now listening on: http://localhost:5174
+2023-12-18 10:10:56 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-18 10:10:56 [INF] Hosting environment: Development
+2023-12-18 10:10:56 [INF] Content root path: /Users/fmansur/Documents/LTT/GitHub/LMS/Server
+2023-12-18 10:10:56 [ERR] Failed to launch the SPA development server 'npm run dev'.
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process '/usr/local/bin/npm' with working directory '/Users/fmansur/Documents/LTT/GitHub/LMS/Server/../tms.client'. No such file or directory
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.LaunchDevelopmentProxy()
+2023-12-18 10:10:56 [ERR] Couldn't start the SPA development server with command 'npm run dev'.
+2023-12-18 10:10:57 [INF] Request starting HTTP/1.1 GET http://localhost:5174/swagger/index.html - null null
+2023-12-18 10:10:57 [INF] Request finished HTTP/1.1 GET http://localhost:5174/swagger/index.html - 200 null text/html;charset=utf-8 109.5587ms
+2023-12-18 10:10:57 [INF] Request starting HTTP/1.1 GET http://localhost:5174/swagger/swagger-ui-bundle.js - null null
+2023-12-18 10:10:57 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-12-18 10:10:57 [INF] Request finished HTTP/1.1 GET http://localhost:5174/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 399.7598ms
+2023-12-18 10:10:57 [INF] Request starting HTTP/1.1 GET http://localhost:5174/swagger/v1/swagger.json - null null
+2023-12-18 10:10:57 [INF] Request finished HTTP/1.1 GET http://localhost:5174/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 95.2109ms
+2023-12-18 10:18:53 [INF] User profile is available. Using '/Users/fmansur/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2023-12-18 10:18:53 [INF] No SPA development server running at https://localhost:5173 found.
+2023-12-18 10:18:53 [INF] Now listening on: http://localhost:5174
+2023-12-18 10:18:53 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-18 10:18:53 [INF] Hosting environment: Development
+2023-12-18 10:18:53 [INF] Content root path: /Users/fmansur/Documents/LTT/GitHub/LMS/Server
+2023-12-18 10:18:53 [ERR] Failed to launch the SPA development server 'npm run dev'.
+System.ComponentModel.Win32Exception (2): An error occurred trying to start process '/usr/local/bin/npm' with working directory '/Users/fmansur/Documents/LTT/GitHub/LMS/Server/../tms.client'. No such file or directory
+   at System.Diagnostics.Process.ForkAndExecProcess(ProcessStartInfo startInfo, String resolvedFilename, String[] argv, String[] envp, String cwd, Boolean setCredentials, UInt32 userId, UInt32 groupId, UInt32[] groups, Int32& stdinFd, Int32& stdoutFd, Int32& stderrFd, Boolean usesTerminal, Boolean throwOnNoExec)
+   at System.Diagnostics.Process.StartCore(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.LaunchDevelopmentProxy()
+2023-12-18 10:18:53 [ERR] Couldn't start the SPA development server with command 'npm run dev'.
+2023-12-18 10:18:54 [INF] Request starting HTTP/1.1 GET http://localhost:5174/swagger/index.html - null null
+2023-12-18 10:18:54 [INF] Request finished HTTP/1.1 GET http://localhost:5174/swagger/index.html - 200 null text/html;charset=utf-8 102.0301ms
+2023-12-18 10:18:55 [INF] Request starting HTTP/1.1 GET http://localhost:5174/swagger/v1/swagger.json - null null
+2023-12-18 10:18:55 [INF] Request finished HTTP/1.1 GET http://localhost:5174/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 81.5197ms

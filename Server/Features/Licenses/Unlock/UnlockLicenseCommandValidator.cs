@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Licenses.Unlock;
+﻿using FluentValidation;
+
+namespace Server.Features.Licenses.Unlock;
 
 public class UnlockLicenseCommandValidator :AbstractValidator<UnlockLicenseCommand>
 {

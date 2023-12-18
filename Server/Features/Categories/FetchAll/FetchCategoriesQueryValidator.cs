@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Categories.FetchAll;
+﻿using FluentValidation;
+
+namespace Server.Features.Categories.FetchAll;
 
 public class FetchCategoriesQueryValidator : AbstractValidator<FetchCategoriesQuery>
 {

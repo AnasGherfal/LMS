@@ -1,12 +1,16 @@
 using System.Reflection;
 using System.Text;
 using Common.Behaviors;
-using Infrastructure;
+using Common.Options;
+using Common.Services;
+using FluentValidation;
+using Infrastructure.ClientInfo;
 using Jose;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.IdentityModel.Tokens;
-using Server.Options;
 
 namespace Server.Extensions;
 
@@ -24,8 +28,10 @@ public static class FeaturesExtension
 
     public static IServiceCollection AddCustomAuthentication(this IServiceCollection serviceCollection, ConfigurationManager configuration)
     {
-        IConfigurationSection jwtConfig = configuration.GetSection(JwtOptionSettings.SectionName);
-        JwtOptionSettings? jwtSettings = jwtConfig.Get<JwtOptionSettings>();
+        serviceCollection.AddScoped<IClientService, ClientService>();
+        serviceCollection.AddHttpContextAccessor();
+        IConfigurationSection jwtConfig = configuration.GetSection(AuthenticationOption.Section);
+        AuthenticationOption? jwtSettings = jwtConfig.Get<AuthenticationOption>();
 
         serviceCollection.AddAuthorizationBuilder()
             .AddPolicy("RegisteredApp", policy => policy.RequireAssertion(ctx => ctx.User.HasClaim(c => c.Type == "apps" && c.Value.Contains("10"))));
@@ -42,8 +48,8 @@ public static class FeaturesExtension
             {
                 ValidateIssuer = true,
                 ValidateAudience = true,
-                ValidIssuer = jwtSettings!.Issuer,
-                ValidAudience = jwtSettings.Audience,
+                ValidIssuer = jwtSettings!.ValidIssuer,
+                ValidAudience = jwtSettings.ValidAudience,
                 ValidateIssuerSigningKey = true,
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Secret)),
                 ValidateLifetime = true,

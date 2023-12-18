@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Licenses.Lock;
+﻿using FluentValidation;
+
+namespace Server.Features.Licenses.Lock;
 
 public class LockLicenseCommandValidator:AbstractValidator<LockLicenseCommand>
 {

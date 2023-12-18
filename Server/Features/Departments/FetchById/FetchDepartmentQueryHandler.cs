@@ -1,5 +1,6 @@
 ﻿using Bogus;
 using Common.Wrappers;
+using MediatR;
 
 namespace Server.Features.Departments.FetchById;
 

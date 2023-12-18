@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Departments.FetchById;
+﻿using FluentValidation;
+
+namespace Server.Features.Departments.FetchById;
 
 public class FetchDepartmentQueryValidator : AbstractValidator<FetchDepartmentQuery>
 {

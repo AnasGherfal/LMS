@@ -1,4 +1,6 @@
-﻿namespace Server.Features.Licenses.Create;
+﻿using FluentValidation;
+
+namespace Server.Features.Licenses.Create;
 
 public class CreateLicenseCommandValidator : AbstractValidator<CreateLicenseCommand>
 {
