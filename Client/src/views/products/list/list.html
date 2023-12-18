@@ -8,44 +8,48 @@
       </v-btn>
     </v-col>
 
-    <v-col class="pr-0">
+    <v-col class="mb-4">
       <!-- Add button -->
-      <v-btn fab dark color="blue" @click="navigateToAddProductPage">
+      <v-btn color="blue" @click="navigateToAddProductPage">
         <v-icon>mdi-plus</v-icon>
       </v-btn>
     </v-col>
   </v-row>
 
-  <!-- Product cards -->
-  <v-row>
-    <v-col v-for="(product, index) in products" :key="index">
-      <v-card class="pa-6">
-        <v-row no-gutters>
-          <!-- Display product details horizontally -->
-          <v-col v-for="(value, key) in productDetails" :key="key" class="pr-2">
-            <v-card-title>{{ key }}</v-card-title>
-            <v-card-text>{{ product[value] }}</v-card-text>
-          </v-col>
-
-          <!-- Actions section as header -->
-          <v-col class="mr-2">
-            <v-card-title class="text-h6" align="center"
-              >الإجراءات</v-card-title
-            >
-            <v-card-actions>
-              <v-btn icon @click="deleteProduct(index)">
-                <v-icon style="color: #b00020">mdi-delete</v-icon>
-              </v-btn>
-              <v-btn icon @click="editProduct(index)">
-                <v-icon style="color: #2196f3">mdi-pencil</v-icon>
-              </v-btn>
-              <v-btn icon @click="lockProduct(index)">
-                <v-icon style="color: #4caf50">mdi-lock</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
+  <!-- Product data table -->
+  <v-data-table
+    :headers="headers"
+    :items="products"
+    :items-per-page="5"
+    class="elevation-1"
+  >
+    <template v-slot:top>
+      <v-toolbar flat>
+        <v-toolbar-title>قائمة المنتجات</v-toolbar-title>
+        <v-spacer></v-spacer>
+      </v-toolbar>
+    </template>
+    <template v-slot:item="{ item }">
+      <tr>
+        <td>{{ item.productName }}</td>
+        <td>{{ item.category }}</td>
+        <td>{{ item.totalLicense }}</td>
+        <td>{{ item.availability }}</td>
+        <td>{{ item.contact }}</td>
+        <td>{{ item.provider }}</td>
+        <td>{{ item.impactLevel }}</td>
+        <td class="text-center">
+          <v-btn icon @click="deleteProduct(index)" variant="text" size="small">
+            <v-icon style="color: #b00020">mdi-delete</v-icon>
+          </v-btn>
+          <v-btn icon @click="editProduct(index)" variant="text" size="small">
+            <v-icon style="color: #2196f3">mdi-pencil</v-icon>
+          </v-btn>
+          <v-btn icon @click="lockProduct(index)" variant="text" size="small">
+            <v-icon style="color: #4caf50">mdi-lock</v-icon>
+          </v-btn>
+        </td>
+      </tr>
+    </template>
+  </v-data-table>
 </v-container>
