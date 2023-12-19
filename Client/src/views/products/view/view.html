@@ -1,3 +1,31 @@
 ﻿<v-card class="mx-auto">
-
+  <v-card-item>
+    <v-card-title class="d-flex align-center pa-2">
+      {{pageTitle}}
+    </v-card-title>
+  </v-card-item>
+  <v-card-text>
+    <v-row>
+      <v-col md="6">
+        <text-field label=" اسم المنتج" disabled> </text-field>
+      </v-col>
+      <v-col md="6">
+        <text-field label="الفئة" disabled> </text-field>
+      </v-col>
+      <v-col md="6">
+        <text-field label="عدد الرخص" disabled> </text-field>
+      </v-col>
+      <v-col md="6">
+        <v-file-input
+          label="ملف"
+          v-model="category.photo"
+          hide-details
+          density="compact"
+          class="rounded-xl"
+          variant="outlined"
+        >
+        </v-file-input>
+      </v-col>
+    </v-row>
+  </v-card-text>
 </v-card>

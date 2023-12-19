@@ -50,7 +50,7 @@ const headers = ref<header[]>([
   { title: "الإجراءات", key: "actions" },
 ]);
 
-// Method to navigate to the create category page
+// Method to navigate to the create product page
 const create = () => {
   router.push({ name: "CreateProducts" });
 };

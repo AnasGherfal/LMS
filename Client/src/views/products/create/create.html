@@ -11,11 +11,22 @@
           <text-field label="اسم المنتج" v-model="product.name"> </text-field>
         </v-col>
         <v-col md="6">
-          <text-field label="الفئة" v-model="product.category"> </text-field>
+          <v-autocomplete
+            v-model="product.categoryId"
+            :items="categories"
+            :rules="[v => !!v || 'Item is required']"
+            item-title="name"
+            item-value="id"
+            label="Item"
+            required
+          ></v-autocomplete>
         </v-col>
         <v-col md="6">
-          <text-field label="عدد الرخص" v-model="product.numberOfLicenses">
+          <text-field label="تفاصيل " v-model="product.description">
           </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field label=" المزود" v-model="product.provider"> </text-field>
         </v-col>
         <v-col md="6">
           <v-file-input
@@ -28,10 +39,10 @@
           >
           </v-file-input>
         </v-col>
+        <v-btn type="submit" rounded="1" class="mr-4 mt-2" @click="create()"
+          >اضافة
+        </v-btn>
       </v-row>
-      <v-btn type="submit" rounded="1" class="mx-2" @click="create()"
-        >اضافة
-      </v-btn>
     </v-form>
   </v-card-text>
 </v-card>

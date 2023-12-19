@@ -2,14 +2,44 @@
 <script setup lang="ts">
 import type { Product } from "./model";
 import { productService } from "../service";
+import { categoryService } from "@/views/categories/service";
+import { jsonToQueryString } from "@/utils/handlers";
 const product = reactive<Product>({
   name: null,
-  category: null,
+  categoryId: null,
   photo: null,
   numberOfLicenses: null,
 });
 const router = useRouter();
 const pageTitle = router.currentRoute.value.meta.title;
+
+const filter = reactive({
+  pageNo: 1,
+  pageSize: 10,
+  title: null,
+  status: null,
+  date: null,
+});
+
+onMounted(() => {
+  getCategories();
+});
+
+const categories = ref([]);
+
+const getCategories = async (pageNo?: number) => {
+  try {
+    //loading.start();
+
+    filter.pageNo = pageNo ?? filter.pageNo;
+    const queryString = jsonToQueryString(filter);
+    const { data } = await categoryService.fetch(queryString);
+    //loading.stop();
+    categories.value = data.content;
+  } catch {
+    //loading.stop();
+  }
+};
 
 // Method to submit the form and add the new Product
 const create = async () => {

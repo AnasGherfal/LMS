@@ -21,7 +21,7 @@
       },
       {
         path: "create",
-        name: "CreateProduct",
+        name: "CreateProducts",
         component: () => import("./create/create.vue"),
         meta: {
           title: "منتج جديد",
