@@ -21,7 +21,6 @@ const filter = reactive<CategoriesListFilter>({
   pageNo: 1,
   pageSize: 10,
   title: null,
-  entityId: null,
   status: null,
   date: null,
 });
@@ -33,7 +32,6 @@ const getAll = async (pageNo?: number) => {
     //loading.start();
 
     filter.pageNo = pageNo ?? filter.pageNo;
-    console.log(filter.entityId);
     const queryString = jsonToQueryString(filter);
     const { data } = await categoryService.fetch(queryString);
     //loading.stop();
@@ -47,7 +45,7 @@ const getAll = async (pageNo?: number) => {
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
   { title: "الاسم", key: "name" },
-  { title: "تاريخ الإنشاء", key: "createdOn" },
+  // { title: "تاريخ الإنشاء", key: "createdOn" },
   { title: "عدد الفئات", key: "numberOfCategories" },
   { title: "الحالة", key: "isActive" },
 
@@ -73,11 +71,12 @@ const canceleDialog = () => {
 
 const deleteCategory = async () => {
         try {
-            const { data } = await userService.deleteUser(tempId.value!);
+            const { data } = await categoryService.deleteCategory(tempId.value!);
             getAll();
             canceleDialog();
         }
         catch {
+          console.error()
         }
     };
 </script>

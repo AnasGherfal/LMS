@@ -22,18 +22,15 @@
   </v-card-item>
   <v-card-text>
     <v-data-table :headers="headers" :items="categories">
-      <template v-slot:item.entity="{ item }">
-        <v-tooltip location="top">
-          <template v-slot:activator="{ props }">
-            <span v-bind="props">{{noteTruncate(item.entity, 15)}}</span>
-          </template>
-          <span>{{item.entity}}</span>
-        </v-tooltip>
+      <template v-slot:item.name="{ item }">
+                  <span>{{item.name}}</span>
+
+
       </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
-          :color="item.isActive == true ? 'green' : 'danger'"
-          :text="item.isActive == false ? 'منجزة' : ''"
+          :color="item.isActive == true ? 'green' : 'red'"
+          :text="item.isActive == false ? 'مجمد' : 'مفعل'"
           label
           size="small"
         ></v-chip>
@@ -48,7 +45,7 @@
           </template>
           <span>عرض تفاصيل الفئة</span>
         </v-tooltip>
-        <v-tooltip location="top">
+        <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
               <v-btn icon variant="text" v-bind="props"
                      @click="showDialog(item.id, 'delete', index)">
@@ -68,13 +65,13 @@
 
   <v-dialog v-model="doneDialog" persistent width="600">
     <v-card>
-      <v-card-title> حذف مستخدم </v-card-title>
+      <v-card-title> حذف الفئة </v-card-title>
       <v-card-text>
-        <span>هل أنت متأكد من إتمام انجاز المهمة</span>
+        <span>هل أنت متأكد من الحذف  </span>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" variant="text" @click="done"> اتمام </v-btn>
+        <v-btn color="primary" variant="text" @click="deleteCategory()"> اتمام </v-btn>
         <v-btn color="error" variant="text" @click="canceleDialog()">
           الغاء
         </v-btn>

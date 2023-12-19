@@ -14,7 +14,6 @@ export interface CategoriesListFilter {
     pageSize: number;
     title: string | null;
     date: string | null;
-    entityId: number | null,
     status: number | null;
 }
 
