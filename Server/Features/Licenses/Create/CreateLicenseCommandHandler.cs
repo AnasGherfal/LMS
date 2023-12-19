@@ -7,6 +7,7 @@ using Common.Services;
 using Common.Wrappers;
 using Infrastructure;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Server.Features.Licenses.Create;
 

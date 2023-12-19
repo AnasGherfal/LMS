@@ -5,9 +5,12 @@
         </v-card-title>
     </v-card-item>
     <v-card-text>
+        <v-form @submit.prevent ref="categoryForm">
+
         <v-row>
             <v-col md="6">
                 <text-field label=" اسم الفئة"
+                v-model="category.name"
                 disabled>
                 </text-field>
             
@@ -15,18 +18,22 @@
             </v-col>
             <v-col md="6">
                 <text-field label="ملاحظات"
+                v-model="category.description"
+
                             disabled>
                 </text-field>
             </v-col>
             <v-col md="6">
-                <v-file-input label="ملف" v-model="category.photo" 
+                <text-field label="ملف" v-model="category.icon" 
                 hide-details
                 density="compact"
                 class="rounded-xl"
-                variant="outlined">
-                </v-file-input>
+                variant="outlined"
+                disabled>
+                </text-field>
             </v-col>
         </v-row>
+        </v-form>
         </v-card-text>
         
         

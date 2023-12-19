@@ -16,7 +16,6 @@ public sealed record CreateLicenseCommand: IRequest<MessageResponse>
     public string? ImpactDescription { get; set; }
     public decimal? PriceInUSD { get; set; }
     public decimal? PriceInLYD { get; set; }
-    public EntityStatus? Status { get; set; }
     public string? DepartmentId { get; set; }
     public string? ProductId { get; set; }
 

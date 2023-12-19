@@ -23,9 +23,7 @@
   <v-card-text>
     <v-data-table :headers="headers" :items="categories">
       <template v-slot:item.name="{ item }">
-                  <span>{{item.name}}</span>
-
-
+        <span>{{item.name}}</span>
       </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
@@ -41,19 +39,22 @@
             <v-btn icon v-bind="props" variant="text" @click="view(item.id)">
               <v-icon size="small" color="primary">mdi-eye-outline</v-icon>
             </v-btn>
-            
           </template>
           <span>عرض تفاصيل الفئة</span>
         </v-tooltip>
         <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
-              <v-btn icon variant="text" v-bind="props"
-                     @click="showDialog(item.id, 'delete', index)">
-                  <v-icon size="small" color="error">mdi-trash-can-outline</v-icon>
-              </v-btn>
+            <v-btn
+              icon
+              variant="text"
+              v-bind="props"
+              @click="showDialog(item.id, 'delete', index)"
+            >
+              <v-icon size="small" color="error">mdi-trash-can-outline</v-icon>
+            </v-btn>
           </template>
           <span>حذف</span>
-      </v-tooltip>
+        </v-tooltip>
       </template>
     </v-data-table>
     <v-pagination
@@ -67,11 +68,13 @@
     <v-card>
       <v-card-title> حذف الفئة </v-card-title>
       <v-card-text>
-        <span>هل أنت متأكد من الحذف  </span>
+        <span>هل أنت متأكد من الحذف </span>
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" variant="text" @click="deleteCategory()"> اتمام </v-btn>
+        <v-btn color="primary" variant="text" @click="deleteCategory()">
+          اتمام
+        </v-btn>
         <v-btn color="error" variant="text" @click="canceleDialog()">
           الغاء
         </v-btn>

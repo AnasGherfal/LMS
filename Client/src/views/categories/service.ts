@@ -14,7 +14,7 @@ function create (category : FormData){
 }
 
 function fetchById(id : number){
-    return httpClient.get<MessageResponse>(`${RESOURCE}`, id)
+    return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`)
 }
 function deleteCategory(id : number){
     return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`, )

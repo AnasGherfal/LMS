@@ -1,4 +1,57 @@
-<v-card class="pa-6">
-    create
-    </v-card>
-    
+<v-card class="mx-auto">
+    <v-card-item>
+        <v-card-title class="d-flex align-center pa-2">
+            {{pageTitle}}
+        </v-card-title>
+    </v-card-item>
+    <v-card-text>
+        <v-form @submit.prevent ref="">
+            <v-row>
+                <v-col md="2">
+                    <text-field label="اسم المنتج" v-model="license.ProductId" >
+                    </text-field>
+                </v-col>
+                <v-col md="2">
+                    <text-field label="القسم" v-model="license.DepartmentId" >
+                    </text-field>
+                </v-col>
+                <v-col md="2">
+                    <text-field label="عدد الاجهزه" v-model="license.NumOfDevices" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="رقم السيريل" v-model="license.SerialKey" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="لفل الخطر" v-model="license.ImpactLevel" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="ملاحظة الخطر" v-model="license.ImpactDescription" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="تاريخ بداية الترخيص" v-model="license.StartDate" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="تاريخ انتهائ الترخيص" v-model="license.ExpireDate" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="تواصل" v-model="license.Contact" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="مدة الترخيص" v-model="license.TimeType" >
+                    </text-field>
+                </v-col>
+                <v-col md="6">
+                    <text-field label=" السعر بالدولار الامريكي" v-model="license.PriceInUSD" >
+                    </text-field>
+                </v-col>    <v-col md="6">
+                    <text-field label="السعر بالدينار الليبي" v-model="license.PriceInLYD" >
+                    </text-field>
+                </v-col>
+                </v-row>
+                <v-btn type="submit" rounded="1" class="mx-2" @click="create()">اضافة
+
+                </v-btn>
+                
+                </v-form>
+    </v-card-text>
+</v-card>
