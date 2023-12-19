@@ -1,55 +1,84 @@
-﻿<v-container>
-  <!-- Floating buttons -->
-  <v-row>
-    <v-col cols="1">
-      <!-- Search button -->
-      <v-btn fab dark color="blue" @click="openSearchDialog">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-col>
+﻿<v-card class="pa-6">
+  <v-card-item>
+    <v-row>
+      <v-card-title class="d-flex align-center"> {{pageTitle}} </v-card-title>
+      <v-spacer></v-spacer>
+      <v-tooltip text="إضافة منتج">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            variant="outlined"
+            icon="mdi mdi-plus"
+            @click="create"
+          />
+        </template>
+      </v-tooltip>
+    </v-row>
+    <v-row>
+      <v-col md="3">
+        <text-field label="اسم المنتج"> </text-field>
+      </v-col>
+    </v-row>
+  </v-card-item>
+  <v-card-text>
+    <v-data-table :headers="headers" :items="products">
+      <template v-slot:item.name="{ item }">
+        <span>{{item.name}}</span>
+      </template>
+      <template v-slot:item.isActive="{ item }">
+        <v-chip
+          :color="item.isActive == true ? 'green' : 'red'"
+          :text="item.isActive == false ? 'مجمد' : 'مفعل'"
+          label
+          size="small"
+        ></v-chip>
+      </template>
+      <template v-slot:item.actions="{ item }">
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+            <v-btn icon v-bind="props" variant="text" @click="view(item.id)">
+              <v-icon size="small" color="primary">mdi-eye-outline</v-icon>
+            </v-btn>
+          </template>
+          <span>عرض تفاصيل المنتج</span>
+        </v-tooltip>
+        <v-tooltip location="top" v-if="item.isActive == true">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              icon
+              variant="text"
+              v-bind="props"
+              @click="showDialog(item.id, 'delete', index)"
+            >
+              <v-icon size="small" color="error">mdi-trash-can-outline</v-icon>
+            </v-btn>
+          </template>
+          <span>حذف</span>
+        </v-tooltip>
+      </template>
+    </v-data-table>
+    <v-pagination
+      v-model="filter.pageNo"
+      class="my-4"
+      :length="totalPages"
+    ></v-pagination>
+  </v-card-text>
 
-    <v-col class="mb-4">
-      <!-- Add button -->
-      <v-btn color="blue" @click="navigateToAddProductPage">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-    </v-col>
-  </v-row>
-
-  <!-- Product data table -->
-  <v-data-table
-    :headers="headers"
-    :items="products"
-    :items-per-page="5"
-    class="elevation-1"
-  >
-    <template v-slot:top>
-      <v-toolbar flat>
-        <v-toolbar-title>قائمة المنتجات</v-toolbar-title>
+  <v-dialog v-model="doneDialog" persistent width="600">
+    <v-card>
+      <v-card-title> حذف المنتج </v-card-title>
+      <v-card-text>
+        <span>هل أنت متأكد من الحذف </span>
+      </v-card-text>
+      <v-card-actions>
         <v-spacer></v-spacer>
-      </v-toolbar>
-    </template>
-    <template v-slot:item="{ item }">
-      <tr>
-        <td>{{ item.productName }}</td>
-        <td>{{ item.category }}</td>
-        <td>{{ item.totalLicense }}</td>
-        <td>{{ item.availability }}</td>
-        <td>{{ item.contact }}</td>
-        <td>{{ item.provider }}</td>
-        <td>{{ item.impactLevel }}</td>
-        <td class="text-center">
-          <v-btn icon @click="deleteProduct(index)" variant="text" size="small">
-            <v-icon style="color: #b00020">mdi-delete</v-icon>
-          </v-btn>
-          <v-btn icon @click="editProduct(index)" variant="text" size="small">
-            <v-icon style="color: #2196f3">mdi-pencil</v-icon>
-          </v-btn>
-          <v-btn icon @click="lockProduct(index)" variant="text" size="small">
-            <v-icon style="color: #4caf50">mdi-lock</v-icon>
-          </v-btn>
-        </td>
-      </tr>
-    </template>
-  </v-data-table>
-</v-container>
+        <v-btn color="primary" variant="text" @click="deleteCategory()">
+          اتمام
+        </v-btn>
+        <v-btn color="error" variant="text" @click="canceleDialog()">
+          الغاء
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
+</v-card>

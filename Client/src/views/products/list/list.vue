@@ -1,82 +1,81 @@
-﻿<template src="./list.html"></template>
-<script setup lang="ts">
-import { ref } from "vue";
-import { type Product } from "./model";
-import { useRouter } from "vue-router";
-
-const products = ref<Product[]>([
-  {
-    productName: "المنتج 1",
-    category: " فئة 1",
-    totalLicense: 100,
-    availability: "قيد التوفر",
-    contact: "أنس قرفال",
-    provider: "المزود 1",
-    impactLevel: "عالي جدا",
-  },
-  {
-    productName: "المنتج 1",
-    category: " فئة 1",
-    totalLicense: 100,
-    availability: "قيد التوفر",
-    contact: "أنس قرفال",
-    provider: "المزود 1",
-    impactLevel: "عالي جدا",
-  },
-  {
-    productName: "المنتج 1",
-    category: " فئة 1",
-    totalLicense: 100,
-    availability: "قيد التوفر",
-    contact: "أنس قرفال",
-    provider: "المزود 1",
-    impactLevel: "عالي جدا",
-  },
-  {
-    productName: "المنتج 1",
-    category: " فئة 1",
-    totalLicense: 100,
-    availability: "قيد التوفر",
-    contact: "أنس قرفال",
-    provider: "المزود 1",
-    impactLevel: "عالي جدا",
-  },
-  {
-    productName: "المنتج 1",
-    category: " فئة 1",
-    totalLicense: 100,
-    availability: "قيد التوفر",
-    contact: "أنس قرفال",
-    provider: "المزود 1",
-    impactLevel: "عالي جدا",
-  },
-]);
-
-const productDetails = {
-  "إسم المنتج": "productName",
-  الفئة: "category",
-  "إجمالي الرخصة": "totalLicense",
-  التوفر: "availability",
-  التواصل: "contact",
-  المزود: "provider",
-  "مستوى التأثير": "impactLevel",
-};
+﻿<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<script lang="ts" setup>
+import { jsonToQueryString } from "@/utils/handlers";
+import type { productListItem, ProductsListFilter, header } from "./model.ts";
+import { productService } from "../service";
 
 const router = useRouter();
+const tempId = ref<number | null>();
+const doneDialog = ref<boolean>(false);
 
-const navigateToAddProductPage = () => {
-  console.log("sss");
-  router.push({ name: "CreateLicense" });
-};
-const deleteProduct = (index: number) => {
-  products.value.splice(index, 1);
+onMounted(() => {
+  getAll();
+});
+const pageTitle = router.currentRoute.value.meta.title;
+
+const filter = reactive<ProductsListFilter>({
+  pageNo: 1,
+  pageSize: 10,
+  title: null,
+  status: null,
+  date: null,
+});
+const totalPages = ref(5);
+
+const products = ref<ProductsListFilter[]>([]);
+const getAll = async (pageNo?: number) => {
+  try {
+    //loading.start();
+
+    filter.pageNo = pageNo ?? filter.pageNo;
+    const queryString = jsonToQueryString(filter);
+    const { data } = await productService.fetch(queryString);
+    //loading.stop();
+    products.value = data.content;
+    totalPages.value = data.totalPages;
+  } catch {
+    //loading.stop();
+  }
 };
 
-const editProduct = (index: number) => {
-  // Implement your edit logic here
+const headers = ref<header[]>([
+  // { title: "#", key: "id" },
+  { title: "الاسم", key: "name" },
+  // { title: "تاريخ الإنشاء", key: "createdOn" },
+  { title: " الفئة", key: "category" },
+  { title: " عدد الرخص", key: "numberOfLicenses" },
+
+  { title: "الحالة", key: "isActive" },
+
+  { title: "الإجراءات", key: "actions" },
+]);
+
+// Method to navigate to the create category page
+const create = () => {
+  router.push({ name: "CreateProducts" });
+};
+const view = (id: number) => {
+  router.push({ name: "Product", params: { id } });
 };
 
-const lockProduct = (index: number) => {
-  // Implement your lock logic here
+const showDialog = (val: number) => {
+  tempId.value = val;
+  doneDialog.value = true;
+};
+const canceleDialog = () => {
+  doneDialog.value = false;
+  tempId.value = null;
+};
+
+const deleteCategory = async () => {
+  try {
+    const { data } = await productService.deleteCategory(tempId.value!);
+    getAll();
+    canceleDialog();
+  } catch {
+    console.error();
+  }
 };
 </script>
+
+<template src="./list.html"></template>

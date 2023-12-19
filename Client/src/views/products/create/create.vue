@@ -1,40 +1,39 @@
 <template src="./create.html"></template>
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
 import type { Product } from "./model";
-
-// New product data to be filled in the form
-const newProduct = ref<Product>({
-  productName: "",
-  category: "",
-  totalLicense: 0,
-  availability: "",
-  contact: "",
-  provider: "",
-  impactLevel: "",
+import { productService } from "../service";
+const product = reactive<Product>({
+  name: null,
+  category: null,
+  photo: null,
+  numberOfLicenses: null,
 });
-
-// Product details mapping
-const productDetails = {
-  "إسم المنتج": "productName",
-  الفئة: "category",
-  "إجمالي الرخصة": "totalLicense",
-  التوفر: "availability",
-  التواصل: "contact",
-  المزود: "provider",
-  "مستوى التأثير": "impactLevel",
-};
-
 const router = useRouter();
+const pageTitle = router.currentRoute.value.meta.title;
 
-// Method to submit the form and add the new product
-const submitForm = () => {
-  // Add validation logic if needed
-  // Push the new product to the products array (or perform any other action)
-  // In a real application, you might want to send this data to a server
-  console.log("New Product:", newProduct.value);
-  // Navigate back to the product list page
-  router.push("/products");
+// Method to submit the form and add the new Product
+const create = async () => {
+  console.log("ff");
+  const productForm = new FormData();
+
+  for (const [key, value] of Object.entries(product)) {
+    if (key === "photo") {
+      //messionForm.append(`${key}`, value[0] as any);
+      continue;
+    }
+    productForm.append(`${key}`, value as any);
+  }
+  if (product.photo != null) {
+    productForm.append(`photo`, product.photo[0] as any);
+  }
+
+  try {
+    const { data } = await productService.create(productForm);
+    //showNotification(data.msg);
+    //loading.stop();
+    router.go(-1);
+  } catch {
+    //loading.stop();
+  }
 };
 </script>
