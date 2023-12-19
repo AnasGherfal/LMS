@@ -22,8 +22,6 @@ public class UpdateLicenseCommandHandler(AppDbContext _dbContext, IClientService
         var id = Guid.Parse(request.Id!);
         var data = await _dbContext.Licenses.SingleOrDefaultAsync(p => p.Id == id, cancellationToken: cancellationToken);
         if (data == null) throw new NotFoundException(nameof(Locale.LicenseNotFound));
-        if (await _dbContext.Products.Where(p => p.Id == data.ProductId).AnyAsync(p => p.Status == EntityStatus.Locked, cancellationToken: cancellationToken))
-            throw new BadRequestException(nameof(Locale.ProductLocked));
         if (data.Status != EntityStatus.Active) throw new BadRequestException(nameof(Locale.IsLocked));
         if (data.IsDeleted) throw new BadRequestException(nameof(Locale.AlreadyDeleted));
         var @event = new LicenseUpdatedEvent(_client.IdentityId, data.Id, data.Sequence + 1, new LicenseUpdatedEventData()
