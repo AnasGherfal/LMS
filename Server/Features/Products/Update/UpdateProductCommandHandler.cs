@@ -28,6 +28,8 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
         var id = Guid.Parse(request.Id!);
         var data = await _dbContext.Products.SingleOrDefaultAsync(p => p.Id == id, cancellationToken: cancellationToken);
         if (data == null) throw new NotFoundException(nameof(Locale.ProductNotFound));
+        if (await _dbContext.Categories.Where(p => p.Id == data.CategoryId).AnyAsync(p => p.Status == EntityStatus.Locked, cancellationToken: cancellationToken))
+            throw new BadRequestException(nameof(Locale.CategoryLocked));
         if (data.Status != EntityStatus.Active) throw new BadRequestException(nameof(Locale.IsLocked));
         if (data.IsDeleted) throw new BadRequestException(nameof(Locale.AlreadyDeleted));
         var @event = new ProductUpdatedEvent(_client.IdentityId, data.Id, data.Sequence + 1, new ProductUpdatedEventData()

@@ -27,6 +27,12 @@ public sealed record CreateProductCommandHandler : IRequestHandler<CreateProduct
 
     public async Task<MessageResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
+        if (request.CategoryId != null)
+        {
+            if (_dbContext.Categories.Where(p => p.Id == Guid.Parse(request.CategoryId)).Any(p => p.Status == EntityStatus.Locked))
+                throw new BadRequestException(nameof(Locale.CategoryLocked));
+
+        }
         var nameExists = await _dbContext.Products.AnyAsync(p => p.Name == request.Name!, cancellationToken: cancellationToken);
         if (nameExists) throw new BadRequestException(nameof(Locale.ProductNameExists));
         var fileRequests = new List<FileStorageUploadRequest>()

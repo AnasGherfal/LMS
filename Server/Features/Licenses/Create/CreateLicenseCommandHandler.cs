@@ -2,6 +2,7 @@
 using Common.Entities;
 using Common.Events.License;
 using Common.Events.Product;
+using Common.Exceptions;
 using Common.Services;
 using Common.Wrappers;
 using Infrastructure;
@@ -15,6 +16,12 @@ public sealed record CreateLicenseCommandHandler(IClientService _client, AppDbCo
     private readonly AppDbContext _dbContext =_dbContext;
     public async Task<MessageResponse> Handle(CreateLicenseCommand request, CancellationToken cancellationToken)
     {
+		var productId= Guid.Parse(request.ProductId);
+        if (productId != null) {
+            if (await _dbContext.Products.Where(p => p.Id == productId).AnyAsync(p => p.Status == EntityStatus.Locked, cancellationToken: cancellationToken))
+                throw new BadRequestException(nameof(Locale.ProductLocked));
+           
+        }
         var @event = new LicenseCreatedEvent(_client.IdentityId, Guid.NewGuid(), new LicenseCreatedEventData()
         {
             DepartmentId = Guid.Parse(request.DepartmentId!),
