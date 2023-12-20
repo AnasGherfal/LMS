@@ -1,8 +1,6 @@
 ﻿using Common.Options;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Server.Extensions;
 
@@ -25,7 +23,7 @@ public static class PersistenceExtension
         });
 
         var connectionString2 = section.GetValue<string>(nameof(PersistenceOption.ConnectionString2));
-        services.AddDbContext<HRMSContext>(o =>
+        services.AddDbContext<HrDbContext>(o =>
         {
             if (string.IsNullOrWhiteSpace(connectionString2))
             {

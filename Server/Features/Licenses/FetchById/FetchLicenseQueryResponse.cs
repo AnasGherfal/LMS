@@ -1,5 +1,4 @@
 ﻿using Common.Constants;
-using Infrastructure.Models;
 
 namespace Server.Features.Licenses.FetchById;
 

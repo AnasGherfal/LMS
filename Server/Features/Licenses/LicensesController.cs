@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
-using Server.Features.Categories.FetchById;
 using Server.Features.Licenses.Create;
 using Server.Features.Licenses.Delete;
 using Server.Features.Licenses.FetchAll;

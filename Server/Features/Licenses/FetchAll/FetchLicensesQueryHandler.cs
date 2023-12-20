@@ -3,7 +3,6 @@ using Common.Wrappers;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Server.Features.Licenses.FetchById;
 
 namespace Server.Features.Licenses.FetchAll;
 

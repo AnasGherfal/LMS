@@ -1,6 +1,5 @@
 ﻿using Common.Constants;
 using Common.Entities;
-using Common.Entities.Abstracts;
 using Common.Events.Category;
 using Common.Exceptions;
 using Common.Services;
@@ -9,7 +8,6 @@ using Common.Wrappers;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Server.Features.Categories.Delete;
 
 namespace Server.Features.Categories.Update;
 

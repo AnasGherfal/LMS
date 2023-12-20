@@ -1,6 +1,5 @@
 ﻿using Common.Constants;
 using Common.Events.License;
-using Common.Events.Product;
 using Common.Exceptions;
 using Common.Services;
 using Common.Wrappers;

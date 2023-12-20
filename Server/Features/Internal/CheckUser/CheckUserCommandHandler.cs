@@ -1,14 +1,8 @@
 ﻿using Common.Constants;
 using Common.Entities;
-using Common.Events.Category;
 using Common.Events.User;
-using Common.Exceptions;
-using Common.Services;
-using Common.Services.Dtos;
-using Common.Wrappers;
 using Infrastructure;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Server.Features.Internal.CheckUser;
 

@@ -6,7 +6,6 @@ using Common.Wrappers;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Server.Features.Categories.Lock;
 
 namespace Server.Features.Categories.Delete;
 

@@ -1,6 +1,4 @@
-﻿using Common.Entities;
-
-namespace Server.Features.Products.FetchById;
+﻿namespace Server.Features.Products.FetchById;
 
 public sealed record FetchProductByIdQueryResponse 
 {

@@ -4,7 +4,6 @@ using Common.Wrappers;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Server.Features.Products.FetchById;
 
 namespace Server.Features.Licenses.FetchById;
 

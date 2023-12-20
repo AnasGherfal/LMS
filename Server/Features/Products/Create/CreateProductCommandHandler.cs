@@ -1,6 +1,5 @@
 ﻿using Common.Constants;
 using Common.Entities;
-using Common.Events.Category;
 using Common.Events.Product;
 using Common.Exceptions;
 using Common.Services;

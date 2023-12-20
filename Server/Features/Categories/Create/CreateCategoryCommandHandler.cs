@@ -1,7 +1,5 @@
-﻿using System.Security.Claims;
-using Common.Constants;
+﻿using Common.Constants;
 using Common.Entities;
-using Common.Entities.Abstracts;
 using Common.Events.Category;
 using Common.Exceptions;
 using Common.Services;
@@ -9,7 +7,6 @@ using Common.Services.Dtos;
 using Common.Wrappers;
 using Infrastructure;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace Server.Features.Categories.Create;

@@ -2,7 +2,6 @@
 using Common.Entities.Abstracts;
 using Infrastructure.Builders;
 using Microsoft.EntityFrameworkCore;
-using File = System.IO.File;
 
 namespace Infrastructure;
 

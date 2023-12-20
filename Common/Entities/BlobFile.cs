@@ -1,5 +1,4 @@
 ﻿using Common.Constants;
-using Common.Events.Category;
 
 namespace Common.Entities;
 
