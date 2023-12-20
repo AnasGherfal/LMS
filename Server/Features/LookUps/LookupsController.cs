@@ -7,6 +7,7 @@ using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Management.Protos;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
 using Server.Features.LookUps.FetchDepartments;
@@ -14,8 +15,8 @@ using Server.Features.LookUps.FetchDepartments;
 
 namespace Server.Features.LookUps;
 
+[AllowAnonymous]
 [ApiController]
-[Route("v1.0/[controller]")]
 
 public class LookupsController : ManagementController
 {
