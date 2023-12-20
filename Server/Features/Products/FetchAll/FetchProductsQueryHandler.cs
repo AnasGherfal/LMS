@@ -38,7 +38,7 @@ public sealed record FetchProductsQueryHandler : IRequestHandler<FetchProductsQu
             .Select(p => new FetchProductsQueryResponse()
             {
                 Id = p.Id,
-                Icon = _httpContext.ApiUrl("Products", "Files") + "/" +p.Photo,
+                Icon = _httpContext.BlobUrl() + p.Photo,
                 Name = p.Name,
                 Category = p.Category!.Name,
                 IsActive = p.Status == EntityStatus.Active,

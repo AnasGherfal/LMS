@@ -43,9 +43,9 @@ public static class HttpContextExtensions
     
     
     
-    public static string ApiUrl(this IHttpContextAccessor context, string source, string destination)
+    public static string BlobUrl(this IHttpContextAccessor context)
     {
-        var url = $"{context?.HttpContext?.Request.Scheme}://{context?.HttpContext?.Request.Host.ToUriComponent()}{context?.HttpContext?.Request.PathBase}{context?.HttpContext?.Request.Path}".Replace(source, destination);
+        var url = $"{context?.HttpContext?.Request.Scheme}://{context?.HttpContext?.Request.Host.ToUriComponent()}{context?.HttpContext?.Request.PathBase}/v1.0/management/Files/";
         return url;
     }
     

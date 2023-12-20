@@ -29,7 +29,7 @@ public sealed record FetchProductByIdQueryHandler : IRequestHandler<FetchProduct
             .Select(p => new FetchProductByIdQueryResponse()
             {
                 Id = p.Id,
-                Icon = _httpContext.ApiUrl("Products", "Files") + "/" +p.Photo,
+                Icon = _httpContext.BlobUrl() + p.Photo,
                 Name = p.Name,
                 Description = p.Description,
                 Provider = p.Provider,

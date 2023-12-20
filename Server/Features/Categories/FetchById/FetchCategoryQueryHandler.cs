@@ -27,7 +27,7 @@ public sealed record FetchCategoryQueryHandler : IRequestHandler<FetchCategoryQu
             .Select(p => new FetchCategoryQueryResponse()
             {
                 Id = p.Id,
-                Icon = _httpContext.ApiUrl("Categories", "Files") + "/" +p.Photo,
+                Icon = _httpContext.BlobUrl() + p.Photo,
                 Name = p.Name,
                 Description = p.Description,
                 IsActive = p.Status == EntityStatus.Active,
