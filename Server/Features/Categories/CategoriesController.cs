@@ -32,7 +32,7 @@ public class CategoriesController: ManagementController
     
     
     [HttpPut("{id}")]
-    public async Task<MessageResponse> Update(string id, [FromBody] UpdateCategoryCommand request)
+    public async Task<MessageResponse> Update(string id, [FromForm] UpdateCategoryCommand request)
     {
         request.SetId(id);
         return await Mediator.Send(request);
