@@ -2,7 +2,7 @@
 using MediatR;
 
 namespace Server.Features.Categories.FetchAll;
-public sealed record FetchCategoriesQueryResponse : IRequest<PagedResponse<FetchCategoriesQueryResponse>>
+public sealed record FetchCategoriesQueryResponse : IRequest<PagedResponse<FetchCategoriesQuery>>
 {
     public Guid Id { get; set; }
     public string Icon { get; set; } = string.Empty;

@@ -4,12 +4,16 @@ using Common.Behaviors;
 using Common.Options;
 using Common.Services;
 using FluentValidation;
+using Infrastructure;
 using Infrastructure.ClientInfo;
+using Infrastructure.Models;
+using Infrastructure.Services.Department;
 using Jose;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Server.Extensions;
@@ -20,15 +24,21 @@ public static class FeaturesExtension
     {
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
         services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+  
         ValidatorOptions.Global.DefaultClassLevelCascadeMode = CascadeMode.Stop;
         ValidatorOptions.Global.DefaultRuleLevelCascadeMode = CascadeMode.Stop;
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-        services.AddAutoMapper(Assembly.GetExecutingAssembly());
+     services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
+
     }
 
     public static IServiceCollection AddCustomAuthentication(this IServiceCollection serviceCollection, ConfigurationManager configuration)
     {
         serviceCollection.AddScoped<IClientService, ClientService>();
+
+
+         serviceCollection.AddScoped(typeof(IDepartmentService), typeof(DepartmentService));
+
         serviceCollection.AddHttpContextAccessor();
         IConfigurationSection jwtConfig = configuration.GetSection(AuthenticationOption.Section);
         AuthenticationOption? jwtSettings = jwtConfig.Get<AuthenticationOption>();

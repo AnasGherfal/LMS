@@ -1,10 +1,12 @@
 ﻿using Common.Wrappers;
+using Infrastructure.HrModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Server.Abstract;
 using Server.Features.Departments.Create;
 using Server.Features.Departments.Delete;
 using Server.Features.Departments.FetchAll;
+using Server.Features.Departments.GetDepartments;
 using Server.Features.Departments.Lock;
 using Server.Features.Departments.Unlock;
 using Server.Features.Departments.Update;
@@ -22,8 +24,17 @@ public class DepartmentsController: ManagementController
     [HttpGet]
     public async Task<PagedResponse<FetchDepartmentsQueryResponse>> Fetch([FromQuery] FetchDepartmentsQuery request)
         => await Mediator.Send(request);
-    
-    
+
+
+ 
+    [HttpGet("all", Name = "GetAllDepartments")]
+    public async Task<ActionResult<List<GetDepartmentsQueryResponse>>> GetDepartments()
+    {
+        var dtos = await Mediator.Send(new GetDepartmentsQuery());
+        return Ok(dtos);
+    }
+
+
     [HttpPut("{id}")]
     public async Task<MessageResponse> Update(string id, [FromBody] UpdateDepartmentCommand request)
     {
