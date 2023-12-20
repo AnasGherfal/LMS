@@ -16,6 +16,10 @@ public class AppDbContext : DbContext
     public DbSet<Product> Products => Set<Product>();
     
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+    protected AppDbContext(DbContextOptions options)
+      : base(options)
+    {
+    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         this.AddEventBuilder(modelBuilder);

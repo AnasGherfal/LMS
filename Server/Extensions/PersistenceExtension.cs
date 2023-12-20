@@ -1,6 +1,8 @@
 ﻿using Common.Options;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Server.Extensions;
 
@@ -21,6 +23,21 @@ public static class PersistenceExtension
                 o.UseSqlServer(connectionString);
             }
         });
+
+        var connectionString2 = section.GetValue<string>(nameof(PersistenceOption.ConnectionString2));
+        services.AddDbContext<HRMSContext>(o =>
+        {
+            if (string.IsNullOrWhiteSpace(connectionString2))
+            {
+                o.UseInMemoryDatabase("IN_MEMORY_TEST");
+                o.EnableDetailedErrors();
+            }
+            else
+            {
+                o.UseSqlServer(connectionString2);
+            }
+        });
+ 
     }
     
     
