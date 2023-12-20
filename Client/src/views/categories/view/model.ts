@@ -1,9 +1,8 @@
-﻿export interface categoryListItem{
+﻿export interface categoryInfo{
     id: string | null;
-    icon: any;
+    photo: any;
     name: string | null;
     description: string | null;
-    isActive: boolean | null; 
-    createdOn: "string" | null
-
+    isActive: boolean | null;
+    createdOn: string | null;
 }

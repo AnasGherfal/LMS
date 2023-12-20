@@ -17,6 +17,14 @@ function create (license : FormData){
 function fetchById(id : number){
     return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`)
 }
+
+function lock(id: number | null) {
+    return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/lock`);
+}
+function unlock(id: number | null) {
+    return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/unlock`);
+}
+
 function deletelicense(id : number){
     return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`, )
 
@@ -26,5 +34,7 @@ export const licenseService = {
     create,
     fetch,
     fetchById,
+    lock,
+    unlock,
     deletelicense,
 }

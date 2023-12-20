@@ -13,17 +13,24 @@ function create (category : FormData){
     return httpClient.post<MessageResponse>(`${RESOURCE}`, category )
 }
 
-function fetchById(id : number){
+function fetchById(id : any){
     return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`)
 }
-function deleteCategory(id : number){
+
+function edit(id : any, category: FormData){
+    return httpClient.put<MessageResponse>(`${RESOURCE}/${id}`, category)
+}
+function deleteCategory(id : any){
     return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`, )
 
 }
+
+
 export const categoryService = {
 
     create,
     fetch,
     fetchById,
+    edit,
     deleteCategory,
 }

@@ -13,7 +13,6 @@ const pageTitle = router.currentRoute.value.meta.title;
 
 // Method to submit the form and add the new Category
 const create = async () => {
-    console.log('ff')
 const categoryForm = new FormData();
 
 for (const [key, value] of Object.entries(category)) {

@@ -43,8 +43,8 @@ const getAll = async (pageNo?: number) => {
 
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
-  { title: "اسم المنتج", key: "productName" },
-  { title: "اسم الديبارتمنت", key: "departmentName" },
+  { title: " المنتج", key: "productName" },
+  { title: "القسم", key: "departmentName" },
 
   { title: "تواصل", key: "contact" },
   { title: "مستوى الخطوره", key: "impactLevel" },
@@ -75,7 +75,7 @@ const canceleDialog = () => {
 
 const deleteCategory = async () => {
         try {
-            const { data } = await categoryService.deleteCategory(tempId.value!);
+            const { data } = await licenseService.deletelicense(tempId.value!);
             getAll();
             canceleDialog();
         }

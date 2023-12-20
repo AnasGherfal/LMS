@@ -1,6 +1,6 @@
 ﻿export interface categoryListItem{
     id: string;
-    icon: string;
+    photo: string;
     name: string;
     numberOfCategories: number;
     isActive: boolean;
