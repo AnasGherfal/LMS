@@ -24,6 +24,7 @@ public sealed record FetchProductByIdQueryHandler : IRequestHandler<FetchProduct
         var id = Guid.Parse(request.Id!);
         var data = await _dbContext.Products
             .Include(p => p.Category)
+            .Include(p=>p.Licenses)
             .Where(p => p.Id == id)
             .Select(p => new FetchProductByIdQueryResponse()
             {
@@ -34,6 +35,7 @@ public sealed record FetchProductByIdQueryHandler : IRequestHandler<FetchProduct
                 Provider = p.Provider,
                 CategoryName = p.Category!.Name,
                 CategoryId = p.CategoryId,
+                NumberOfLicenses=p.Licenses.Count(),
                 IsActive = p.Status == EntityStatus.Active,
                 CreatedOn = DateTime.UtcNow,
             })

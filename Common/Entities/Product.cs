@@ -14,6 +14,7 @@ public class Product: Entity
     public string Provider { get; set; } = string.Empty;
     public EntityStatus Status { get; set; }
     public Category? Category { get; set; }
+    public ICollection<License> Licenses { get; set; } = default!;
 
     public void Apply(ProductCreatedEvent @event)
     {

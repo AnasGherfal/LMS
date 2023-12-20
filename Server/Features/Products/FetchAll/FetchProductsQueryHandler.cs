@@ -31,6 +31,7 @@ public sealed record FetchProductsQueryHandler : IRequestHandler<FetchProductsQu
         var data = await query
             .OrderBy(p => p.CreatedOn)
             .Include(p => p.Category)
+            .Include(p=> p.Licenses)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
             .AsNoTracking()
@@ -41,7 +42,7 @@ public sealed record FetchProductsQueryHandler : IRequestHandler<FetchProductsQu
                 Name = p.Name,
                 Category = p.Category!.Name,
                 IsActive = p.Status == EntityStatus.Active,
-                NumberOfLicenses = 0,
+                NumberOfLicenses = p.Licenses.Count(),
                 CreatedOn = p.CreatedOn,
             })
             .ToListAsync(cancellationToken: cancellationToken);
