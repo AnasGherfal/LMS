@@ -43,11 +43,11 @@ export default defineConfig({
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
   server: {
+    port: 5555,
     proxy: {
-      host: '127.0.0.1',
+      host: "127.0.0.1",
 
       "/v1.0/management": {
-        
         changeOrigin: false,
         secure: false,
         target: "http:/localhost:7144",
