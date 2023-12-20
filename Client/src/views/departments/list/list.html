@@ -1,112 +1,77 @@
-<v-container>
-  <!-- Floating buttons -->
-  <v-row>
-    <v-col cols="1">
-      <!-- Search button -->
-      <v-btn fab dark color="blue" @click="openSearchDialog">
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-    </v-col>
-
-    <v-col class="pr-0">
-      <!-- Add button -->
-      <v-btn fab dark color="blue" @click="navigateToAddDepartmentPage">
-        <v-icon>mdi-plus</v-icon>
-      </v-btn>
-    </v-col>
-  </v-row>
-
-  <!-- Fixed title card -->
-  <v-row>
-    <v-col>
-      <v-card class="pa-6">
-        <v-row no-gutters>
-          <v-col class="pr-2">
-            <v-card-title>إسم القسم</v-card-title>
-          </v-col>
-          <v-col class="pr-2">
-            <v-card-title>تواصل</v-card-title>
-          </v-col>
-          <v-col class="mr-2">
-            <v-card-title>الإجراءات</v-card-title>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
-
-  <!-- Product data cards -->
-  <v-row v-for="(product, index) in products" :key="index">
-    <v-col>
-      <v-card class="pa-6">
-        <v-row no-gutters>
-          <v-col class="pr-2">
-            <v-card-text>{{ product.productName }}</v-card-text>
-          </v-col>
-          <v-col class="pr-2">
-            <v-card-text>{{ product.contact }}</v-card-text>
-          </v-col>
-          <v-col class="mr-2">
-            <v-card-actions>
-              <v-btn icon @click="deleteProduct(index)">
-                <v-icon style="color: #b00020">mdi-delete</v-icon>
-              </v-btn>
-              <v-btn icon @click="editProduct(index)">
-                <v-icon style="color: #2196f3">mdi-pencil</v-icon>
-              </v-btn>
-              <v-btn icon @click="lockProduct(index)">
-                <v-icon style="color: #4caf50">mdi-lock</v-icon>
-              </v-btn>
-            </v-card-actions>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
-</v-container>
-<!-- 
-
-
-  <v-row>
-    <v-col
-      v-for="category in pp.content"
-      :key="category.id"
-      cols="12"
-      md="6"
-      lg="4"
-    >
-      <v-card class="pa-6" style="width: 100%">
-        <v-row align="center">
-          <v-col cols="auto">
-            <v-icon :color="category.isActive ? 'green' : 'red'" size="50"
-              >{{ category.name }}</v-icon
+<v-card class="pa-6">
+  <v-card-item>
+    <v-row>
+      <v-card-title class="d-flex align-center"> {{pageTitle}} </v-card-title>
+      <v-spacer></v-spacer>
+      <v-tooltip text="إضافة قسم">
+        <template v-slot:activator="{ props }">
+          <v-btn
+            v-bind="props"
+            variant="outlined"
+            icon="mdi mdi-plus"
+            @click="create"
+            disabled
+          />
+        </template>
+      </v-tooltip>
+    </v-row>
+    <v-row>
+      <v-col md="3">
+        <text-field label="اسم القسم"> </text-field>
+      </v-col>
+    </v-row>
+  </v-card-item>
+  <v-card-text>
+    <v-data-table :headers="headers" :items="departments">
+      <template v-slot:item.name="{ item }">
+        <span>{{item.name}}</span>
+      </template>
+      <template v-slot:item.isActive="{ item }">
+        <v-chip
+          :color="item.isActive == true ? 'red' : 'green'"
+          :text="item.isActive == false ? 'مجمد' : 'مفعل'"
+          label
+          size="small"
+        ></v-chip>
+      </template>
+      <template v-slot:item.actions="{ item }">
+        <v-tooltip location="top" v-if="item.isActive == true">
+          <template v-slot:activator="{ props }">
+            <v-btn
+              icon
+              variant="text"
+              v-bind="props"
+              @click="showDialog(item.id, 'delete', index)"
             >
-          </v-col>
-          <v-col>
-            <v-card-title>
-              <h4>{{ category.name }}</h4>
-            </v-card-title>
-            <v-card-text>
-              <h4>عدد المنتجات: {{ category.productCount }}</h4>
-            </v-card-text>
-          </v-col>
-          <v-col>
-            <v-card-title>
-              <h4>الإجراءت</h4>
-            </v-card-title>
-            <v-card-text>
-              <v-btn icon="mdi mdi-pencil" variant="text"></v-btn>
-              <v-btn icon="mdi mdi-information" variant="text"></v-btn>
-              <v-btn
-                icon="mdi mdi-delete"
-                color="delete"
-                variant="text"
-              ></v-btn>
-            </v-card-text>
-          </v-col>
-        </v-row>
-      </v-card>
-    </v-col>
-  </v-row>
-</v-row>
- -->
+              <v-icon size="small" color="error">mdi-trash-can-outline</v-icon>
+            </v-btn>
+          </template>
+          <span>حذف</span>
+        </v-tooltip>
+      </template>
+    </v-data-table>
+    <v-pagination
+      v-model="filter.pageNo"
+      class="my-4"
+      :length="totalPages"
+    ></v-pagination>
+  </v-card-text>
+
+  <!-- <v-dialog v-model="doneDialog" persistent width="600">
+    <v-card>
+      <v-card-title> حذف القسم </v-card-title>
+      <v-card-text>
+        <span>هل أنت متأكد من الحذف </span>
+      </v-card-text>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" variant="text" @click="deleteDepartment()">
+          اتمام
+        </v-btn>
+        <v-btn color="error" variant="text" @click="canceleDialog()">
+          الغاء
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog> -->
+</v-card>

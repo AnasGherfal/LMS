@@ -12,14 +12,14 @@ function create(product: FormData) {
 }
 
 function fetchById(id: number) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`, id);
+  return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
 }
-function deleteCategory(id: number) {
+function deleteProduct(id: number) {
   return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`);
 }
 export const productService = {
   create,
   fetch,
   fetchById,
-  deleteCategory,
+  deleteProduct,
 };

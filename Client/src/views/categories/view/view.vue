@@ -4,13 +4,12 @@ import { categoryService } from "../service";
 
 const router = useRouter();
 const route = useRoute();
-const id = (route.params.id);
+const id = route.params.id;
 console.log(id);
 const pageTitle = router.currentRoute.value.meta.title;
 
 onMounted(() => {
-    getById();
-
+  getById();
 });
 
 const category = ref<categoryListItem>({

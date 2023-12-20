@@ -1,4 +1,20 @@
-export interface Product {
-  productName: string;
-  contact: string;
+export interface departmentListItem {
+  id: string;
+  icon: string;
+  name: string;
+  isActive: boolean;
+  createdOn: "string";
+}
+
+export interface departmentsListFilter {
+  pageNo: number;
+  pageSize: number;
+  title: string | null;
+  date: string | null;
+  status: number | null;
+}
+
+export interface header {
+  title: string;
+  key: string;
 }

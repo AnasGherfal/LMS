@@ -67,9 +67,9 @@ const canceleDialog = () => {
   tempId.value = null;
 };
 
-const deleteCategory = async () => {
+const deleteProduct = async () => {
   try {
-    const { data } = await productService.deleteCategory(tempId.value!);
+    const { data } = await productService.deleteProduct(tempId.value!);
     getAll();
     canceleDialog();
   } catch {

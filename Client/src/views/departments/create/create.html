@@ -1,19 +1,23 @@
-<v-container>
-  <v-card>
-    <!-- Display product details and editable fields -->
-    <v-row>
-      <v-col v-for="(value, key) in productDetails" :key="key" class="pa-6">
-        <v-card-title>{{ key }}</v-card-title>
-        <v-card-text>
-          <!-- Editable field for new information -->
-          <v-text-field v-model="newProduct[value]"></v-text-field>
-        </v-card-text>
-      </v-col>
-    </v-row>
-
-    <!-- Submit button to add the new product -->
-    <v-card-actions>
-      <v-btn @click="submitForm">Submit</v-btn>
-    </v-card-actions>
-  </v-card>
-</v-container>
+<!-- <v-card class="mx-auto">
+  <v-card-item>
+    <v-card-title class="d-flex align-center pa-2">
+      {{pageTitle}}
+    </v-card-title>
+  </v-card-item>
+  <v-card-text>
+    <v-form @submit.prevent ref="departmentForm">
+      <v-row>
+        <v-col md="6">
+          <text-field label=" رقم التعريف" v-model="department.id">
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field label="إسم القسم" v-model="category.name"> </text-field>
+        </v-col>
+      </v-row>
+      <v-btn type="submit" rounded="1" class="mx-2" @click="create()"
+        >اضافة
+      </v-btn>
+    </v-form>
+  </v-card-text>
+</v-card> -->

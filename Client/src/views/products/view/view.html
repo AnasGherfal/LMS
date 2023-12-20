@@ -5,27 +5,37 @@
     </v-card-title>
   </v-card-item>
   <v-card-text>
-    <v-row>
-      <v-col md="6">
-        <text-field label=" اسم المنتج" disabled> </text-field>
-      </v-col>
-      <v-col md="6">
-        <text-field label="الفئة" disabled> </text-field>
-      </v-col>
-      <v-col md="6">
-        <text-field label="عدد الرخص" disabled> </text-field>
-      </v-col>
-      <v-col md="6">
-        <v-file-input
-          label="ملف"
-          v-model="product.icon"
-          hide-details
-          density="compact"
-          class="rounded-xl"
-          variant="outlined"
-        >
-        </v-file-input>
-      </v-col>
-    </v-row>
+    <v-form @submit.prevent ref="productForm">
+      <v-row>
+        <v-col md="6">
+          <text-field label=" اسم المنتج" v-model="product.name" disabled>
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field label="الفئة" v-model="product.categoryName" disabled>
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field
+            label="عدد الرخص"
+            v-model="product.numberOfLicenses"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field
+            label="ملف"
+            v-model="product.icon"
+            hide-details
+            density="compact"
+            class="rounded-xl"
+            variant="outlined"
+            disabled
+          >
+          </text-field>
+        </v-col>
+      </v-row>
+    </v-form>
   </v-card-text>
 </v-card>

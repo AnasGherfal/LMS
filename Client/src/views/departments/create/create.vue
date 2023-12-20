@@ -1,4 +1,4 @@
-<template src="./create.html"></template>
+<!-- <template src="./create.html"></template>
 <script setup lang="ts">
 
 import { useRouter } from "vue-router";
@@ -26,4 +26,4 @@ const submitForm = () => {
   // Navigate back to the product list page
   router.push("/departments");
 };
-</script>
+</script> -->

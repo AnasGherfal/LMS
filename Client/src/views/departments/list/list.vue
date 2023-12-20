@@ -1,37 +1,82 @@
-<template src="./list.html"></template>
-<script setup lang="ts">
-import { ref } from "vue";
-import { type Product } from "./model";
-import { useRouter } from "vue-router";
-
-const products = ref<Product[]>([
-  {
-    productName: "Product 1",
-    contact: "Category A",
-  },
-  { productName: "Product 2", contact: "Category B" },
-]);
-
-const productDetails = {
-  "إسم القسم": "productName",
-  تواصل: "contact",
-};
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<script lang="ts" setup>
+import { jsonToQueryString } from "@/utils/handlers";
+import type {
+  departmentListItem,
+  departmentsListFilter,
+  header,
+} from "./model.ts";
+import { departmentService } from "../service";
 
 const router = useRouter();
+const tempId = ref<number | null>();
+const doneDialog = ref<boolean>(false);
 
-const navigateToAddDepartmentPage = () => {
-  console.log("sss");
+onMounted(() => {
+  getAll();
+});
+const pageTitle = router.currentRoute.value.meta.title;
+
+const filter = reactive<departmentsListFilter>({
+  pageNo: 1,
+  pageSize: 400,
+  title: null,
+  status: null,
+  date: null,
+});
+const totalPages = ref(5);
+
+const departments = ref<departmentListItem[]>([]);
+const getAll = async (pageNo?: number) => {
+  try {
+    //loading.start();
+
+    filter.pageNo = pageNo ?? filter.pageNo;
+    const queryString = jsonToQueryString(filter);
+    const { data } = await departmentService.fetch(queryString);
+    //loading.stop();
+    departments.value = data.content;
+    totalPages.value = data.totalPages;
+  } catch {
+    //loading.stop();
+  }
+};
+
+const headers = ref<header[]>([
+  // { title: "#", key: "id" },
+  { title: "رقم التعريف", key: "id" },
+  { title: "إسم القسم", key: "name" },
+
+  // { title: "تاريخ الإنشاء", key: "createdOn" },
+  { title: "الحالة", key: "isActive" },
+]);
+
+// Method to navigate to the create category page
+const create = () => {
   router.push({ name: "CreateDepartments" });
 };
-const deleteProduct = (index: number) => {
-  products.value.splice(index, 1);
+const view = (id: number) => {
+  router.push({ name: "Department", params: { id } });
 };
 
-const editProduct = (index: number) => {
-  // Implement your edit logic here
+const showDialog = (val: number) => {
+  tempId.value = val;
+  doneDialog.value = true;
+};
+const canceleDialog = () => {
+  doneDialog.value = false;
+  tempId.value = null;
 };
 
-const lockProduct = (index: number) => {
-  // Implement your lock logic here
-};
+// const deleteDepartment = async () => {
+//   try {
+//     const { data } = await departmentService.deleteCategory(tempId.value!);
+//     getAll();
+//     canceleDialog();
+//   } catch {
+//     console.error();
+//   }
+// };
 </script>
+
+<template src="./list.html"></template>

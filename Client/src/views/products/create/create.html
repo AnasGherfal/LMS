@@ -11,15 +11,21 @@
           <text-field label="اسم المنتج" v-model="product.name"> </text-field>
         </v-col>
         <v-col md="6">
-          <v-autocomplete
+          <auto-complete
+            label="فئات"
             v-model="product.categoryId"
             :items="categories"
-            :rules="[v => !!v || 'Item is required']"
-            item-title="name"
             item-value="id"
-            label="Item"
-            required
-          ></v-autocomplete>
+            item-title="name"
+            variant="outlined"
+            density="compact"
+            class="rounded-xl"
+            :return-object="false"
+            :clearable="false"
+            :hide-details="false"
+            :multiple="false"
+          >
+          </auto-complete>
         </v-col>
         <v-col md="6">
           <text-field label="تفاصيل " v-model="product.description">
