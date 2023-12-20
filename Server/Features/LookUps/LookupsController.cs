@@ -1,4 +1,5 @@
 ﻿using Common;
+using Common.Constants;
 using Common.Exceptions;
 using Common.Helpers;
 using Grpc.Net.Client;
@@ -6,6 +7,8 @@ using Grpc.Net.Client.Web;
 using Infrastructure;
 using Management.Protos;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.ObjectModel;
+using System.Linq;
 
 
 namespace Server.Features.LookUps;
@@ -18,11 +21,33 @@ public class LookupsController(IConfiguration configuration, IHttpContextAccesso
     private readonly IConfiguration _configuration = configuration;
     private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
-    [HttpGet("get-entities")]
-    public async Task<IActionResult> GetEntities()
+    [HttpGet("get-impactLevels")]
+    public async Task<IActionResult> GetImpactLevels()
     {
+        var impactLevels = Enum.GetValues(typeof(ImpactLevel))
+            .Cast <ImpactLevel>()
+            .ToList()
+            .Select(p=> new FetchLookUpsQueryResponse()
+            {
+                Id = (short) p,
+                Name = p.ToString()
+            }).ToList();
 
-        return Ok();
+        return Ok(impactLevels);
+    }
+    [HttpGet("get-timeTypes")]
+    public async Task<IActionResult> GetTimeTypes()
+    {
+        var timeTypes = Enum.GetValues(typeof(TimeType))
+            .Cast<TimeType>()
+            .ToList()
+            .Select(p => new FetchLookUpsQueryResponse()
+            {
+                Id = (short)p,
+                Name = p.ToString()
+            }).ToList();
+
+        return Ok(timeTypes);
     }
 
     [HttpGet("get-app-users-list")]

@@ -20,7 +20,7 @@ public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext) : IReque
                 || p.DepartmentId == Guid.Parse(request.DepartmentId!)));
         var data = await query
             .OrderBy(p => p.CreatedOn)
-            //.Include(p => p.Product)
+            .Include(p => p.Product)
             //.Include(p=> p.Department)
             .Skip((pageNumber - 1) * pageSize)
             .Take(pageSize)
@@ -34,7 +34,7 @@ public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext) : IReque
                 ExpireDate = p.ExpireDate,
                 StartDate=p.StartDate,
                 ImpactLevel=p.ImpactLevel,
-               // ProductName=p.Product.Name,
+               ProductName=p.Product.Name,
                 CreatedOn = p.CreatedOn,
             })
             .ToListAsync(cancellationToken: cancellationToken);
