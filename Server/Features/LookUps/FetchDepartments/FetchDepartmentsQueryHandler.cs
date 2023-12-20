@@ -1,7 +1,10 @@
-﻿using Common.Wrappers;
+﻿using Common.Entities.HrEntities;
+using Common.Wrappers;
 using Infrastructure;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using System.Security.Cryptography;
 
 namespace Server.Features.LookUps.FetchDepartments;
 
@@ -16,14 +19,24 @@ public class FetchDepartmentsQueryHandler : IRequestHandler<FetchDepartmentsQuer
 
     public async Task<ListResponse<FetchDepartmentsQueryResponse>> Handle(FetchDepartmentsQuery request, CancellationToken cancellationToken)
     {
-        var data = await _hrDbContext.AdminEntities
-            .Select(p => new FetchDepartmentsQueryResponse()
+        var res = await (from a in _hrDbContext.ManagementPostions
+                  join b in _hrDbContext.Employees
+                       on a.EmpId equals b.EmpId into g
+                  from d in g.DefaultIfEmpty()
+                  select new
+                  {
+                      entityid = a.EntityId,
+                      entityname = _hrDbContext.AdminEntities.Where(e => e.EntityId == a.EntityId).Select(n => n.EntityName).Single(),
+                      name = d.FirstName + " " + d.LastName,
+                  })
+                  .Select(p => new FetchDepartmentsQueryResponse()
             {
-                Id = p.EntityId,
-                Name = p.EntityName,
-            })
+                Id = p.entityid,
+                Name = p.entityname,
+                OwnerName= p.name,
+             })
             .ToListAsync(cancellationToken: cancellationToken);
-        return new ListResponse<FetchDepartmentsQueryResponse>("", data);
+        return new ListResponse<FetchDepartmentsQueryResponse>("", res);
     }
 }
 

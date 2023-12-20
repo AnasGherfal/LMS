@@ -7,4 +7,5 @@ public sealed record FetchDepartmentsQueryResponse : IRequest<PagedResponse<Fetc
 {
     public short Id { get; set; }
     public string Name { get; set; } = string.Empty;
+    public string OwnerName { get; set; }
 }
