@@ -4,8 +4,14 @@ import httpClient from "@/plugins/http-client";
 
 const RESOURCE = "products";
 
-function fetch(quaryString: string) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`, quaryString);
+function fetch(pageNumber?: number, pageSize?: number, name?: string) {
+  return httpClient.get<MessageResponse>(`${RESOURCE}`, {
+    params: {
+      PageNumber: pageNumber,
+      PageSize: pageSize,
+      Search: name,
+    },
+  });
 }
 function create(product: FormData) {
   return httpClient.post<MessageResponse>(`${RESOURCE}`, product);

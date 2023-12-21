@@ -15,14 +15,14 @@ onMounted(() => {
 
 const product = ref<productInfo>({
   id: null,
-  icon: null,
+  photo: null,
   name: null,
   category: null,
   numberOfLicense: null,
   isActive: null,
   createdOn: null,
 });
-const icon = ref({});
+const photo = ref({});
 
 const getById = async () => {
   try {
@@ -39,7 +39,7 @@ const getById = async () => {
 const edit = async () => {
   const productSend = reactive<productInfo>({
     id: product.value.id,
-    icon: icon,
+    photo: photo,
     name: product.value.name,
     category: product.value.category,
     numberOfLicense: product.value.numberOfLicense,
@@ -49,14 +49,14 @@ const edit = async () => {
   const productForm = new FormData();
 
   for (const [key, value] of Object.entries(productSend)) {
-    if (key === "icon") {
+    if (key === "photo") {
       //messionForm.append(`${key}`, value[0] as any);
       continue;
     }
     productForm.append(`${key}`, value as any);
   }
-  if (productSend.icon != null) {
-    productForm.append(`icon`, productSend.icon[0] as any);
+  if (productSend.photo != null) {
+    productForm.append(`photo`, productSend.photo[0] as any);
   }
 
   try {
@@ -70,7 +70,7 @@ const edit = async () => {
 };
 
 const downloadImage = async () => {
-  window.open(product.value.icon, "_blank");
+  window.open(product.value.photo, "_blank");
 };
 
 const back = () => router.push({ name: "ProductList" });

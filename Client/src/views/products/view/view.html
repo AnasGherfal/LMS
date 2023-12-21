@@ -62,7 +62,7 @@
           <text-field
             v-if="disabled "
             label="ملف"
-            v-model="product.icon"
+            v-model="product.photo"
             hide-details
             density="compact"
             class="rounded-xl"
@@ -74,18 +74,18 @@
           <v-file-input
             v-else
             label="ملف"
-            v-model="icon"
+            v-model="photo"
             hide-details
             density="compact"
             class="rounded-xl"
             variant="outlined"
           >
           </v-file-input>
-        </v-col>
-        <v-col v-show=" disabled">
+
           <v-tooltip text="تحميل الملف">
             <template v-slot:activator="{ props }">
               <v-btn
+                v-show=" disabled"
                 v-bind="props"
                 icon="mdi mdi-download"
                 color="primary"

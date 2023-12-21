@@ -1,6 +1,6 @@
 ﻿export interface productListItem {
   id: string;
-  icon: string;
+  photo: string;
   name: string;
   category: number;
   numberOfLicense: number;
