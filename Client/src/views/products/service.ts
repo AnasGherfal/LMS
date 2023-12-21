@@ -14,6 +14,9 @@ function create(product: FormData) {
 function fetchById(id: number) {
   return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
 }
+function edit(id: any, product: FormData) {
+  return httpClient.put<MessageResponse>(`${RESOURCE}/${id}`, product);
+}
 function deleteProduct(id: number) {
   return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`);
 }
@@ -21,5 +24,6 @@ export const productService = {
   create,
   fetch,
   fetchById,
+  edit,
   deleteProduct,
 };

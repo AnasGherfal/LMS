@@ -1,4 +1,4 @@
-﻿export interface productListItem {
+﻿export interface productInfo {
   id: string | null;
   icon: any;
   name: string | null;
