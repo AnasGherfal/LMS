@@ -25,7 +25,7 @@ public class LicenseCreatedEventData : IEventData
     public string ImpactDescription { get; set; }=string.Empty;
     public decimal PriceInUSD { get; set; } = default!;
     public decimal PriceInLYD { get; set; } = default!;
-    public Guid DepartmentId { get; set; } = Guid.Empty;
+    public short DepartmentId { get; set; } = default!;
     public Guid ProductId { get; set; }= Guid.Empty;
     [JsonIgnore]
     public EventType Type => EventType.LicenseCreated;

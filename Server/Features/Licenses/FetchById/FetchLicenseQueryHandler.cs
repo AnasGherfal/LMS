@@ -13,19 +13,17 @@ public sealed record FetchLicenseQueryHandler(AppDbContext _dbContext) : IReques
     public async Task<ContentResponse<FetchLicenseQueryResponse>> Handle(FetchLicenseQuery request, CancellationToken cancellationToken)
     {
         var id = Guid.Parse(request.Id!);
+        
         var data = await _dbContext.Licenses
-            //.Include(p => p.Department)
-            //.Include(p=> p.Product)
+            .Include(p=> p.Product)
             .Where(p => p.Id == id)
             .Select(p => new FetchLicenseQueryResponse()
             {
                 Id = p.Id,
-                //ProductName = p.Product.Name,
+                ProductName = p.Product.Name,
                 ProductId = p.ProductId,
-               // DepartmentName = p.Department!.Name,
-               DepartmentId=p.DepartmentId,
+                DepartmentId=p.DepartmentId,
                 SerialKey = p.SerialKey,
-                Contact = p.Contact,
                 StartDate=p.StartDate,
                 ExpireDate=p.ExpireDate,
                 ImpactLevel=p.ImpactLevel,

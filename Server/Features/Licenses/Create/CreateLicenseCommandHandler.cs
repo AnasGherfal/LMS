@@ -24,12 +24,12 @@ public sealed record CreateLicenseCommandHandler(IClientService _client, AppDbCo
         }
         var @event = new LicenseCreatedEvent(_client.IdentityId, Guid.NewGuid(), new LicenseCreatedEventData()
         {
-            DepartmentId = Guid.Parse(request.DepartmentId!),
+            DepartmentId =short.Parse(request.DepartmentId!),
             ProductId = Guid.Parse(request.ProductId!),
             SerialKey = request.SerialKey!,
+            Contact=request.Contact!,
             ImpactLevel = request.ImpactLevel!.Value,
             ImpactDescription = request.ImpactDescription!,
-           Contact= request.Contact!,
            StartDate = DateTime.Parse(request.StartDate!),
             ExpireDate = DateTime.Parse(request.ExpireDate!),
             PriceInUSD = request.PriceInUSD!.Value,

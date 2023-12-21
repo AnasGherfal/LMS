@@ -15,16 +15,16 @@ public class LicenseUpdatedEvent : EventStore<LicenseUpdatedEventData>
 public class LicenseUpdatedEventData : IEventData
 {
     public int? NumOfDevices { get; set; } 
-    public string? SerialKey { get; set; } 
+    public string? SerialKey { get; set; }
+    public string? Contact { get; set; }
     public TimeType? TimeType { get; set; } 
-    public string? Contact { get; set; } 
     public ImpactLevel? ImpactLevel { get; set; }
     public DateTime? StartDate { get; set; } 
     public DateTime? ExpireDate { get; set; } 
     public string? ImpactDescription { get; set; } 
     public decimal? PriceInUSD { get; set; }
     public decimal? PriceInLYD { get; set; }
-    public Guid? DepartmentId { get; set; }
+    public short? DepartmentId { get; set; }
     public Guid? ProductId { get; set; }
     [JsonIgnore]
     public EventType Type => EventType.LicenseUpdated;

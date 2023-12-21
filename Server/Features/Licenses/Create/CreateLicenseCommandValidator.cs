@@ -8,7 +8,7 @@ public class CreateLicenseCommandValidator : AbstractValidator<CreateLicenseComm
     public CreateLicenseCommandValidator()
     {
         RuleFor(a => a.DepartmentId)
-            .IsGuid();
+            .NotEmpty();
         RuleFor(a => a.ProductId)
             .IsGuid();
         RuleFor(a => a.PriceInUSD)
@@ -22,8 +22,6 @@ public class CreateLicenseCommandValidator : AbstractValidator<CreateLicenseComm
         RuleFor(a => a.StartDate)
             .NotEmpty();
         RuleFor(a => a.ExpireDate)
-            .NotEmpty();
-        RuleFor(a => a.Contact)
             .NotEmpty();
         RuleFor(a => a.ImpactLevel)
             .NotEmpty();

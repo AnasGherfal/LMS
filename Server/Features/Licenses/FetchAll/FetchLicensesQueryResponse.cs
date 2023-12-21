@@ -11,7 +11,7 @@ public sealed record FetchLicensesQueryResponse : IRequest<PagedResponse<FetchLi
     public DateTime StartDate { get; set; }
     public DateTime ExpireDate { get; set; }
     public string ProductName { get; set; } = string.Empty;
-    public string DepartmentName { get; set; }= string.Empty;
+    public short DepartmentId { get; set; } = default!;
     public bool IsActive { get; set; } = true;
     public DateTime CreatedOn { get; set; }
 }

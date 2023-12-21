@@ -7,11 +7,7 @@ public class FetchLicensesQueryValidator : AbstractValidator<FetchLicensesQuery>
 {
     public FetchLicensesQueryValidator()
     {
-        When(((p, _) => !string.IsNullOrEmpty(p.DepartmentId)), () =>
-        {
-            RuleFor(item => item.DepartmentId)
-                .IsGuid();
-        });
+        
         When(((p, _) => !string.IsNullOrEmpty(p.ProductId)), () =>
         {
             RuleFor(item => item.ProductId)

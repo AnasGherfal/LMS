@@ -1,4 +1,5 @@
 ﻿using Common.Constants;
+using Common.Entities.HrEntities;
 using Common.Events.License;
 
 namespace Common.Entities;
@@ -17,10 +18,9 @@ public class License : Entity
     public decimal PriceInUSD { get; set; }
     public decimal PriceInLYD { get; set; }
     public EntityStatus Status { get; set; }
-    public Guid DepartmentId { get; set; }
+    public short DepartmentId { get; set; }
     public Guid ProductId { get; set; }
     public Product Product { get; set; } = default!;
-    //public Department Department { get; set; } = default!;
     public void Apply(LicenseCreatedEvent @event)
     {
         Sequence = @event.Sequence;
@@ -31,12 +31,12 @@ public class License : Entity
         ImpactDescription = @event.Data.ImpactDescription;
         DepartmentId = @event.Data.DepartmentId;
         ProductId = @event.Data.ProductId;
+        Contact = @event.Data.Contact;
         ImpactLevel = @event.Data.ImpactLevel;
         StartDate = @event.Data.StartDate;
         ExpireDate = @event.Data.ExpireDate;
         SerialKey = @event.Data.SerialKey;
         TimeType = @event.Data.TimeType;
-        Contact= @event.Data.Contact;
         PriceInLYD = @event.Data.PriceInLYD;
         PriceInUSD = @event.Data.PriceInUSD;
         Status = EntityStatus.Active;
@@ -54,7 +54,6 @@ public class License : Entity
         ExpireDate = @event.Data.ExpireDate ?? ExpireDate;
         SerialKey = @event.Data.SerialKey;
         TimeType = @event.Data.TimeType ?? TimeType;
-        Contact = @event.Data.Contact ?? Contact;
         PriceInLYD = @event.Data.PriceInLYD ?? PriceInLYD;
         PriceInUSD = @event.Data.PriceInUSD ?? PriceInUSD;
     }

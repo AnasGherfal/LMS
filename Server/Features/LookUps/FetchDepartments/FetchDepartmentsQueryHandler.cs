@@ -27,13 +27,13 @@ public class FetchDepartmentsQueryHandler : IRequestHandler<FetchDepartmentsQuer
                   {
                       entityid = a.EntityId,
                       entityname = _hrDbContext.AdminEntities.Where(e => e.EntityId == a.EntityId).Select(n => n.EntityName).Single(),
-                      name = d.FirstName + " " + d.LastName,
+                      name = d.FirstName + " " + d.LastName
                   })
                   .Select(p => new FetchDepartmentsQueryResponse()
             {
                 Id = p.entityid,
                 Name = p.entityname,
-                OwnerName= p.name,
+                OwnerName= p.name
              })
             .ToListAsync(cancellationToken: cancellationToken);
         return new ListResponse<FetchDepartmentsQueryResponse>("", res);

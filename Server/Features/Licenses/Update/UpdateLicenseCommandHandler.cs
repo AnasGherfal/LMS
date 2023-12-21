@@ -25,10 +25,10 @@ public class UpdateLicenseCommandHandler(AppDbContext _dbContext, IClientService
         if (data.IsDeleted) throw new BadRequestException(nameof(Locale.AlreadyDeleted));
         var @event = new LicenseUpdatedEvent(_client.IdentityId, data.Id, data.Sequence + 1, new LicenseUpdatedEventData()
         {
-            Contact = request.Contact,
             ImpactLevel= request.ImpactLevel,
             ImpactDescription= request.ImpactDescription,
             StartDate = request.StartDate,
+            Contact=request.Contact,
             ExpireDate = request.ExpireDate,
             PriceInUSD= request.PriceInUSD,
             PriceInLYD= request.PriceInLYD,
