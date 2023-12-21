@@ -10,7 +10,7 @@ import { departmentService } from "@/views/departments/service";
 const router = useRouter();
 const products = ref([]);
 const departments = ref<[]>([]);
-
+const departmentOwner = ref();
 const license = reactive<License>({
   ProductId: null,
   DepartmentId: null,

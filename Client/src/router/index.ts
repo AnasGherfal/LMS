@@ -12,6 +12,7 @@ const routes = [
     path: "/",
     name: "Home",
     component: layouts,
+    redirect:licenses,
 
     children: [...licenses, ...products, ...categories, ...departments],
   },

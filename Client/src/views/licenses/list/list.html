@@ -9,18 +9,31 @@
             v-bind="props"
             variant="outlined"
             icon="mdi mdi-plus"
-            
             @click="create"
           />
         </template>
       </v-tooltip>
     </v-row>
     <v-row>
-      <v-col md="2">
-        <text-field label="اسم القسم"> </text-field>
+      <v-col md="3">
+        <auto-complete
+          label=" القسم"
+          v-model="filter.DepartmentId"
+          :items="departments"
+          item-title="name"
+          item-value="id"
+          rounded
+        >
+        </auto-complete>
       </v-col>
-      <v-col md="2">
-        <text-field label="اسم المنتج"> </text-field>
+      <v-col md="3">
+        <auto-complete
+          label=" المنتج"
+          v-model="filter.ProductId"
+          :items="products"
+          rounded
+        >
+        </auto-complete>
       </v-col>
     </v-row>
   </v-card-item>
@@ -66,7 +79,6 @@
       class="my-4"
       :length="totalPages"
       rounded="circle"
-
     ></v-pagination>
   </v-card-text>
 

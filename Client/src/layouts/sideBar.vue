@@ -3,29 +3,25 @@
     const links = router.options.routes[0].children;
     // const hasAccess = (link: any) => link.meta.roles.includes(identity.user.roleId);
 
-    const side = [{
-      title: "القائمة الرئيسية",
-      icon: "",
-      path:"/"
-    },
+    const side = [
     {
       title: "الرخص",
-      icon: "",
+      icon: "mdi mdi-license",
       path:"/licenses"
     },
     {
       title: "المنتجات",
-      icon: "",
+      icon: "mdi mdi-package-variant",
       path:"/products"
     },
     {
       title: "الفئات",
-      icon: "",
+      icon: "mdi mdi-shape",
       path:"/categories"
     },
     {
       title: "الأقسام",
-      icon: "",
+      icon: "mdi mdi-sitemap",
       path:"/departments"
     },
     
@@ -41,7 +37,9 @@
 <div v-for="item in side" :key="item.title">
 
   <v-list-item :title="item.title" :to="item.path">
-    
+    <template v-slot:prepend>
+                        <v-icon :icon="item.icon" size="x-small"></v-icon>
+                    </template>
   </v-list-item>
 </div>
 

@@ -1,21 +1,22 @@
 ﻿<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script lang="ts" setup>
 import { jsonToQueryString } from "@/utils/handlers";
-import type {
-    licenseListItem,
-    licenseListFilter,
-    header,
-} from "./model.ts";
+import type { licenseListItem, licenseListFilter, header } from "./model.ts";
 import { licenseService } from "../service";
+import { productService } from "@/views/products/service";
+import { departmentService } from "@/views/departments/service";
 
 const router = useRouter();
 const tempId = ref<number | null>();
-  const doneDialog = ref<boolean>(false);
-
+const doneDialog = ref<boolean>(false);
+const pageTitle = router.currentRoute.value.meta.title;
+const products = ref([]);
+const departments = ref<[]>([]);
 onMounted(() => {
   getAll();
+  getDepartments();
+  getProducts();
 });
-const pageTitle = router.currentRoute.value.meta.title;
 
 const filter = reactive<licenseListFilter>({
   pageNo: 1,
@@ -25,11 +26,38 @@ const filter = reactive<licenseListFilter>({
 });
 const totalPages = ref(5);
 
-const licenses = ref<licenseListItem[]>([]);
-const getAll = async (pageNo?: number, pageSize?:number) => {
+const getProducts = async (pageNo?: number) => {
   try {
+    //loading.start();
 
-    const { data } = await licenseService.fetch(pageNo, pageSize);
+    filter.pageNo = pageNo ?? filter.pageNo;
+    const queryString = jsonToQueryString(filter);
+    const { data } = await productService.fetch(queryString);
+    //loading.stop();
+    products.value = data.content;
+  } catch {
+    //loading.stop();
+  }
+};
+
+const getDepartments = async () => {
+  try {
+    //loading.start();
+
+    const { data } = await departmentService.fetch();
+    //loading.stop();
+    departments.value = data.content;
+  } catch {
+    //loading.stop();
+  }
+};
+
+
+
+const licenses = ref<licenseListItem[]>([]);
+const getAll = async (pageNo?: number, pageSize?: number, productId?:string, departmentId?: string) => {
+  try {
+    const { data } = await licenseService.fetch(pageNo, pageSize, productId, departmentId);
     //loading.stop();
     licenses.value = data.content;
     totalPages.value = data.totalPages;
@@ -48,7 +76,7 @@ const headers = ref<header[]>([
   { title: "تاريخ بداية الترخيص", key: "startDate" },
   { title: "تاريخ نهاية الترخيص", key: "expireDate" },
   { title: "الحالة", key: "isActive" },
-//   { title: "تاريخ الانشاء", key: "createdOn" },
+  //   { title: "تاريخ الانشاء", key: "createdOn" },
 
   { title: "الإجراءات", key: "actions" },
 ]);
@@ -71,15 +99,14 @@ const canceleDialog = () => {
 };
 
 const deleteCategory = async () => {
-        try {
-            const { data } = await licenseService.deletelicense(tempId.value!);
-            getAll();
-            canceleDialog();
-        }
-        catch {
-          console.error()
-        }
-    };
+  try {
+    const { data } = await licenseService.deletelicense(tempId.value!);
+    getAll();
+    canceleDialog();
+  } catch {
+    console.error();
+  }
+};
 </script>
 
 <template src="./list.html"></template>

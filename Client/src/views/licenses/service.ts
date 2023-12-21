@@ -4,12 +4,13 @@ import httpClient from "@/plugins/http-client";
 
 const RESOURCE = "licenses";
 
-function fetch(pageNumber?: number, pageSize?: number, name?: string) {
+function fetch(pageNumber?: number, pageSize?: number, productId?: string, departmentId?: string) {
   return httpClient.get<MessageResponse>(`${RESOURCE}`, {
     params: {
       PageNumber: pageNumber,
       PageSize: pageSize,
-      Search: name,
+      productId: productId,
+      DepartmentId: departmentId
     },
   });
 }

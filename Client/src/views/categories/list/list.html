@@ -18,6 +18,7 @@
       <v-col md="3">
         <text-field label="اسم الفئة" v-model="filter.name"
         clearable
+        rounded
         @update:model-value="getAll()"> </text-field>
       </v-col>
     </v-row>
@@ -75,10 +76,10 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" variant="text" @click="deleteCategory()">
+        <v-btn color="secondary" variant="text" @click="deleteCategory()">
           اتمام
         </v-btn>
-        <v-btn color="error" variant="text" @click="canceleDialog()">
+        <v-btn color="primary" variant="text" @click="canceleDialog()">
           الغاء
         </v-btn>
       </v-card-actions>

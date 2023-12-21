@@ -30,11 +30,16 @@
         </v-col>
 
         
-        <v-col md="3">
-          <text-field label="اسم المسؤول" v-model="license.DepartmentId" disabled>
-          </text-field>
+        <!-- <v-col md="3">
+          <auto-complete
+          v-model="license.DepartmentId"
+          :items="departments"
+          item-title="ownerName"
+          label=" القسم"
+          disabled
+        ></auto-complete>
         </v-col>
-  
+   -->
      
         <v-col md="2">
           <text-field label="عدد الاجهزه" v-model="license.NumOfDevices">
