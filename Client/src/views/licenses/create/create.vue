@@ -5,10 +5,11 @@ import type { License } from "./model";
 import { licenseService } from "../service";
 import { jsonToQueryString } from "@/utils/handlers";
 import { productService } from "@/views/products/service";
+import { departmentService } from "@/views/departments/service";
 
 const router = useRouter();
 const products = ref([]);
-const departments = ref([]);
+const departments = ref<[]>([]);
 
 const license = reactive<License>({
   ProductId: null,
@@ -34,6 +35,7 @@ const filter = reactive({
 
 onMounted(() => {
   getProducts();
+  getDepartments();
 });
 
 const pageTitle = router.currentRoute.value.meta.title;
@@ -52,19 +54,20 @@ const getProducts = async (pageNo?: number) => {
   }
 };
 
-const getDepartments = async (pageNo?: number) => {
+const getDepartments = async () => {
   try {
     //loading.start();
 
-    // filter.pageNo = pageNo ?? filter.pageNo;
-    // const queryString = jsonToQueryString(filter);
-    // const { data } = await departmentService.fetch(queryString);
-    // //loading.stop();
-    // departments.value = data.content;
+    const { data } = await departmentService.fetch();
+    //loading.stop();
+    departments.value = data.content;
+ 
   } catch {
     //loading.stop();
   }
 };
+
+
 
 const create = async () => {
   const licenseForm = new FormData();
