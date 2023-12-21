@@ -6,11 +6,7 @@ import { categoryService } from "../service";
 const router = useRouter();
 const route = useRoute();
 const id = route.params.id;
-<<<<<<< HEAD
-console.log(id);
-=======
 const disabled = ref(true);
->>>>>>> 8ac65db216eccd65c21dd7e020b218375d6889c5
 const pageTitle = router.currentRoute.value.meta.title;
 
 onMounted(() => {

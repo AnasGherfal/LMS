@@ -1,4 +1,3 @@
-import { useHttpClient } from "@/network/httpClient";
 import type { MessageResponse } from "@/models/messageResponse";
 import httpClient from "@/plugins/http-client";
 
@@ -6,8 +5,14 @@ import httpClient from "@/plugins/http-client";
 const RESOURCE = "categories";
 
 
-function fetch (quaryString : string){
-    return httpClient.get<MessageResponse>(`${RESOURCE}`, quaryString )
+function fetch (pageNumber?: number, pageSize?: number, name?: string){
+    return httpClient.get<MessageResponse>(`${RESOURCE}`, {
+        params: {
+          PageNumber: pageNumber,
+          PageSize: pageSize,
+          Search: name,
+        },
+      });
 }
 function create (category : FormData){
     return httpClient.post<MessageResponse>(`${RESOURCE}`, category )

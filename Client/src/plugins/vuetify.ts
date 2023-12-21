@@ -18,8 +18,8 @@ const myCustomLightTheme = {
   colors: {
     background: "#FFFFFF",
     surface: "#FFFFFF",
-    primary: "#0b4c9c",
-    secondary: "#e14b2a",
+    primary: "#e14b2a",
+    secondary: "#0b4c9c",
     error: "#B00020",
     info: "#2196F3",
     success: "#4CAF50",

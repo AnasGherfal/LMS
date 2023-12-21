@@ -9,6 +9,7 @@
             v-bind="props"
             variant="outlined"
             icon="mdi mdi-plus"
+            
             @click="create"
           />
         </template>
@@ -64,6 +65,8 @@
       v-model="filter.pageNo"
       class="my-4"
       :length="totalPages"
+      rounded="circle"
+
     ></v-pagination>
   </v-card-text>
 

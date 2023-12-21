@@ -12,9 +12,8 @@
 export interface CategoriesListFilter {
     pageNo: number;
     pageSize: number;
-    title: string | null;
-    date: string | null;
-    status: number | null;
+    name: string | null;
+
 }
 
 export interface header {

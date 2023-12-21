@@ -26,13 +26,10 @@ const filter = reactive<licenseListFilter>({
 const totalPages = ref(5);
 
 const licenses = ref<licenseListItem[]>([]);
-const getAll = async (pageNo?: number) => {
+const getAll = async (pageNo?: number, pageSize?:number) => {
   try {
-    //loading.start();
 
-    filter.pageNo = pageNo ?? filter.pageNo;
-    const queryString = jsonToQueryString(filter);
-    const { data } = await licenseService.fetch(queryString);
+    const { data } = await licenseService.fetch(pageNo, pageSize);
     //loading.stop();
     licenses.value = data.content;
     totalPages.value = data.totalPages;
