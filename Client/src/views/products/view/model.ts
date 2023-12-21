@@ -2,8 +2,7 @@
   id: string | null;
   photo: any;
   name: string | null;
-  category: number | null;
-  numberOfLicense: number | null;
+  provider: string | null;
   isActive: boolean | null;
   createdOn: string | null;
 }

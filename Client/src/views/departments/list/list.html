@@ -22,7 +22,23 @@
     </v-row>
   </v-card-item>
   <v-card-text>
-    <v-data-table :headers="headers" :items="departments">
+    <v-table height="300px">
+      <thead>
+        <tr>
+          <th class="text-right">رقم التعريف</th>
+          <th class="text-right">إسم القسم</th>
+          <th class="text-right">المسؤول</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in departments" :key="item.id">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.ownerName }}</td>
+        </tr>
+      </tbody>
+    </v-table>
+    <!-- <v-table :headers="headers" :items="departments">
       <template v-slot:item.name="{ item }">
         <span>{{item.name}}</span>
       </template>
@@ -49,12 +65,14 @@
           <span>حذف</span>
         </v-tooltip>
       </template>
-    </v-data-table>
-    <!-- <v-pagination
-      v-model="filter.pageNo"
-      class="my-4"
-      :length="totalPages"
-    ></v-pagination> -->
+    </v-table> -->
+    <!-- <v-infinite-scroll height="300" mode="manual" @load="load">
+      <template v-for="(item, index) in departments" :key="item">
+        <div :class="['px-2', index % 2 === 0 ? 'bg-grey-lighten-2' : '']">
+          Item number {{ item }}
+        </div>
+      </template>
+    </v-infinite-scroll> -->
   </v-card-text>
 
   <!-- <v-dialog v-model="doneDialog" persistent width="600">

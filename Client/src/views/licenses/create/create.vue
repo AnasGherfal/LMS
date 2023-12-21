@@ -40,13 +40,13 @@ onMounted(() => {
 
 const pageTitle = router.currentRoute.value.meta.title;
 
-const getProducts = async (pageNo?: number) => {
+const getProducts = async (
+  pageNo?: number,
+  pageSize?: number,
+  name?: string
+) => {
   try {
-    //loading.start();
-
-    filter.pageNo = pageNo ?? filter.pageNo;
-    const queryString = jsonToQueryString(filter);
-    const { data } = await productService.fetch(queryString);
+    const { data } = await productService.fetch(pageNo, pageSize, name);
     //loading.stop();
     products.value = data.content;
   } catch {
@@ -61,13 +61,10 @@ const getDepartments = async () => {
     const { data } = await departmentService.fetch();
     //loading.stop();
     departments.value = data.content;
- 
   } catch {
     //loading.stop();
   }
 };
-
-
 
 const create = async () => {
   const licenseForm = new FormData();

@@ -17,7 +17,7 @@ function create(product: FormData) {
   return httpClient.post<MessageResponse>(`${RESOURCE}`, product);
 }
 
-function fetchById(id: number) {
+function fetchById(id: number | any) {
   return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
 }
 function edit(id: any, product: FormData) {

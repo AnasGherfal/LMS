@@ -16,10 +16,14 @@
     </v-row>
     <v-row>
       <v-col md="3">
-        <text-field label="اسم الفئة" v-model="filter.name"
-        clearable
-        rounded
-        @update:model-value="getAll()"> </text-field>
+        <text-field
+          label="اسم الفئة"
+          v-model="filter.name"
+          clearable
+          rounded
+          @update:model-value="getAll()"
+        >
+        </text-field>
       </v-col>
     </v-row>
   </v-card-item>

@@ -19,7 +19,7 @@ const pageTitle = router.currentRoute.value.meta.title;
 
 const filter = reactive<departmentsListFilter>({
   pageNo: 1,
-  pageSize: 400,
+  pageSize: 7,
   title: null,
   status: null,
   date: null,
@@ -34,7 +34,6 @@ const getAll = async () => {
     const { data } = await departmentService.fetch();
     //loading.stop();
     departments.value = data.content;
- 
   } catch {
     //loading.stop();
   }
@@ -66,15 +65,16 @@ const canceleDialog = () => {
   tempId.value = null;
 };
 
-// const deleteDepartment = async () => {
-//   try {
-//     const { data } = await departmentService.deleteCategory(tempId.value!);
-//     getAll();
-//     canceleDialog();
-//   } catch {
-//     console.error();
-//   }
-// };
+// Add the new code here
+const items = ref(Array.from({ length: 50 }, (k, v) => v + 1));
+
+const load = ({ done }: { done: (status: string) => void }) => {
+  setTimeout(() => {
+    const lastItem = items.value?.[items.value.length - 1] ?? 0;
+    items.value.push(...Array.from({ length: 10 }, (_, v) => v + lastItem + 1));
+    done("ok");
+  }, 1000);
+};
 </script>
 
 <template src="./list.html"></template>

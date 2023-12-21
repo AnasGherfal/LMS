@@ -17,8 +17,7 @@ const product = ref<productInfo>({
   id: null,
   photo: null,
   name: null,
-  category: null,
-  numberOfLicense: null,
+  provider: null,
   isActive: null,
   createdOn: null,
 });
@@ -41,8 +40,6 @@ const edit = async () => {
     id: product.value.id,
     photo: photo,
     name: product.value.name,
-    category: product.value.category,
-    numberOfLicense: product.value.numberOfLicense,
     isActive: product.value.isActive,
     createdOn: product.value.createdOn,
   });
