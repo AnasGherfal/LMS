@@ -4,12 +4,17 @@
             {{pageTitle}}
             <v-row>
                 <v-col>
+                    <v-tooltip text="تعديل">
+                        <template v-slot:activator="{ props }">
                     <v-btn class="d-flex mr-4"
+                    v-bind="props"
                     icon="mdi mdi-text-box-edit"
                     color="primary" variant="outlined"  @click=" disabled =!disabled">
                     
 
                     </v-btn>
+                    </template>
+                    </v-tooltip>
                 </v-col>
                 <v-col class="d-flex justify-end">
                     <v-btn             icon="mdi mdi-keyboard-backspace"

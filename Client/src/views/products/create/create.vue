@@ -4,6 +4,7 @@ import type { Product } from "./model";
 import { productService } from "../service";
 import { categoryService } from "@/views/categories/service";
 import { jsonToQueryString } from "@/utils/handlers";
+import type { categoryListItem } from "@/views/categories/list/model";
 const product = reactive<Product>({
   name: null,
   categoryId: null,
@@ -21,21 +22,24 @@ const filter = reactive({
   date: null,
 });
 
+const totalPages = ref(5);
+
 onMounted(() => {
   getCategories();
 });
 
-const categories = ref([]);
-
-const getCategories = async (pageNo?: number) => {
+const categories = ref<categoryListItem[]>([]);
+const getCategories = async (
+  pageNo?: number,
+  pageSize?: number,
+  name?: string
+) => {
   try {
-    //loading.start();
-
-    filter.pageNo = pageNo ?? filter.pageNo;
-    const queryString = jsonToQueryString(filter);
-    const { data } = await categoryService.fetch(queryString);
+    const { data } = await categoryService.fetch(pageNo, pageSize, name);
     //loading.stop();
+    console.log(data);
     categories.value = data.content;
+    totalPages.value = data.totalPages;
   } catch {
     //loading.stop();
   }

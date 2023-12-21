@@ -14,6 +14,7 @@ declare module 'vue' {
     Loading: typeof import('./components/general/loading.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SelectField: typeof import('./components/form/selectField.vue')['default']
     Snackbar: typeof import('./components/general/snackbar.vue')['default']
     Textarea: typeof import('./components/form/textarea.vue')['default']
     TextField: typeof import('./components/form/textField.vue')['default']

@@ -27,16 +27,14 @@ const filter = reactive<departmentsListFilter>({
 const totalPages = ref(5);
 
 const departments = ref<departmentListItem[]>([]);
-const getAll = async (pageNo?: number) => {
+const getAll = async () => {
   try {
     //loading.start();
 
-    filter.pageNo = pageNo ?? filter.pageNo;
-    const queryString = jsonToQueryString(filter);
-    const { data } = await departmentService.fetch(queryString);
+    const { data } = await departmentService.fetch();
     //loading.stop();
     departments.value = data.content;
-    totalPages.value = data.totalPages;
+ 
   } catch {
     //loading.stop();
   }

@@ -3,7 +3,7 @@ import type { Lookup } from "@/models/lookups";
 import httpClient from "@/plugins/http-client";
 
 export interface LookupState {
-    entitiesLookup: Lookup[];
+    licenseTypesLookup: Lookup[];
     rolesLookup: Lookup[];
     empsLookup: Lookup[];
 }
@@ -11,18 +11,18 @@ export interface LookupState {
 export const useLookupStore = defineStore("lookupStore", {
     state: (): LookupState => {
         return {
-            entitiesLookup: [],
+            licenseTypesLookup: [],
             rolesLookup: [],
             empsLookup: [],
         };
     },
 
     actions: {
-        async getEntities() {
+        async getLicenseTypes() {
             try {
-                if (this.entitiesLookup.length <= 0) {
-                    const { data } = await getEntities();
-                    this.entitiesLookup = data;
+                if (this.licenseTypesLookup.length <= 0) {
+                    const { data } = await getLicenseTypes();
+                    this.licenseTypesLookup = data;
                     //this.entitiesLookup = [
                     //    { text: 'مكتب 1', value: 1 },
                     //    { text: 'مكتب 2', value: 2 },
@@ -54,7 +54,7 @@ export const useLookupStore = defineStore("lookupStore", {
 
 
 
-const RESOURCE = "lookups";
-function getEntities() {
-    return httpClient.get<Lookup[]>(`${RESOURCE}/get-entities`);
+const RESOURCE = "Lookups";
+function getLicenseTypes() {
+    return httpClient.get<Lookup[]>(`${RESOURCE}/License-Types`);
 }

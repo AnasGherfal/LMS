@@ -1,6 +1,5 @@
 ﻿<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script lang="ts" setup>
-import { jsonToQueryString } from "@/utils/handlers";
 import type {
   categoryListItem,
   CategoriesListFilter,
@@ -10,37 +9,41 @@ import { categoryService } from "../service";
 
 const router = useRouter();
 const tempId = ref<number | null>();
-  const doneDialog = ref<boolean>(false);
+const doneDialog = ref<boolean>(false);
+const search = ref();
+const pageTitle = router.currentRoute.value.meta.title;
 
 onMounted(() => {
   getAll();
 });
-const pageTitle = router.currentRoute.value.meta.title;
 
 const filter = reactive<CategoriesListFilter>({
   pageNo: 1,
-  pageSize: 10,
-  title: null,
-  status: null,
-  date: null,
+  pageSize: 5,
+  name: null,
 });
 const totalPages = ref(5);
 
 const categories = ref<categoryListItem[]>([]);
-const getAll = async (pageNo?: number) => {
+const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
-    //loading.start();
-
-    filter.pageNo = pageNo ?? filter.pageNo;
-    const queryString = jsonToQueryString(filter);
-    const { data } = await categoryService.fetch(queryString);
+    const { data } = await categoryService.fetch(pageNo, pageSize, name);
     //loading.stop();
+    console.log(data);
     categories.value = data.content;
     totalPages.value = data.totalPages;
   } catch {
     //loading.stop();
   }
 };
+
+watch(
+  [() => filter.pageNo, () => filter.name],
+  ([newPageNo, newName], [oldPageNo, oldName]) => {
+    const name = newName !== null ? newName : filter.name ?? "";
+    getAll(newPageNo, filter.pageSize, name);
+  }
+);
 
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
@@ -70,15 +73,14 @@ const canceleDialog = () => {
 };
 
 const deleteCategory = async () => {
-        try {
-            const { data } = await categoryService.deleteCategory(tempId.value!);
-            getAll();
-            canceleDialog();
-        }
-        catch {
-          console.error()
-        }
-    };
+  try {
+    const { data } = await categoryService.deleteCategory(tempId.value!);
+    getAll();
+    canceleDialog();
+  } catch {
+    console.error();
+  }
+};
 </script>
 
 <template src="./list.html"></template>

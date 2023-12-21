@@ -33,7 +33,7 @@ public class ProductsController: ManagementController
     
     
     [HttpPut("{id}")]
-    public async Task<MessageResponse> Update(string id, [FromBody] UpdateProductCommand request)
+    public async Task<MessageResponse> Update(string id, [FromForm] UpdateProductCommand request)
     {
         request.SetId(id);
         return await Mediator.Send(request);
