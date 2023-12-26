@@ -18,18 +18,12 @@ export const useLookupStore = defineStore("lookupStore", {
     },
 
     actions: {
+        
         async getLicenseTypes() {
             try {
-                if (this.licenseTypesLookup.length <= 0) {
                     const { data } = await getLicenseTypes();
                     this.licenseTypesLookup = data;
-                    //this.entitiesLookup = [
-                    //    { text: 'مكتب 1', value: 1 },
-                    //    { text: 'مكتب 2', value: 2 },
-                    //    { text: 'إدارة 1', value: 3 },
-                    //    { text: 'إدارة 2', value: 4 },
-                    //];
-                }
+                
             } catch (err) {
                 return Promise.reject(err);
             }
@@ -48,7 +42,9 @@ export const useLookupStore = defineStore("lookupStore", {
                 return Promise.reject(err);
             }
         },
+        
     },
+    
 });
 
 

@@ -9,8 +9,9 @@ import { departmentService } from "@/views/departments/service";
 
 const router = useRouter();
 const products = ref([]);
-const departments = ref<[]>([]);
+const departments = ref([]);
 const departmentOwner = ref();
+const store = useLookupStore();
 const license = reactive<License>({
   ProductId: null,
   DepartmentId: null,
@@ -36,6 +37,7 @@ const filter = reactive({
 onMounted(() => {
   getProducts();
   getDepartments();
+  store.getLicenseTypes();
 });
 
 const pageTitle = router.currentRoute.value.meta.title;

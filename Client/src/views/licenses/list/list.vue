@@ -11,7 +11,7 @@ const tempId = ref<number | null>();
 const doneDialog = ref<boolean>(false);
 const pageTitle = router.currentRoute.value.meta.title;
 const products = ref([]);
-const departments = ref<[]>([]);
+const departments = ref([]);
 onMounted(() => {
   getAll();
   getDepartments();
@@ -32,7 +32,7 @@ const getProducts = async (pageNo?: number) => {
 
     filter.pageNo = pageNo ?? filter.pageNo;
     const queryString = jsonToQueryString(filter);
-    const { data } = await productService.fetch(queryString);
+    const { data } = await productService.fetch();
     //loading.stop();
     products.value = data.content;
   } catch {
