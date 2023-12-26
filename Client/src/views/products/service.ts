@@ -13,6 +13,7 @@ function fetch(pageNumber?: number, pageSize?: number, name?: string) {
     },
   });
 }
+
 function create(product: FormData) {
   return httpClient.post<MessageResponse>(`${RESOURCE}`, product);
 }
@@ -20,16 +21,25 @@ function create(product: FormData) {
 function fetchById(id: number | any) {
   return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
 }
+
 function edit(id: any, product: FormData) {
   return httpClient.put<MessageResponse>(`${RESOURCE}/${id}`, product);
 }
+
 function deleteProduct(id: number) {
   return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`);
 }
+
+// Add this method
+function toggleLock(id: number, action: "unlock" | "lock") {
+  return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/${action}`);
+}
+
 export const productService = {
   create,
   fetch,
   fetchById,
   edit,
   deleteProduct,
+  toggleLock,
 };

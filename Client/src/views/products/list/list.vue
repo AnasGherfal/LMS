@@ -1,5 +1,4 @@
-﻿<!-- eslint-disable @typescript-eslint/no-unused-vars -->
-<script lang="ts" setup>
+﻿<script lang="ts" setup>
 import { jsonToQueryString } from "@/utils/handlers";
 import type { productListItem, ProductsListFilter, header } from "./model.ts";
 import { productService } from "../service";
@@ -16,9 +15,7 @@ const pageTitle = router.currentRoute.value.meta.title;
 const filter = reactive<ProductsListFilter>({
   pageNo: 1,
   pageSize: 10,
-  title: null,
-  status: null,
-  date: null,
+  name: null,
 });
 const totalPages = ref(5);
 
@@ -26,26 +23,29 @@ const products = ref<productListItem[]>([]);
 const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
     const { data } = await productService.fetch(pageNo, pageSize, name);
-    //loading.stop();
-    console.log(data);
     products.value = data.content;
     totalPages.value = data.totalPages;
   } catch {
-    //loading.stop();
+    console.error();
   }
 };
 
 const headers = ref<header[]>([
-  // { title: "#", key: "id" },
+  { title: "#", key: "photo" },
   { title: "الاسم", key: "name" },
-  // { title: "تاريخ الإنشاء", key: "createdOn" },
   { title: " الفئة", key: "category" },
   { title: " عدد الرخص", key: "numberOfLicenses" },
-
   { title: "الحالة", key: "isActive" },
-
   { title: "الإجراءات", key: "actions" },
 ]);
+
+watch(
+  [() => filter.pageNo, () => filter.name],
+  ([newPageNo, newName], [oldPageNo, oldName]) => {
+    const name = newName !== null ? newName : filter.name ?? "";
+    getAll(newPageNo, filter.pageSize, name);
+  }
+);
 
 // Method to navigate to the create product page
 const create = () => {
@@ -71,6 +71,18 @@ const deleteProduct = async () => {
     canceleDialog();
   } catch {
     console.error();
+  }
+};
+
+// Add these methods
+const toggleLock = async (productId: number, newLockState: boolean) => {
+  try {
+    const endpoint = newLockState ? "lock" : "unlock";
+    await productService.toggleLock(productId, endpoint);
+    getAll();
+    console.log(newLockState);
+  } catch (error) {
+    console.error(error);
   }
 };
 </script>

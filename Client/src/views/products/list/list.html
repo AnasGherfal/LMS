@@ -1,7 +1,7 @@
 ﻿<v-card class="pa-6">
   <v-card-item>
     <v-row>
-      <v-card-title class="d-flex align-center"> {{pageTitle}} </v-card-title>
+      <v-card-title class="d-flex align-center"> {{ pageTitle }} </v-card-title>
       <v-spacer></v-spacer>
       <v-tooltip text="إضافة منتج">
         <template v-slot:activator="{ props }">
@@ -16,14 +16,28 @@
     </v-row>
     <v-row>
       <v-col md="3">
-        <text-field label="اسم المنتج"> </text-field>
+        <text-field
+          label="اسم المنتج"
+          v-model="filter.name"
+          clearable
+          rounded
+          @update:model-value="getAll()"
+        >
+        </text-field>
       </v-col>
     </v-row>
   </v-card-item>
   <v-card-text>
-    <v-data-table :headers="headers" :items="products">
+    <v-data-table :headers="headers" :items="products" :search="filter.name">
+      <template v-slot:item.photo="{ item }">
+        <span>
+          <v-avatar>
+            <v-img :src="item.photo" alt="icon" small></v-img>
+          </v-avatar>
+        </span>
+      </template>
       <template v-slot:item.name="{ item }">
-        <span>{{item.name}}</span>
+        <span>{{ item.name }}</span>
       </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
@@ -34,13 +48,29 @@
         ></v-chip>
       </template>
       <template v-slot:item.actions="{ item }">
-        <v-tooltip location="top">
+        <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
             <v-btn icon v-bind="props" variant="text" @click="view(item.id)">
               <v-icon size="small" color="secondary">mdi-eye-outline</v-icon>
             </v-btn>
           </template>
           <span>عرض تفاصيل المنتج</span>
+        </v-tooltip>
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+            <!-- Lock Icon - Add this section -->
+            <v-btn
+              icon
+              v-bind="props"
+              variant="text"
+              @click="toggleLock(item.id, item.isActive)"
+            >
+              <v-icon size="small" :color="item.isActive ? 'grey' : 'blue'">
+                {{ item.isActive ? 'mdi-lock' : 'mdi-lock-open' }}
+              </v-icon>
+            </v-btn>
+          </template>
+          <span>{{ item.isActive ? 'قفل' : 'فتح' }}</span>
         </v-tooltip>
         <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
@@ -72,12 +102,12 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" variant="text" @click="deleteProduct()">
-          اتمام
-        </v-btn>
-        <v-btn color="error" variant="text" @click="canceleDialog()">
-          الغاء
-        </v-btn>
+        <v-btn color="primary" variant="text" @click="deleteProduct()"
+          >اتمام</v-btn
+        >
+        <v-btn color="error" variant="text" @click="canceleDialog()"
+          >الغاء</v-btn
+        >
       </v-card-actions>
     </v-card>
   </v-dialog>

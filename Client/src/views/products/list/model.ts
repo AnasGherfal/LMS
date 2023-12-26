@@ -11,9 +11,7 @@
 export interface ProductsListFilter {
   pageNo: number;
   pageSize: number;
-  title: string | null;
-  date: string | null;
-  status: number | null;
+  name: string | null;
 }
 
 export interface header {
