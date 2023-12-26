@@ -18,7 +18,7 @@ function create(license: FormData) {
   return httpClient.post<MessageResponse>(`${RESOURCE}`, license);
 }
 
-function fetchById(id: number) {
+function fetchById(id: string | string[]) {
   return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
 }
 

@@ -6,8 +6,8 @@
   </v-card-item>
   <v-card-text>
     <v-form @submit.prevent ref="">
-      <v-row >
-        <v-col md="3" >
+      <v-row>
+        <v-col md="3">
           <auto-complete
             v-model="license.ProductId"
             :items="products"
@@ -26,21 +26,8 @@
             label=" القسم"
             required
           ></auto-complete>
-        
         </v-col>
 
-        
-        <!-- <v-col md="3">
-          <auto-complete
-          v-model="license.DepartmentId"
-          :items="departments"
-          item-title="ownerName"
-          label=" القسم"
-          disabled
-        ></auto-complete>
-        </v-col>
-   -->
-     
         <v-col md="2">
           <text-field label="عدد الاجهزه" v-model="license.NumOfDevices">
           </text-field>
@@ -49,13 +36,16 @@
           <text-field label="رقم السيريل" v-model="license.SerialKey">
           </text-field>
         </v-col>
-  
+
         <v-col md="3">
           <date-picker label="تاريخ بداية الترخيص" v-model="license.StartDate">
           </date-picker>
         </v-col>
         <v-col md="3">
-          <date-picker label="تاريخ انتهاء الترخيص" v-model="license.ExpireDate">
+          <date-picker
+            label="تاريخ انتهاء الترخيص"
+            v-model="license.ExpireDate"
+          >
           </date-picker>
         </v-col>
         <v-col md="2">
@@ -69,11 +59,17 @@
           >
           </text-area>
         </v-col>
-        <v-col md="3">
-          <select-field label="مدة الترخيص" v-model="license.TimeType">
+        <v-col md="3"
+          >{{store.licenseTypesLookup}}
+          <select-field
+            label="مدة الترخيص"
+            v-model="license.TimeType"
+            :items=""
+            item-title="name"
+          >
           </select-field>
         </v-col>
-        
+
         <v-col md="3">
           <text-field label="تواصل" v-model="license.Contact"> </text-field>
         </v-col>
@@ -95,10 +91,10 @@
       <v-row>
         <v-col>
           <v-btn type="submit" rounded="1" class="mx-2" @click="create()"
-          >اضافة
-        </v-btn>
+            >اضافة
+          </v-btn>
         </v-col>
-       </v-row>
+      </v-row>
     </v-form>
   </v-card-text>
 </v-card>
