@@ -25,7 +25,7 @@ public sealed record FetchProductsQueryHandler : IRequestHandler<FetchProductsQu
         var query = _dbContext.Products
             .Where(p => 
                 (string.IsNullOrWhiteSpace(request.Search)
-                        || p.Name.Contains(request.Search))
+                        || p.Name.Contains(request.Search, StringComparison.CurrentCultureIgnoreCase))
             && (string.IsNullOrWhiteSpace(request.CategoryId)
                 || p.CategoryId == Guid.Parse(request.CategoryId!)));
         var data = await query

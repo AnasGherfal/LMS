@@ -24,7 +24,7 @@ public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategori
         var pageSize = request.PageSize ?? 5;
         var query = _dbContext.Categories
             .Where(p => string.IsNullOrWhiteSpace(request.Search)
-                        || p.Name.Contains(request.Search));
+                        || p.Name.Contains(request.Search, StringComparison.CurrentCultureIgnoreCase));
         var data = await query
             .OrderBy(p => p.CreatedOn)
             .Skip((pageNumber - 1) * pageSize)
