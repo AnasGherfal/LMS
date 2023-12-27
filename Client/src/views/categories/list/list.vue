@@ -46,7 +46,7 @@ watch(
 );
 
 const headers = ref<header[]>([
-  // { title: "#", key: "id" },
+  { title: "#", key: "photo" },
   { title: "الاسم", key: "name" },
   // { title: "تاريخ الإنشاء", key: "createdOn" },
   { title: "عدد الفئات", key: "numberOfCategories" },
@@ -79,6 +79,16 @@ const deleteCategory = async () => {
     canceleDialog();
   } catch {
     console.error();
+  }
+};
+const toggleLock = async (categoryId: number, newLockState: boolean) => {
+  try {
+    const endpoint = newLockState ? "lock" : "unlock";
+    await categoryService.toggleLock(categoryId, endpoint);
+    getAll();
+    console.log(newLockState);
+  } catch (error) {
+    console.error(error);
   }
 };
 </script>

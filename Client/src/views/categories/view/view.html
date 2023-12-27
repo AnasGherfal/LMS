@@ -1,103 +1,103 @@
 ﻿<v-card class="mx-auto">
-    <v-card-item>
-        <v-card-title class="d-flex align-center pa-2">
-            {{pageTitle}}
-            <v-row>
-                <v-col>
-                    <v-tooltip text="تعديل">
-                        <template v-slot:activator="{ props }">
-                    <v-btn class="d-flex mr-4"
-                    v-bind="props"
-                    icon="mdi mdi-text-box-edit"
-                    color="primary" variant="outlined"  @click=" disabled =!disabled">
-                    
-
-                    </v-btn>
-                    </template>
-                    </v-tooltip>
-                </v-col>
-                <v-col class="d-flex justify-end">
-                    <v-btn             icon="mdi mdi-keyboard-backspace"
-                    color="error" variant="outlined" rounded="1" class="mx-2" @click="back()"></v-btn>
-                </v-col>
-            </v-row>
-        </v-card-title>
-    </v-card-item>
-    <v-card-text>
-        <v-form @submit.prevent ref="create">
-
-        <v-row>
-            <v-col md="6">
-                <text-field label=" اسم الفئة"
-                v-model="category.name"
-                :disabled = disabled>
-                </text-field>
-            
-
-            </v-col>
-            <v-col md="6">
-                <text-field label="ملاحظات"
-                v-model="category.description"
-
-                :disabled = disabled>
-                </text-field>
-            </v-col>
-            <v-col md="6" >
-                <text-field v-if="disabled "  label="ملف" v-model="category.photo" 
-                hide-details
-                density="compact"
-                class="rounded-xl"
+  <v-card-item>
+    <v-card-title class="d-flex align-center pa-2">
+      {{pageTitle}}
+      <v-row>
+        <v-col>
+          <v-tooltip text="تعديل">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                class="d-flex mr-4"
+                v-bind="props"
+                icon="mdi mdi-text-box-edit"
+                color="primary"
                 variant="outlined"
-                :disabled = disabled>
-                </text-field>
-
-                <v-file-input v-else
-                label="ملف"
-                v-model="photo"
-                hide-details
-                density="compact"
-                class="rounded-xl"
-                variant="outlined"           
+                @click=" disabled =!disabled"
               >
+              </v-btn>
+            </template>
+          </v-tooltip>
+        </v-col>
+        <v-col class="d-flex justify-end">
+          <v-btn
+            icon="mdi mdi-keyboard-backspace"
+            color="error"
+            variant="outlined"
+            rounded="1"
+            class="mx-2"
+            @click="back()"
+          ></v-btn>
+        </v-col>
+      </v-row>
+    </v-card-title>
+  </v-card-item>
+  <v-card-text>
+    <v-form @submit.prevent ref="create">
+      <v-row>
+        <v-col md="6">
+          <text-field
+            label=" اسم الفئة"
+            v-model="category.name"
+            :disabled="disabled"
+          >
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <text-field
+            label="ملاحظات"
+            v-model="category.description"
+            :disabled="disabled"
+          >
+          </text-field>
+        </v-col>
+        <v-col md="6">
+          <v-avatar size="100" v-if="disabled">
+            <v-img :src="category.photo" alt="Product Photo"></v-img>
+          </v-avatar>
 
-                </v-file-input>
-         
-            </v-col>
-            <v-col v-show=" disabled">
-                <v-tooltip text="تحميل الملف">
-                    <template v-slot:activator="{ props }">
+          <v-file-input
+            v-else
+            label="ملف"
+            v-model="photo"
+            hide-details
+            density="compact"
+            class="rounded-xl"
+            variant="outlined"
+          >
+          </v-file-input>
 
-                <v-btn 
+          <v-tooltip text="تحميل الملف">
+            <template v-slot:activator="{ props }">
+              <v-btn
+                v-show=" disabled"
                 v-bind="props"
                 icon="mdi mdi-download"
-                color="primary" variant="text" 
-                @click="downloadImage()">
-                    
-                </v-btn>  
-                </template>
-            </v-tooltip>
-            </v-col>
-            
-        </v-row>
-        <v-row v-if="disabled == false">
-            <v-col md="2">
-                <v-btn class="d-flex mr-4"
-                color="primary" variant="outlined" @click="edit()" >
-                تعديل
-
-                </v-btn>
-            </v-col>
-            <v-col md="2">
-                <v-btn
-                color="error" variant="outlined"  @click=" disabled = true">
+                color="primary"
+                variant="text"
+                @click="downloadImage()"
+              >
+              </v-btn>
+            </template>
+          </v-tooltip>
+        </v-col>
+      </v-row>
+      <v-row v-if="disabled == false">
+        <v-col md="2">
+          <v-btn
+            class="d-flex mr-4"
+            color="primary"
+            variant="outlined"
+            @click="edit()"
+          >
+            تعديل
+          </v-btn>
+        </v-col>
+        <v-col md="2">
+          <v-btn color="error" variant="outlined" @click=" disabled = true">
             إلغاء التعديل
-
-                </v-btn>
-            </v-col>
-        </v-row>
-
-        </v-form>
-        </v-card-text>
-        
-        
-        </v-card>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-form>
+  </v-card-text>
+</v-card>

@@ -30,7 +30,6 @@ function deleteProduct(id: number) {
   return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`);
 }
 
-// Add this method
 function toggleLock(id: number, action: "unlock" | "lock") {
   return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/${action}`);
 }

@@ -40,6 +40,7 @@ const edit = async () => {
     id: product.value.id,
     photo: photo,
     name: product.value.name,
+    provider: product.value.provider,
     isActive: product.value.isActive,
     createdOn: product.value.createdOn,
   });

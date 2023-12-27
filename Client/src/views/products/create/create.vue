@@ -5,6 +5,9 @@ import { productService } from "../service";
 import { categoryService } from "@/views/categories/service";
 import { jsonToQueryString } from "@/utils/handlers";
 import type { categoryListItem } from "@/views/categories/list/model";
+
+const loading = ref(false);
+
 const product = reactive<Product>({
   name: null,
   categoryId: null,
@@ -47,7 +50,7 @@ const getCategories = async (
 
 // Method to submit the form and add the new Product
 const create = async () => {
-  console.log("ff");
+  await new Promise((resolve) => setTimeout(resolve, 10000));
   const productForm = new FormData();
 
   for (const [key, value] of Object.entries(product)) {

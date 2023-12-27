@@ -59,17 +59,9 @@
           </text-field>
         </v-col>
         <v-col md="6">
-          <text-field
-            v-if="disabled "
-            label="ملف"
-            v-model="product.photo"
-            hide-details
-            density="compact"
-            class="rounded-xl"
-            variant="outlined"
-            :disabled="disabled"
-          >
-          </text-field>
+          <v-avatar size="100" v-if="disabled">
+            <v-img :src="product.photo" alt="Product Photo"></v-img>
+          </v-avatar>
 
           <v-file-input
             v-else
