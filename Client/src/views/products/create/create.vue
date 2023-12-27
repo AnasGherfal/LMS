@@ -50,7 +50,6 @@ const getCategories = async (
 
 // Method to submit the form and add the new Product
 const create = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
   const productForm = new FormData();
 
   for (const [key, value] of Object.entries(product)) {
