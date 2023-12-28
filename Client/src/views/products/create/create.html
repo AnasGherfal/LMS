@@ -12,6 +12,7 @@
             label="اسم المنتج"
             v-model="product.name"
             required
+            :rules="rules"
           ></text-field>
         </v-col>
         <v-col md="6">
@@ -29,6 +30,7 @@
             :hide-details="false"
             :multiple="false"
             required
+            :rules="rules"
           ></auto-complete>
         </v-col>
         <v-col md="6">
@@ -36,6 +38,7 @@
             label="تفاصيل "
             v-model="product.description"
             required
+            :rules="rules"
           ></text-field>
         </v-col>
         <v-col md="6">
@@ -43,6 +46,7 @@
             label=" المزود"
             v-model="product.provider"
             required
+            :rules="rules"
           ></text-field>
         </v-col>
         <v-col md="6">
@@ -55,6 +59,7 @@
             variant="outlined"
             accept="image/*"
             required
+            :rules="rules"
           ></v-file-input>
         </v-col>
       </v-row>
@@ -63,6 +68,8 @@
           <v-btn type="submit" rounded="1" class="mx-2" @click="create()"
             >اضافة</v-btn
           >
+          <v-btn type="cancel" color="error" variant="outlined" rounded="1" class="mx-2" @click="router.back()">رجوع</v-btn>
+
         </v-col>
       </v-row>
     </v-form>

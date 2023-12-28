@@ -8,6 +8,10 @@ import type { categoryListItem } from "@/views/categories/list/model";
 
 const loading = ref(false);
 
+const rules = computed(() => [
+    (v: any) => !!v || 'مطلوب',
+]);
+
 const product = reactive<Product>({
   name: null,
   categoryId: null,

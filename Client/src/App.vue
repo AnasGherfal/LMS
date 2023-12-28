@@ -1,11 +1,13 @@
 <template>
   <!-- <signIn></signIn> -->
   <v-app>
+    <snackbar></snackbar>
+        <loading>
+        </loading>
     <router-view />
   </v-app>
 </template>
 
 <script setup lang="ts">
-import signIn from "./views/login/signIn.vue";
 
 </script>

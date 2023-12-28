@@ -27,6 +27,7 @@ const totalPages = ref(5);
 const categories = ref<categoryListItem[]>([]);
 const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
+
     const { data } = await categoryService.fetch(pageNo, pageSize, name);
     //loading.stop();
     console.log(data);
