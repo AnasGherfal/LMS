@@ -15,6 +15,7 @@
             item-value="id"
             label="المنتج"
             required
+            :rules="rules"
           ></auto-complete>
         </v-col>
         <v-col md="3">
@@ -25,26 +26,29 @@
             item-value="id"
             label=" القسم"
             required
+            :rules="rules"
           ></auto-complete>
         </v-col>
 
         <v-col md="2">
-          <text-field label="عدد الاجهزه" v-model="license.numOfDevices">
+          <text-field label="عدد الاجهزه" v-model="license.numOfDevices" :rules="rules">
           </text-field>
         </v-col>
         <v-col md="4">
-          <text-field label="رقم السيريل" v-model="license.serialKey">
+          <text-field label="رقم السيريل" v-model="license.serialKey"
+          :rules="rules">
           </text-field>
         </v-col>
 
         <v-col md="3">
-          <date-picker label="تاريخ بداية الترخيص" v-model="license.startDate">
+          <date-picker label="تاريخ بداية الترخيص" v-model="license.startDate" :rules="rules">
           </date-picker>
         </v-col>
         <v-col md="3">
           <date-picker
             label="تاريخ انتهاء الترخيص"
             v-model="license.expireDate"
+            :rules="rules"
           >
           </date-picker>
         </v-col>
@@ -55,6 +59,7 @@
           :items="store.impactLevelLookup.content"
           item-title="name"
           item-value="id"
+          :rules="rules"
         >
         </select-field>
         </v-col>
@@ -72,6 +77,7 @@
             :items="store.licenseTypesLookup.content"
             item-title="name"
             item-value="id"
+            :rules="rules"
           >
           </select-field>
         </v-col>
@@ -83,6 +89,7 @@
           <text-field
             label=" السعر بالدولار الامريكي"
             v-model="license.priceInUSD"
+            :rules="rules"
           >
           </text-field>
         </v-col>
@@ -90,6 +97,7 @@
           <text-field
             label="السعر بالدينار الليبي"
             v-model="license.priceInLYD"
+            :rules="rules"
           >
           </text-field>
         </v-col>

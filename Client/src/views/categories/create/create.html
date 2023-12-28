@@ -8,10 +8,10 @@
     <v-form @submit.prevent ref="categoryForm">
       <v-row>
         <v-col md="6">
-          <text-field label="اسم الفئة" v-model="category.name"> </text-field>
+          <text-field label="اسم الفئة" v-model="category.name" :rules="rules"> </text-field>
         </v-col>
         <v-col md="6">
-          <text-field label="ملاحظات" v-model="category.description">
+          <text-field label="ملاحظات" v-model="category.description" :rules="rules">
           </text-field>
         </v-col>
         <v-col md="6">
@@ -23,6 +23,7 @@
             class="rounded-xl"
             variant="outlined"
             accept="image/*"
+            :rules="rules"
           >
           </v-file-input>
         </v-col>

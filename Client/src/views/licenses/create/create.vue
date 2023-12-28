@@ -6,7 +6,7 @@ import { licenseService } from "../service";
 import { jsonToQueryString } from "@/utils/handlers";
 import { productService } from "@/views/products/service";
 import { departmentService } from "@/views/departments/service";
-import { productListItem } from "@/views/products/list/model";
+import type { productListItem } from "@/views/products/list/model";
 import type { departmentListItem } from "@/views/departments/list/model";
 
 const router = useRouter();
@@ -14,6 +14,11 @@ const products = ref<productListItem>();
   const departments = ref<departmentListItem[]>([]);
 const departmentOwner = ref();
 const store = useLookupStore();
+
+const rules = computed(() => [
+    (v: any) => !!v || 'مطلوب',
+]);
+
 const license = reactive<License>({
   productId: null,
   departmentId: null,

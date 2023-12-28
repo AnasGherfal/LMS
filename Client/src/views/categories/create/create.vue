@@ -3,6 +3,11 @@
 
 import type { Category } from "./model";
 import { categoryService} from '../service'
+
+const rules = computed(() => [
+    (v: any) => !!v || 'مطلوب',
+]);
+
 const category = reactive<Category>({
     name: null,
     description: null,
