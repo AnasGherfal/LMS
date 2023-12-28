@@ -9,7 +9,7 @@
       <v-row>
         <v-col md="3">
           <auto-complete
-            v-model="license.ProductId"
+            v-model="license.productId"
             :items="products"
             item-title="name"
             item-value="id"
@@ -19,7 +19,7 @@
         </v-col>
         <v-col md="3">
           <auto-complete
-            v-model="license.DepartmentId"
+            v-model="license.departmentId"
             :items="departments"
             item-title="name"
             item-value="id"
@@ -29,60 +29,67 @@
         </v-col>
 
         <v-col md="2">
-          <text-field label="عدد الاجهزه" v-model="license.NumOfDevices">
+          <text-field label="عدد الاجهزه" v-model="license.numOfDevices">
           </text-field>
         </v-col>
         <v-col md="4">
-          <text-field label="رقم السيريل" v-model="license.SerialKey">
+          <text-field label="رقم السيريل" v-model="license.serialKey">
           </text-field>
         </v-col>
 
         <v-col md="3">
-          <date-picker label="تاريخ بداية الترخيص" v-model="license.StartDate">
+          <date-picker label="تاريخ بداية الترخيص" v-model="license.startDate">
           </date-picker>
         </v-col>
         <v-col md="3">
           <date-picker
             label="تاريخ انتهاء الترخيص"
-            v-model="license.ExpireDate"
+            v-model="license.expireDate"
           >
           </date-picker>
         </v-col>
         <v-col md="2">
-          <text-field label="مستوى الخطر" v-model="license.ImpactLevel">
-          </text-field>
+          <select-field
+          label="مستوى الخطر"
+          v-model="license.impactLevel"
+          :items="store.impactLevelLookup.content"
+          item-title="name"
+          item-value="id"
+        >
+        </select-field>
         </v-col>
         <v-col md="4">
           <text-area
             label="معلومات عن مستوى الخطر"
-            v-model="license.ImpactDescription"
+            v-model="license.impactDescription"
           >
           </text-area>
         </v-col>
-        <v-col md="3"
-          >{{store.licenseTypesLookup}}
+        <v-col md="3">
           <select-field
             label="مدة الترخيص"
-            v-model="license.TimeType"
+            v-model="license.timeType"
+            :items="store.licenseTypesLookup.content"
             item-title="name"
+            item-value="id"
           >
           </select-field>
         </v-col>
 
         <v-col md="3">
-          <text-field label="تواصل" v-model="license.Contact"> </text-field>
+          <text-field label="تواصل" v-model="license.contact"> </text-field>
         </v-col>
         <v-col md="3">
           <text-field
             label=" السعر بالدولار الامريكي"
-            v-model="license.PriceInUSD"
+            v-model="license.priceInUSD"
           >
           </text-field>
         </v-col>
         <v-col md="3">
           <text-field
             label="السعر بالدينار الليبي"
-            v-model="license.PriceInLYD"
+            v-model="license.priceInLYD"
           >
           </text-field>
         </v-col>

@@ -86,7 +86,6 @@ const toggleLock = async (categoryId: number, newLockState: boolean) => {
     const endpoint = newLockState ? "lock" : "unlock";
     await categoryService.toggleLock(categoryId, endpoint);
     getAll();
-    console.log(newLockState);
   } catch (error) {
     console.error(error);
   }

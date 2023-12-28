@@ -1,10 +1,12 @@
 import type { MessageResponse } from "@/models/messageResponse";
 import httpClient from "@/plugins/http-client";
+import { categoryListResponse } from "./list/model";
+import { categoryInforResponse } from "./view/model";
 
 const RESOURCE = "categories";
 
 function fetch(pageNumber?: number, pageSize?: number, name?: string) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`, {
+  return httpClient.get<categoryListResponse>(`${RESOURCE}`, {
     params: {
       PageNumber: pageNumber,
       PageSize: pageSize,
@@ -17,7 +19,7 @@ function create(category: FormData) {
 }
 
 function fetchById(id: any) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
+  return httpClient.get<categoryInforResponse>(`${RESOURCE}/${id}`);
 }
 
 function edit(id: any, category: FormData) {

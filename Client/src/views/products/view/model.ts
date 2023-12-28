@@ -6,3 +6,8 @@
   isActive: boolean | null;
   createdOn: string | null;
 }
+
+export interface productInfoResponse {
+  content: productInfo;
+  msg: string;
+}

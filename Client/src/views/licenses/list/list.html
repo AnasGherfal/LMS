@@ -44,6 +44,9 @@
       <template v-slot:item.productName="{ item }">
         <span>{{item.productName}}</span>
       </template>
+      <template v-slot:item.departmentId="{ item }">
+        <span>{{item.departmentId}}</span>
+      </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
           :color="item.isActive == true ? 'green' : 'red'"
@@ -86,7 +89,7 @@
 
   <v-dialog v-model="doneDialog" persistent width="600">
     <v-card>
-      <v-card-title> حذف الفئة </v-card-title>
+      <v-card-title> حذف الرخصة </v-card-title>
       <v-card-text>
         <span>هل أنت متأكد من الحذف </span>
       </v-card-text>

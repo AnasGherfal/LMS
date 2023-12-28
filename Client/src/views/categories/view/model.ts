@@ -6,3 +6,9 @@
     isActive: boolean | null;
     createdOn: string | null;
 }
+
+export interface categoryInforResponse {
+    content: categoryInfo;
+    totalPages: number;
+    msg: string;
+}

@@ -15,3 +15,8 @@
     priceInUSD : string | null;
     priceInLYD : string | null;
 }
+
+export interface licenseInfoResponse {
+    content: licenseInfo;
+    msg: string;
+}

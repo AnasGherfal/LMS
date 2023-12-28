@@ -5,13 +5,17 @@ import type { licenseListItem, licenseListFilter, header } from "./model.ts";
 import { licenseService } from "../service";
 import { productService } from "@/views/products/service";
 import { departmentService } from "@/views/departments/service";
+import type { departmentListItem } from "@/views/departments/list/model";
+import type { productListItem } from "@/views/products/list/model";
 
 const router = useRouter();
 const tempId = ref<number | null>();
 const doneDialog = ref<boolean>(false);
 const pageTitle = router.currentRoute.value.meta.title;
-const products = ref([]);
-const departments = ref([]);
+const products = ref<productListItem>();
+const departments = ref<departmentListItem[]>();
+const store = useLookupStore();
+
 onMounted(() => {
   getAll();
   getDepartments();
@@ -52,6 +56,14 @@ const getDepartments = async () => {
   }
 };
 
+// const getDepartmentNameById = (departmentId: number | null): string => {
+//   if (departmentId === null) {
+//     return ''; // Handle the case when departmentId is null
+//   }
+
+//   const department = departments.value.find(dep => dep.id === departmentId);
+//   return department ? department.name : ''; // Return department name if found, otherwise an empty string
+// };
 
 
 const licenses = ref<licenseListItem[]>([]);
@@ -69,7 +81,7 @@ const getAll = async (pageNo?: number, pageSize?: number, productId?:string, dep
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
   { title: " المنتج", key: "productName" },
-  { title: "القسم", key: "departmentName" },
+  { title: "القسم", key: "departmentId" },
 
   { title: "تواصل", key: "contact" },
   { title: "مستوى الخطوره", key: "impactLevel" },
@@ -81,7 +93,7 @@ const headers = ref<header[]>([
   { title: "الإجراءات", key: "actions" },
 ]);
 
-// Method to navigate to the create category page
+
 const create = () => {
   router.push({ name: "CreateLicense" });
 };

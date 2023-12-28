@@ -4,16 +4,18 @@ import httpClient from "@/plugins/http-client";
 
 export interface LookupState {
     licenseTypesLookup: Lookup[];
-    rolesLookup: Lookup[];
-    empsLookup: Lookup[];
+    impactLevelLookup: Lookup[];
+    // rolesLookup: Lookup[];
+    // empsLookup: Lookup[];
 }
 
 export const useLookupStore = defineStore("lookupStore", {
     state: (): LookupState => {
         return {
             licenseTypesLookup: [],
-            rolesLookup: [],
-            empsLookup: [],
+            impactLevelLookup:[],
+            // rolesLookup: [],
+            // empsLookup: [],
         };
     },
 
@@ -28,20 +30,29 @@ export const useLookupStore = defineStore("lookupStore", {
                 return Promise.reject(err);
             }
         },
-        async getRoles() {
+        async getImpactLevel() {
             try {
-                if (this.rolesLookup.length <= 0) {
-                    //const { data } = await lookupsService.getEntities();
-                    //this.entitiesLookup = data;
-                    this.rolesLookup = [
-                        { text: 'مشرف', value: 1 },
-                        { text: 'موظف', value: 2 }
-                    ];
-                }
+                    const { data } = await getLicenseTypes();
+                    this.impactLevelLookup = data;
+                
             } catch (err) {
                 return Promise.reject(err);
             }
         },
+        // async getRoles() {
+        //     try {
+        //         if (this.rolesLookup.length <= 0) {
+        //             //const { data } = await lookupsService.getEntities();
+        //             //this.entitiesLookup = data;
+        //             // this.rolesLookup = [
+        //             //     { text: 'مشرف', value: 1 },
+        //             //     { text: 'موظف', value: 2 }
+        //             // ];
+        //         }
+        //     } catch (err) {
+        //         return Promise.reject(err);
+        //     }
+        // },
         
     },
     
@@ -53,4 +64,7 @@ export const useLookupStore = defineStore("lookupStore", {
 const RESOURCE = "Lookups";
 function getLicenseTypes() {
     return httpClient.get<Lookup[]>(`${RESOURCE}/License-Types`);
+}
+function getImpactLevel() {
+    return httpClient.get<Lookup[]>(`${RESOURCE}/Impact-Levels`);
 }

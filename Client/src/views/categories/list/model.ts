@@ -17,3 +17,9 @@ export interface header {
   title: string;
   key: string;
 }
+
+export interface categoryListResponse {
+  content: categoryListItem[];
+  totalPages: number;
+  msg: string;
+}

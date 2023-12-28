@@ -1,11 +1,13 @@
 import { useHttpClient } from "@/network/httpClient";
 import type { MessageResponse } from "@/models/messageResponse";
 import httpClient from "@/plugins/http-client";
+import { productListResponse } from "./list/model";
+import { productInfoResponse } from "./view/model";
 
 const RESOURCE = "products";
 
 function fetch(pageNumber?: number, pageSize?: number, name?: string) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`, {
+  return httpClient.get<productListResponse>(`${RESOURCE}`, {
     params: {
       PageNumber: pageNumber,
       PageSize: pageSize,
@@ -19,7 +21,7 @@ function create(product: FormData) {
 }
 
 function fetchById(id: number | any) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
+  return httpClient.get<productInfoResponse>(`${RESOURCE}/${id}`);
 }
 
 function edit(id: any, product: FormData) {

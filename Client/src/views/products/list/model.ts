@@ -18,3 +18,8 @@ export interface header {
   title: string;
   key: string;
 }
+export interface productListResponse {
+  content: productListItem;
+  msg: string;
+  totalPages: number;
+}

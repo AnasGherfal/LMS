@@ -1,9 +1,9 @@
 export interface departmentListItem {
-  id: string;
-  icon: string;
-  name: string;
-  isActive: boolean;
-  createdOn: "string";
+  id: string | null;
+  icon: string | null;
+  name: string | null;
+  isActive: boolean | null;
+  createdOn: string | null;
 }
 
 export interface departmentsListFilter {
@@ -18,3 +18,8 @@ export interface header {
   title: string;
   key: string;
 }
+export interface departmentListResponse {
+  content: departmentListItem[];
+  msg: string;
+}
+

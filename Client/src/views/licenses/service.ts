@@ -1,11 +1,13 @@
 import { useHttpClient } from "@/network/httpClient";
 import type { MessageResponse } from "@/models/messageResponse";
 import httpClient from "@/plugins/http-client";
+import { licenseInfoResponse } from "./view/model";
+import { licenseListResponse } from "./list/model";
 
 const RESOURCE = "licenses";
 
 function fetch(pageNumber?: number, pageSize?: number, productId?: string, departmentId?: string) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`, {
+  return httpClient.get<licenseListResponse>(`${RESOURCE}`, {
     params: {
       PageNumber: pageNumber,
       PageSize: pageSize,
@@ -19,7 +21,7 @@ function create(license: FormData) {
 }
 
 function fetchById(id: string | string[]) {
-  return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);
+  return httpClient.get<licenseInfoResponse>(`${RESOURCE}/${id}`);
 }
 
 function lock(id: number | null) {

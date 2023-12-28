@@ -19,7 +19,7 @@ const filter = reactive<ProductsListFilter>({
 });
 const totalPages = ref(5);
 
-const products = ref<productListItem[]>([]);
+const products = ref<productListItem>();
 const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
     const { data } = await productService.fetch(pageNo, pageSize, name);

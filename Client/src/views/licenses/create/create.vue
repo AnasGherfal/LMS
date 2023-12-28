@@ -6,25 +6,27 @@ import { licenseService } from "../service";
 import { jsonToQueryString } from "@/utils/handlers";
 import { productService } from "@/views/products/service";
 import { departmentService } from "@/views/departments/service";
+import { productListItem } from "@/views/products/list/model";
+import type { departmentListItem } from "@/views/departments/list/model";
 
 const router = useRouter();
-const products = ref([]);
-const departments = ref([]);
+const products = ref<productListItem>();
+  const departments = ref<departmentListItem[]>([]);
 const departmentOwner = ref();
 const store = useLookupStore();
 const license = reactive<License>({
-  ProductId: null,
-  DepartmentId: null,
-  NumOfDevices: null,
-  SerialKey: null,
-  ImpactLevel: null,
-  ImpactDescription: null,
-  StartDate: null,
-  ExpireDate: null,
-  Contact: null,
-  TimeType: null,
-  PriceInUSD: null,
-  PriceInLYD: null,
+  productId: null,
+  departmentId: null,
+  numOfDevices: null,
+  serialKey: null,
+  impactLevel: null,
+  impactDescription: null,
+  startDate: null,
+  expireDate: null,
+  contact: null,
+  timeType: null,
+  priceInUSD: null,
+  priceInLYD: null,
 });
 const filter = reactive({
   pageNo: 1,
@@ -38,6 +40,8 @@ onMounted(() => {
   getProducts();
   getDepartments();
   store.getLicenseTypes();
+  store.getImpactLevel();
+
 });
 
 const pageTitle = router.currentRoute.value.meta.title;

@@ -1,10 +1,11 @@
 import type { MessageResponse } from "@/models/messageResponse";
 import httpClient from "@/plugins/http-client";
+import { departmentListResponse } from "./list/model";
 
 const RESOURCE = "Lookups/Departments";
 
 function fetch() {
-  return httpClient.get<MessageResponse>(`${RESOURCE}`);
+  return httpClient.get<departmentListResponse>(`${RESOURCE}`);
 }
 // function create(department: FormData) {
 //   return httpClient.post<MessageResponse>(`${RESOURCE}`, category);

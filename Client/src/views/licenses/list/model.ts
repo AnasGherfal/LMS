@@ -20,6 +20,10 @@ export interface header {
     title: string,
     key: string
 }
-
+export interface licenseListResponse {
+    content: licenseListItem[];
+    msg: string;
+    totalPages: number;
+}
 
 

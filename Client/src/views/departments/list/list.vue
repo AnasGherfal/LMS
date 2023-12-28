@@ -1,11 +1,9 @@
-<!-- eslint-disable @typescript-eslint/no-unused-vars -->
 <script lang="ts" setup>
-import { jsonToQueryString } from "@/utils/handlers";
 import type {
   departmentListItem,
   departmentsListFilter,
   header,
-} from "./model.ts";
+} from "@/views/departments/list/model";
 import { departmentService } from "../service";
 
 const router = useRouter();
@@ -26,7 +24,7 @@ const filter = reactive<departmentsListFilter>({
 });
 const totalPages = ref(5);
 
-const departments = ref<departmentListItem[]>([]);
+const departments = ref<departmentListItem[]>();
 const getAll = async () => {
   try {
     //loading.start();
