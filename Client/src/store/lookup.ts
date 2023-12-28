@@ -32,7 +32,7 @@ export const useLookupStore = defineStore("lookupStore", {
         },
         async getImpactLevel() {
             try {
-                    const { data } = await getLicenseTypes();
+                    const { data } = await getImpactLevel();
                     this.impactLevelLookup = data;
                 
             } catch (err) {
