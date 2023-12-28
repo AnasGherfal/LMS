@@ -9,7 +9,7 @@
              type="warning"
              :text="alertBox.$state.message"
              position="absolute"
-             border="left">
+             >
     </v-alert>
 
 </template>

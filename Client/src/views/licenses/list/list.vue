@@ -56,16 +56,23 @@ const getDepartments = async () => {
   }
 };
 
-// const getDepartmentNameById = (departmentId: number | null): string => {
-//   if (departmentId === null) {
-//     return ''; // Handle the case when departmentId is null
-//   }
-
-//   const department = departments.value.find(dep => dep.id === departmentId);
-//   return department ? department.name : ''; // Return department name if found, otherwise an empty string
-// };
+interface Department {
+  id: string;
+  name: string;
+}
 
 
+const getDepartmentNameById = (departmentId: number | null): string | null => {
+  if (departmentId === null || !departments.value) {
+    return null; // Return null instead of an empty string
+  }
+
+  const department = departments.value.find(dep => dep.id === departmentId.toString());
+  return department ? department.name : null; // Return department name if found, otherwise return null
+};
+
+
+console.log(getDepartmentNameById(55))
 const licenses = ref<licenseListItem[]>([]);
 const getAll = async (pageNo?: number, pageSize?: number, productId?:string, departmentId?: string) => {
   try {

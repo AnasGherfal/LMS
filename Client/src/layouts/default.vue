@@ -1,5 +1,5 @@
     <script lang="ts" setup>
-      import appBar from './AppBar.vue'
+      import appBar from './appBar.vue'
       import sideBar from './sideBar.vue'
     </script>
 <template>

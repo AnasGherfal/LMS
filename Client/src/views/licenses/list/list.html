@@ -45,7 +45,7 @@
         <span>{{item.productName}}</span>
       </template>
       <template v-slot:item.departmentId="{ item }">
-        <span>{{item.departmentId}}</span>
+        <span>{{getDepartmentNameById(item.departmentId)}}</span>
       </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip

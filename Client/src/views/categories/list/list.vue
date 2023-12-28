@@ -29,7 +29,7 @@ const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
 
     const { data } = await categoryService.fetch(pageNo, pageSize, name);
-    //loading.stop();
+    // loading.stop();
     console.log(data);
     categories.value = data.content;
     totalPages.value = data.totalPages;
