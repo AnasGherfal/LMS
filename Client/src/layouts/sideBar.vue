@@ -28,7 +28,7 @@ const side = [
 </script>
 
 <template>
-  <v-navigation-drawer class="sidebar" permanent color="#016CE0">
+  <v-navigation-drawer class="sidebar" permanent >
     <v-list-item
       class="sidebar__brand"
       prepend-avatar="/newLogo.png"

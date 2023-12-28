@@ -117,7 +117,7 @@ const canceleDialog = () => {
   tempId.value = null;
 };
 
-const deleteCategory = async () => {
+const deleteLicense = async () => {
   try {
     const { data } = await licenseService.deletelicense(tempId.value!);
     getAll();

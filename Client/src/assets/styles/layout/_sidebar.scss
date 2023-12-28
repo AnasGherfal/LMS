@@ -4,15 +4,15 @@
 	margin-right: 1rem;
 	border: 0;
 	background: transparent;
-	background-color: rgb(34, 77, 150);
+	background-color: rgb(228, 183, 183);
 	border-radius: 10px;
-	color:rgb(255, 255, 255);
+	color:rgb(38, 8, 8);
 	width: 100%;
 	//max-width: 17.125rem;
 	transition: all .3s linear;
 
 	.active {
-		background-color: #fff;
+		background-color: #000000;
 	}
 
 	&__brand {
@@ -37,7 +37,7 @@
 		border: 0;
 		height: 1px;
 		opacity: .25;
-		background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, .4), transparent);
+		background-image: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4), transparent);
 		background-color: transparent;
 	}
 
@@ -52,7 +52,7 @@
 			.v-list-item__prepend {
 				padding: 10px;
 				margin-left: 0.7rem;
-				background: #fff;
+				background: #fffcfc;
 				border-radius: 0.5rem;
 				box-shadow: 0 .3125rem .625rem 0 rgba(0,0,0,.12);
 
@@ -62,7 +62,7 @@
 			}
 
 			.v-list-item-title {
-				color: rgb(var(--v-theme-primary));
+				color: rgb(0, 0, 0)
 			}
 		}
 
@@ -73,11 +73,11 @@
 			border-radius: 0.5rem;
 
 			.v-list-item__overlay {
-				background: #fff;
+				background: #ff0000;
 			}
 
 			.v-list-item__prepend {
-				background: rgb(var(--v-theme-secondary));
+				background: rgba(112, 17, 17, 0.05);
 				color: #fff;
 			}
 
