@@ -6,7 +6,7 @@
         meta: {
             title: 'الفئات',
             hasChildren: false,
-            icon: "mdi-file-document-multiple-outline",
+            icon: "mdi mdi-shape",
             // roles: [1,2] 
         },
         children: [

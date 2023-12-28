@@ -6,7 +6,7 @@
         meta: {
             title: 'الرخص',
             hasChildren: false,
-            icon: "mdi-file-document-multiple-outline",
+            icon: "mdi mdi-license",
             // roles: [1,2] 
         },
         children: [

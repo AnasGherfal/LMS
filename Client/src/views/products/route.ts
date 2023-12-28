@@ -6,7 +6,7 @@
     meta: {
       title: "المنتجات",
       hasChildren: false,
-      icon: "mdi-file-document-multiple-outline",
+      icon: "mdi mdi-package-variant",
       // roles: [1,2]
     },
     children: [

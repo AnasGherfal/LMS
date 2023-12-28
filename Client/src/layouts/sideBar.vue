@@ -35,13 +35,16 @@ const side = [
       title="نظام إدارة الرخص"
     ></v-list-item>
     <hr class="sidebar__hr" />
-    <v-list class="sidebar__nav pa-0"> </v-list>
-    <div v-for="item in side" :key="item.title">
-      <v-list-item :title="item.title" :to="item.path">
-        <template v-slot:prepend>
-          <v-icon :icon="item.icon" size="small" color="#E08B00"></v-icon>
-        </template>
-      </v-list-item>
-    </div>
+    <v-list class="sidebar__nav pa-0">
+            <div v-for="(link, i) in links">
+
+
+                <v-list-item link :key="i" :title="link.meta.title" :to="link.path" >
+                    <template v-slot:prepend>
+                        <v-icon :icon="link.meta.icon" size="x-small"></v-icon>
+                    </template>
+                </v-list-item>
+            </div>
+        </v-list>
   </v-navigation-drawer>
 </template>
