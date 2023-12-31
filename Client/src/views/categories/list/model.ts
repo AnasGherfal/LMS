@@ -2,7 +2,7 @@
   id: string;
   photo: string;
   name: string;
-  numberOfCategories: number;
+  numberOfProducts: number;
   isActive: boolean;
   createdOn: "string";
 }

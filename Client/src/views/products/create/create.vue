@@ -68,8 +68,8 @@ const create = async () => {
   }
 
   try {
-    const { data } = await productService.create(productForm);
     router.back();
+    const { data } = await productService.create(productForm);
     //loading.stop();
   } catch {
     //loading.stop();

@@ -87,8 +87,8 @@ const create = async () => {
   }
 
   try {
-    const { data } = await licenseService.create(licenseForm);
     router.back();
+    const { data } = await licenseService.create(licenseForm);
     //showNotification(data.msg);
     loading.stop();
   } catch {

@@ -49,7 +49,7 @@ const headers = ref<header[]>([
   { title: "#", key: "photo" },
   { title: "الاسم", key: "name" },
   // { title: "تاريخ الإنشاء", key: "createdOn" },
-  { title: "عدد الفئات", key: "numberOfCategories" },
+  { title: "عدد المنتجات", key: "numberOfProducts" },
   { title: "الحالة", key: "isActive" },
 
   { title: "الإجراءات", key: "actions" },

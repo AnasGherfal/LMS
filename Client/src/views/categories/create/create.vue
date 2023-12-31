@@ -33,8 +33,8 @@ for (const [key, value] of Object.entries(category)) {
     }
   
     try {
-        const { data } = await categoryService.create(categoryForm);
         router.back();
+        const { data } = await categoryService.create(categoryForm);
         // loading.stop();
     } catch {
         //loading.stop();
