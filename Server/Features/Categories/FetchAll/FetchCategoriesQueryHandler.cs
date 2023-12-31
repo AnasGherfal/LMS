@@ -36,7 +36,7 @@ public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategori
                 Photo = _httpContext.BlobUrl() + p.Photo,
                 Name = p.Name,
                 IsActive = p.Status == EntityStatus.Active,
-                NumberOfProducts = products.Where(c=>c.Id==p.Id).Count(),
+                NumberOfProducts = products.Where(c=>c.CategoryId==p.Id).Count(),
                 CreatedOn = p.CreatedOn,
             })
             .ToListAsync(cancellationToken: cancellationToken);
