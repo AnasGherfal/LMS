@@ -11,14 +11,12 @@ import type { departmentListItem } from "@/views/departments/list/model";
 
 const router = useRouter();
 const products = ref<productListItem>();
-  const departments = ref<departmentListItem[]>([]);
+const departments = ref<departmentListItem[]>([]);
 const departmentOwner = ref();
 const store = useLookupStore();
 const loading = useLoadingStore();
 
-const rules = computed(() => [
-    (v: any) => !!v || 'مطلوب',
-]);
+const rules = computed(() => [(v: any) => !!v || "مطلوب"]);
 
 const license = reactive<License>({
   productId: null,
@@ -47,7 +45,6 @@ onMounted(() => {
   getDepartments();
   store.getLicenseTypes();
   store.getImpactLevel();
-
 });
 
 const pageTitle = router.currentRoute.value.meta.title;
@@ -87,8 +84,11 @@ const create = async () => {
   }
 
   try {
-    router.back();
     const { data } = await licenseService.create(licenseForm);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    router.back();
+
     //showNotification(data.msg);
     loading.stop();
   } catch {
