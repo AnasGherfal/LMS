@@ -9,6 +9,7 @@ public class Category: Entity
     public Guid Photo { get; set; } = Guid.Empty;
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
+    public ICollection<Product> Products { get; set; } = [];
     public EntityStatus Status { get; set; }
     
     public void Apply(CategoryCreatedEvent @event)

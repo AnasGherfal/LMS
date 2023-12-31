@@ -8,10 +8,9 @@ using Server.Features.LookUps.FetchDepartments;
 
 namespace Server.Features.Licenses.FetchAll;
 
-public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext, HrDbContext _hrDbContext) : IRequestHandler<FetchLicensesQuery, PagedResponse<FetchLicensesQueryResponse>>
+public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext) : IRequestHandler<FetchLicensesQuery, PagedResponse<FetchLicensesQueryResponse>>
 {
     private readonly AppDbContext _dbContext= _dbContext;
-    private readonly HrDbContext _hrDbContext= _hrDbContext;
     public async Task<PagedResponse<FetchLicensesQueryResponse>> Handle(FetchLicensesQuery request, CancellationToken cancellationToken)
     {
         var pageNumber = request.PageNumber ?? 1;
@@ -19,7 +18,7 @@ public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext, HrDbCont
         var query = _dbContext.Licenses
             .Where(p =>
                 string.IsNullOrWhiteSpace(request.DepartmentId)
-                || p.DepartmentId ==short.Parse(request.DepartmentId!));
+                || p.DepartmentId == short.Parse(request.DepartmentId!));
         var data = await query
             .OrderBy(p => p.CreatedOn)
             .Include(p => p.Product)

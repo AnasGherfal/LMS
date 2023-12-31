@@ -20,7 +20,7 @@ public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategori
     public async Task<PagedResponse<FetchCategoriesQueryResponse>> Handle(FetchCategoriesQuery request, CancellationToken cancellationToken)
     {
         var pageNumber = request.PageNumber ?? 1;
-        var products=_dbContext.Products;
+        
         var pageSize = request.PageSize ?? 5;
         var query = _dbContext.Categories
             .Where(p => string.IsNullOrWhiteSpace(request.Search)
@@ -28,6 +28,7 @@ public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategori
         var data = await query
             .OrderBy(p => p.CreatedOn)
             .Skip((pageNumber - 1) * pageSize)
+            .Include(p=>p.Products)
             .Take(pageSize)
             .AsNoTracking()
             .Select(p => new FetchCategoriesQueryResponse()
@@ -36,7 +37,7 @@ public sealed record FetchCategoriesQueryHandler : IRequestHandler<FetchCategori
                 Photo = _httpContext.BlobUrl() + p.Photo,
                 Name = p.Name,
                 IsActive = p.Status == EntityStatus.Active,
-                NumberOfProducts = products.Where(c=>c.CategoryId==p.Id).Count(),
+                NumberOfProducts = p.Products.Count(),
                 CreatedOn = p.CreatedOn,
             })
             .ToListAsync(cancellationToken: cancellationToken);

@@ -1,4 +1,5 @@
 ﻿using Common.Constants;
+using Common.Events.Category;
 using Common.Events.License;
 using Common.Exceptions;
 using Common.Services;

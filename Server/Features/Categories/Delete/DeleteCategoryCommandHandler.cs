@@ -24,7 +24,7 @@ public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryComman
         var id = Guid.Parse(request.Id!);
         var data = await _dbContext.Categories.SingleOrDefaultAsync(p => p.Id == id, cancellationToken: cancellationToken);
         if (data == null) throw new NotFoundException(nameof(Locale.CategoryNotFound));
-        if (await _dbContext.Products.AnyAsync(p => p.CategoryId == id, cancellationToken: cancellationToken))
+        if (data.Products.Any(p => p.CategoryId == id))
             throw new BadRequestException(nameof(Locale.CategoryHaveProduct));
         if (data.Status == EntityStatus.Locked) throw new BadRequestException(nameof(Locale.IsLocked));
         if (data.IsDeleted) throw new BadRequestException(nameof(Locale.AlreadyDeleted));
