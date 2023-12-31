@@ -7,6 +7,7 @@ import { productService } from "@/views/products/service";
 import { departmentService } from "@/views/departments/service";
 import type { departmentListItem } from "@/views/departments/list/model";
 import type { productListItem } from "@/views/products/list/model";
+import {formatDate} from "@/utils/timeFormat"
 
 const router = useRouter();
 const tempId = ref<number | null>();

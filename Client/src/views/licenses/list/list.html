@@ -51,6 +51,12 @@
       <template v-slot:item.impactLevel="{ item }">
         <span>{{getImpactLevel(item.impactLevel)}}</span>
       </template>
+      <template v-slot:item.startDate="{ item }">
+        <span>{{formatDate(item.startDate)}}</span>
+      </template>
+      <template v-slot:item.expireDate="{ item }">
+        <span>{{formatDate(item.expireDate)}}</span>
+      </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
           :color="item.isActive == true ? 'green' : 'red'"
