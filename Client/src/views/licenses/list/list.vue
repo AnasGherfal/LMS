@@ -15,11 +15,12 @@ const pageTitle = router.currentRoute.value.meta.title;
 const products = ref<productListItem>();
 const departments = ref<departmentListItem[]>();
 const store = useLookupStore();
-
 onMounted(() => {
   getAll();
   getDepartments();
   getProducts();
+  store.getImpactLevel();
+  // getDepartmentNameById(55);
 });
 
 const filter = reactive<licenseListFilter>({
@@ -55,28 +56,35 @@ const getDepartments = async () => {
     //loading.stop();
   }
 };
-
-interface Department {
-  id: string;
-  name: string;
-}
+const getDepartmentNameById = (departmentId: number | null) => {
+  const department = departments.value?.find((dep) => dep.id === departmentId);
 
 
-const getDepartmentNameById = (departmentId: number | null): string | null => {
-  if (departmentId === null || !departments.value) {
-    return null; // Return null instead of an empty string
-  }
-
-  const department = departments.value.find(dep => dep.id === departmentId.toString());
-  return department ? department.name : null; // Return department name if found, otherwise return null
+  return department ? department.name : "";
 };
 
+const getImpactLevel = (impactLevelId: number | null) => {
+  const impactLevel = store.impactLevelLookup.find(
+    (dep) => dep.id === impactLevelId
+  );
 
-console.log(getDepartmentNameById(55))
+  return impactLevel ? impactLevel.name : ""; 
+};
+
 const licenses = ref<licenseListItem[]>([]);
-const getAll = async (pageNo?: number, pageSize?: number, productId?:string, departmentId?: string) => {
+const getAll = async (
+  pageNo?: number,
+  pageSize?: number,
+  productId?: string,
+  departmentId?: string
+) => {
   try {
-    const { data } = await licenseService.fetch(pageNo, pageSize, productId, departmentId);
+    const { data } = await licenseService.fetch(
+      pageNo,
+      pageSize,
+      productId,
+      departmentId
+    );
     //loading.stop();
     licenses.value = data.content;
     totalPages.value = data.totalPages;
@@ -99,7 +107,6 @@ const headers = ref<header[]>([
 
   { title: "الإجراءات", key: "actions" },
 ]);
-
 
 const create = () => {
   router.push({ name: "CreateLicense" });

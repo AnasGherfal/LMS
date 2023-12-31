@@ -18,7 +18,6 @@ httpClient.interceptors.request.use(
     (config: any) => {
         const loading = useLoadingStore();
         loading.start();
-        console.log(loading.loading)
         const store = useIdentityStore();
         // if (config.headers != undefined) {
         //     config.headers.Authorization = `Bearer ${store.token}`;

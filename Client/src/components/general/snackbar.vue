@@ -1,6 +1,5 @@
 ﻿<script setup lang="ts">
     const snack = useSnackbarStore();
-    console.log(snack)
 </script>
 <template>
     <v-snackbar v-model="snack.$state.show"

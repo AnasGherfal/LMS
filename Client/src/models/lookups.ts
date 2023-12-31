@@ -1,4 +1,4 @@
 export interface Lookup {
-  text: string;
-  value: number;
+  id: number; // Assuming 'id' is of type number
+  name: string;
 }
