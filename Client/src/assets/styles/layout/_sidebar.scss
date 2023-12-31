@@ -4,7 +4,7 @@
   margin-right: 1rem;
   border: 0;
   background: transparent;
-  background-color: rgb(121, 202, 255);
+  background-color: rgb(147, 186, 255);
   border-radius: 10px;
   color: rgb(38, 8, 8);
   width: 100%;
@@ -57,7 +57,7 @@
       .v-list-item__prepend {
         padding: 10px;
         margin-left: 0.7rem;
-        background: #40c9ff;
+        background: #ebf9ff;
         border-radius: 0.5rem;
         box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.12);
 
@@ -67,7 +67,7 @@
       }
 
       .v-list-item-title {
-        color: rgb(0, 0, 0);
+        color: rgb(47, 47, 47);
       }
     }
 
@@ -75,12 +75,14 @@
     .v-list-item--active.v-list-item--density-default:not(
         .v-list-item--nav
       ).v-list-item--one-line {
-      background: #9dceff;
+      background: #4d9bf9;
+      color: #ebf9ff;
       box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
       border-radius: 0.5rem;
 
       .v-list-item__overlay {
         background: hsl(206, 75%, 86%);
+        color: #ebf9ff;
       }
 
       .v-list-item__prepend {

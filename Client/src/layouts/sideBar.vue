@@ -28,7 +28,7 @@ const side = [
 </script>
 
 <template>
-  <v-navigation-drawer class="sidebar" permanent >
+  <v-navigation-drawer class="sidebar" permanent>
     <v-list-item
       class="sidebar__brand"
       prepend-avatar="/newLogo.png"
@@ -36,15 +36,13 @@ const side = [
     ></v-list-item>
     <hr class="sidebar__hr" />
     <v-list class="sidebar__nav pa-0">
-            <div v-for="(link, i) in links">
-
-
-                <v-list-item link :key="i" :title="link.meta.title" :to="link.path" >
-                    <template v-slot:prepend>
-                        <v-icon :icon="link.meta.icon" size="x-small"></v-icon>
-                    </template>
-                </v-list-item>
-            </div>
-        </v-list>
+      <div v-for="(link, i) in links">
+        <v-list-item link :key="i" :title="link.meta.title" :to="link.path">
+          <template v-slot:prepend>
+            <v-icon :icon="link.meta.icon" size="x-small"></v-icon>
+          </template>
+        </v-list-item>
+      </div>
+    </v-list>
   </v-navigation-drawer>
 </template>
