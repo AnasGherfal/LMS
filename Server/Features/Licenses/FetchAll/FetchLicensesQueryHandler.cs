@@ -18,8 +18,8 @@ public sealed record FetchLicensesQueryHandler(AppDbContext _dbContext, HrDbCont
         var pageSize = request.PageSize ?? 5;
         var query = _dbContext.Licenses
             .Where(p =>
-                (string.IsNullOrWhiteSpace(request.DepartmentId)
-                || p.DepartmentId ==short.Parse(request.DepartmentId!)));
+                string.IsNullOrWhiteSpace(request.DepartmentId)
+                || p.DepartmentId ==short.Parse(request.DepartmentId!));
         var data = await query
             .OrderBy(p => p.CreatedOn)
             .Include(p => p.Product)
