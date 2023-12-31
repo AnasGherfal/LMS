@@ -14,6 +14,7 @@ const products = ref<productListItem>();
   const departments = ref<departmentListItem[]>([]);
 const departmentOwner = ref();
 const store = useLookupStore();
+const loading = useLoadingStore();
 
 const rules = computed(() => [
     (v: any) => !!v || 'مطلوب',
@@ -79,6 +80,7 @@ const getDepartments = async () => {
 
 const create = async () => {
   const licenseForm = new FormData();
+  loading.start();
 
   for (const [key, value] of Object.entries(license)) {
     licenseForm.append(`${key}`, value as any);
@@ -86,9 +88,9 @@ const create = async () => {
 
   try {
     const { data } = await licenseService.create(licenseForm);
-    //showNotification(data.msg);
-    //loading.stop();
     router.go(-1);
+    //showNotification(data.msg);
+    loading.stop();
   } catch {
     //loading.stop();
   }

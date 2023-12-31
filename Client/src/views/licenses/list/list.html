@@ -47,6 +47,9 @@
       <template v-slot:item.departmentId="{ item }">
         <span>{{getDepartmentNameById(item.departmentId)}}</span>
       </template>
+      <template v-slot:item.impactLevel="{ item }">
+        <span>{{getImpactLevel(item.impactLevel)}}</span>
+      </template>
       <template v-slot:item.isActive="{ item }">
         <v-chip
           :color="item.isActive == true ? 'green' : 'red'"

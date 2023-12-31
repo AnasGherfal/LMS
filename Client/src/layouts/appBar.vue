@@ -4,8 +4,7 @@
   
       const router = useRouter();
       const items = computed(() => (router.currentRoute.value.matched.filter(s => s.name != 'Home').map(a => a.meta)));
-      console.log(router.currentRoute.value)
-      console.log(items.value)
+
   
   </script>
 <template>
