@@ -69,8 +69,7 @@ const create = async () => {
 
   try {
     const { data } = await productService.create(productForm);
-    router.go(-1);
-    console.log(router.go(-1))
+    router.back();
     //loading.stop();
   } catch {
     //loading.stop();
