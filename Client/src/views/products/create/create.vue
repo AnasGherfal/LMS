@@ -8,9 +8,7 @@ import type { categoryListItem } from "@/views/categories/list/model";
 
 const loading = ref(false);
 
-const rules = computed(() => [
-    (v: any) => !!v || 'مطلوب',
-]);
+const rules = computed(() => [(v: any) => !!v || "مطلوب"]);
 
 const product = reactive<Product>({
   name: null,
@@ -68,8 +66,10 @@ const create = async () => {
   }
 
   try {
-    router.back();
     const { data } = await productService.create(productForm);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    router.push({ name: "ProductList" });
+
     //loading.stop();
   } catch {
     //loading.stop();

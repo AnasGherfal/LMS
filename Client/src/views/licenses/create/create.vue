@@ -87,7 +87,7 @@ const create = async () => {
     const { data } = await licenseService.create(licenseForm);
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    router.back();
+    router.push({ name: "LicensesList" });
 
     //showNotification(data.msg);
     loading.stop();
