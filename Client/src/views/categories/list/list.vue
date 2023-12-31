@@ -30,7 +30,6 @@ const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
 
     const { data } = await categoryService.fetch(pageNo, pageSize, name);
     // loading.stop();
-    console.log(data);
     categories.value = data.content;
     totalPages.value = data.totalPages;
   } catch {
@@ -40,7 +39,7 @@ const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
 
 watch(
   [() => filter.pageNo, () => filter.name],
-  ([newPageNo, newName], [oldPageNo, oldName]) => {
+  ([newPageNo, newName]) => {
     const name = newName !== null ? newName : filter.name ?? "";
     getAll(newPageNo, filter.pageSize, name);
   }

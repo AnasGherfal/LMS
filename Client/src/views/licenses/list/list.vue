@@ -59,7 +59,6 @@ const getDepartments = async () => {
 const getDepartmentNameById = (departmentId: number | null) => {
   const department = departments.value?.find((dep) => dep.id === departmentId);
 
-
   return department ? department.name : "";
 };
 
@@ -68,7 +67,7 @@ const getImpactLevel = (impactLevelId: number | null) => {
     (dep) => dep.id === impactLevelId
   );
 
-  return impactLevel ? impactLevel.name : ""; 
+  return impactLevel ? impactLevel.name : "";
 };
 
 const licenses = ref<licenseListItem[]>([]);
@@ -92,6 +91,16 @@ const getAll = async (
     //loading.stop();
   }
 };
+
+watch(
+  [() => filter.pageNo, () => filter.DepartmentId, () => filter.ProductId],
+  ([pageNo, department, product]) => {
+    const pageNumber: number = pageNo !== null ? Number(pageNo) : 0; // Using 0 as default if it's null
+    const departmentId: string | undefined = department !== null ? department : undefined;
+    const productId: string | undefined = product !== null ? product : undefined;
+    getAll(pageNumber, filter.pageSize, productId, departmentId);
+  } 
+);
 
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
