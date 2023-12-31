@@ -6,13 +6,18 @@ import { licenseListResponse } from "./list/model";
 
 const RESOURCE = "licenses";
 
-function fetch(pageNumber?: number, pageSize?: number, productId?: string, departmentId?: string) {
+function fetch(
+  pageNumber?: number,
+  pageSize?: number,
+  productId?: string,
+  departmentId?: string
+) {
   return httpClient.get<licenseListResponse>(`${RESOURCE}`, {
     params: {
       PageNumber: pageNumber,
       PageSize: pageSize,
       productId: productId,
-      DepartmentId: departmentId
+      DepartmentId: departmentId,
     },
   });
 }
@@ -24,21 +29,24 @@ function fetchById(id: string | string[]) {
   return httpClient.get<licenseInfoResponse>(`${RESOURCE}/${id}`);
 }
 
-function lock(id: number | null) {
-  return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/lock`);
-}
-function unlock(id: number | null) {
-  return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/unlock`);
-}
+// function lock(id: number | null) {
+//   return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/lock`);
+// }
+// function unlock(id: number | null) {
+//   return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/unlock`);
+// }
 
 function deletelicense(id: number) {
   return httpClient.delete<MessageResponse>(`${RESOURCE}/${id}`);
+}
+
+function toggleLock(id: number, action: "unlock" | "lock") {
+  return httpClient.put<MessageResponse>(`${RESOURCE}/${id}/${action}`);
 }
 export const licenseService = {
   create,
   fetch,
   fetchById,
-  lock,
-  unlock,
   deletelicense,
+  toggleLock,
 };

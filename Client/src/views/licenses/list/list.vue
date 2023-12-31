@@ -7,7 +7,7 @@ import { productService } from "@/views/products/service";
 import { departmentService } from "@/views/departments/service";
 import type { departmentListItem } from "@/views/departments/list/model";
 import type { productListItem } from "@/views/products/list/model";
-import {formatDate} from "@/utils/timeFormat"
+import { formatDate } from "@/utils/timeFormat";
 
 const router = useRouter();
 const tempId = ref<number | null>();
@@ -97,10 +97,12 @@ watch(
   [() => filter.pageNo, () => filter.DepartmentId, () => filter.ProductId],
   ([pageNo, department, product]) => {
     const pageNumber: number = pageNo !== null ? Number(pageNo) : 0; // Using 0 as default if it's null
-    const departmentId: string | undefined = department !== null ? department : undefined;
-    const productId: string | undefined = product !== null ? product : undefined;
+    const departmentId: string | undefined =
+      department !== null ? department : undefined;
+    const productId: string | undefined =
+      product !== null ? product : undefined;
     getAll(pageNumber, filter.pageSize, productId, departmentId);
-  } 
+  }
 );
 
 const headers = ref<header[]>([
@@ -141,6 +143,17 @@ const deleteLicense = async () => {
     canceleDialog();
   } catch {
     console.error();
+  }
+};
+
+const toggleLock = async (licenseId: number, newLockState: boolean) => {
+  try {
+    const endpoint = newLockState ? "lock" : "unlock";
+    await licenseService.toggleLock(licenseId, endpoint);
+    getAll();
+    console.log(newLockState);
+  } catch (error) {
+    console.error(error);
   }
 };
 </script>
