@@ -9,9 +9,7 @@ export interface departmentListItem {
 export interface departmentsListFilter {
   pageNo: number;
   pageSize: number;
-  title: string | null;
-  date: string | null;
-  status: number | null;
+  name: string | null;
 }
 
 export interface header {
@@ -20,6 +18,6 @@ export interface header {
 }
 export interface departmentListResponse {
   content: departmentListItem[];
+  totalPages: number;
   msg: string;
 }
-

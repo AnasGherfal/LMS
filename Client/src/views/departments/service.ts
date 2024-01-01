@@ -4,12 +4,15 @@ import { departmentListResponse } from "./list/model";
 
 const RESOURCE = "Lookups/Departments";
 
-function fetch() {
-  return httpClient.get<departmentListResponse>(`${RESOURCE}`);
+function fetch(pageNumber?: number, pageSize?: number, name?: string) {
+  return httpClient.get<departmentListResponse>(`${RESOURCE}`, {
+    params: {
+      PageNumber: pageNumber,
+      PageSize: pageSize,
+      Search: name,
+    },
+  });
 }
-// function create(department: FormData) {
-//   return httpClient.post<MessageResponse>(`${RESOURCE}`, category);
-// }
 
 function fetchById(id: number) {
   return httpClient.get<MessageResponse>(`${RESOURCE}/${id}`);

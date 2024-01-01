@@ -9,6 +9,7 @@ import { departmentService } from "../service";
 const router = useRouter();
 const tempId = ref<number | null>();
 const doneDialog = ref<boolean>(false);
+const search = ref();
 
 onMounted(() => {
   getAll();
@@ -17,21 +18,18 @@ const pageTitle = router.currentRoute.value.meta.title;
 
 const filter = reactive<departmentsListFilter>({
   pageNo: 1,
-  pageSize: 7,
-  title: null,
-  status: null,
-  date: null,
+  pageSize: 20,
+  name: null,
 });
 const totalPages = ref(5);
 
-const departments = ref<departmentListItem[]>();
-const getAll = async () => {
+const departments = ref<departmentListItem[]>([]);
+const getAll = async (pageNo?: number, pageSize?: number, name?: string) => {
   try {
-    //loading.start();
-
-    const { data } = await departmentService.fetch();
-    //loading.stop();
+    const { data } = await departmentService.fetch(pageNo, pageSize, name);
+    // loading.stop();
     departments.value = data.content;
+    totalPages.value = data.totalPages;
   } catch {
     //loading.stop();
   }
@@ -43,7 +41,7 @@ const headers = ref<header[]>([
   { title: "إسم القسم", key: "name" },
 
   // { title: "تاريخ الإنشاء", key: "createdOn" },
-  { title: "الحالة", key: "isActive" },
+  { title: "المسؤول", key: "ownerName" },
 ]);
 
 // Method to navigate to the create category page

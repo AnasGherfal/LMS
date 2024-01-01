@@ -17,27 +17,36 @@
     </v-row>
     <v-row>
       <v-col md="3">
-        <text-field label="اسم القسم"> </text-field>
+        <text-field
+          label="بحث عن القسم"
+          v-model="filter.name"
+          clearable
+          rounded
+          @update:model-value="getAll()"
+        >
+        </text-field>
       </v-col>
     </v-row>
   </v-card-item>
   <v-card-text>
-    <v-table height="300px">
-      <thead>
-        <tr>
-          <th class="text-right">رقم التعريف</th>
-          <th class="text-right">إسم القسم</th>
-          <th class="text-right">المسؤول</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in departments" :key="item.id">
-          <td>{{ item.id }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.ownerName }}</td>
-        </tr>
-      </tbody>
-    </v-table>
+    <v-data-table :headers="headers" :items="departments" :search="filter.name">
+      <template v-slot:item.id="{ item }">
+        <span>{{item.id}}</span>
+      </template>
+      <template v-slot:item.name="{ item }">
+        <span>{{item.name}}</span>
+      </template>
+      <template v-slot:item.ownerName="{ item }">
+        <span>{{item.ownerName}}</span>
+      </template>
+    </v-data-table>
+    <v-pagination
+      v-model="filter.pageNo"
+      class="my-4"
+      :length="totalPages"
+      rounded="circle"
+    ></v-pagination>
+
     <!-- <v-table :headers="headers" :items="departments">
       <template v-slot:item.name="{ item }">
         <span>{{item.name}}</span>
