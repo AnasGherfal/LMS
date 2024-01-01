@@ -1,102 +1,114 @@
 ﻿<v-card class="mx-auto">
-    <v-card-item>
-      <v-card-title class="d-flex align-center pa-2">
-        {{pageTitle}}
-        <v-row>
-            <v-col class="d-flex justify-end">
-                <v-btn             icon="mdi mdi-keyboard-backspace"
-                color="error" variant="outlined" rounded="1" class="mx-2" @click="back()"></v-btn>
-            </v-col>
-        </v-row>
-      </v-card-title>
-    </v-card-item>
-    <v-card-text>
-        
-      <v-form @submit.prevent ref="">
-        <v-row>
-          <v-col md="3">
-            <auto-complete
-              v-model="license.productName"
-              :items="products"
-              item-title="name"
-              item-value="id"
-              label="المنتج"
-              disabled
-            ></auto-complete>
-          </v-col>
-          <v-col md="3">
-            <auto-complete
-              v-model="license.departmentName"
-              :items="departments"
-              item-title="name"
-              item-value="id"
-              label=" القسم"
-              disabled
-            ></auto-complete>
-          </v-col>
+  <v-card-item>
+    <v-card-title class="d-flex align-center pa-2">
+      {{pageTitle}}
+      <v-row>
+        <v-col class="d-flex justify-end">
+          <v-btn
+            icon="mdi mdi-keyboard-backspace"
+            color="error"
+            variant="outlined"
+            rounded="1"
+            class="mx-2"
+            @click="back()"
+          ></v-btn>
+        </v-col>
+      </v-row>
+    </v-card-title>
+  </v-card-item>
+  <v-card-text>
+    <v-form @submit.prevent ref="">
+      <v-row>
+        <v-col md="3">
+          <text-field
+          label="المنتج"
+          v-model="license.productName"
+          disabled
+        >
+        </text-field>
+       
+        </v-col>
 
-          <v-col md="3">
-            <text-field label="عدد الاجهزه" v-model="license.numOfDevices"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="رقم السيريل" v-model="license.serialKey"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="مستوى الخطر" v-model="license.impactLevel"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3" >
-            <text-field
-              label="معلومات عن مستوى الخطر"
-              v-model="license.impactDescription"
-              disabled
-            >
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="تاريخ بداية الترخيص" v-model="license.startDate"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="تاريخ انتهائ الترخيص" v-model="license.expireDate"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="مدة الترخيص" v-model="license.timeType"
-            disabled>
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field label="تواصل" v-model="license.contact"
-            disabled> </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field
-              label=" السعر بالدولار الامريكي"
-              v-model="license.priceInUSD"
-              disabled
-            >
-            </text-field>
-          </v-col>
-          <v-col md="3">
-            <text-field
-              label="السعر بالدينار الليبي"
-              v-model="license.priceInLYD"
-              disabled
-            >
-            </text-field>
-          </v-col>
-        </v-row>
+        <v-col md="3"
+          >
+          <text-field
+            label="القسم"
+            :value="getDepartmentNameById(license.departmentId)"
+            disabled
+          >
+          </text-field>
+ 
+        </v-col>
 
-      </v-form>
-
-    </v-card-text>
-  </v-card>
-  
+        <v-col md="3">
+          <text-field
+            label="عدد الاجهزه"
+            v-model="license.numOfDevices"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field label="رقم السيريل" v-model="license.serialKey" disabled>
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="مستوى الخطر"
+            :value="getImpactLevel(license.impactLevel)"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="معلومات عن مستوى الخطر"
+            v-model="license.impactDescription"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="تاريخ بداية الترخيص"
+            :value="formatDate(license.startDate)"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="تاريخ انتهاء الترخيص"
+            :value="formatDate(license.expireDate)"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field label="مدة الترخيص" :value="getLicenseTypes(license.timeType)" disabled>
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field label="تواصل" v-model="license.contact" disabled>
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label=" السعر بالدولار الامريكي"
+            v-model="license.priceInUSD"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="السعر بالدينار الليبي"
+            v-model="license.priceInLYD"
+            disabled
+          >
+          </text-field>
+        </v-col>
+      </v-row>
+    </v-form>
+  </v-card-text>
+</v-card>

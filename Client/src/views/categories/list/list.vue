@@ -6,7 +6,6 @@ import type {
   header,
 } from "./model.ts";
 import { categoryService } from "../service";
-
 const router = useRouter();
 const tempId = ref<number | null>();
 const doneDialog = ref<boolean>(false);

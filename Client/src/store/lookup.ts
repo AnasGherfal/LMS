@@ -5,6 +5,7 @@ import httpClient from "@/plugins/http-client";
 export interface LookupState {
   licenseTypesLookup: Lookup[];
   impactLevelLookup: Lookup[];
+
   // rolesLookup: Lookup[];
   // empsLookup: Lookup[];
 }
@@ -23,7 +24,7 @@ export const useLookupStore = defineStore("lookupStore", {
     async getLicenseTypes() {
       try {
         const { data } = await getLicenseTypes();
-        this.licenseTypesLookup = data;
+        this.licenseTypesLookup = data.content;
       } catch (err) {
         return Promise.reject(err);
       } 
@@ -32,11 +33,11 @@ export const useLookupStore = defineStore("lookupStore", {
       try {
         const { data } = await getImpactLevel();
         this.impactLevelLookup = data.content;
-        return data;
       } catch (err) {
         return Promise.reject(err);
       }
     },
+
 
 
     // async getRoles() {
@@ -58,7 +59,7 @@ export const useLookupStore = defineStore("lookupStore", {
 
 const RESOURCE = "Lookups";
 function getLicenseTypes() {
-  return httpClient.get<Lookup[]>(`${RESOURCE}/License-Types`);
+  return httpClient.get(`${RESOURCE}/License-Types`);
 }
 function getImpactLevel() {
   return httpClient.get(`${RESOURCE}/Impact-Levels`);
