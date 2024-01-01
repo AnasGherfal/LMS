@@ -3,28 +3,7 @@ const router = useRouter();
 const links = router.options.routes[0].children;
 // const hasAccess = (link: any) => link.meta.roles.includes(identity.user.roleId);
 
-const side = [
-  {
-    title: "الرخص",
-    icon: "mdi mdi-license",
-    path: "/licenses",
-  },
-  {
-    title: "المنتجات",
-    icon: "mdi mdi-package-variant",
-    path: "/products",
-  },
-  {
-    title: "الفئات",
-    icon: "mdi mdi-shape",
-    path: "/categories",
-  },
-  {
-    title: "الأقسام",
-    icon: "mdi mdi-sitemap",
-    path: "/departments",
-  },
-];
+
 </script>
 
 <template>

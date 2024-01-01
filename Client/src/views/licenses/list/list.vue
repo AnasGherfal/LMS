@@ -107,17 +107,17 @@ watch(
 
 const headers = ref<header[]>([
   // { title: "#", key: "id" },
-  { title: " المنتج", key: "productName" },
-  { title: "القسم", key: "departmentId" },
+  { title: " المنتج", key: "productName" , width: '10%'},
+  { title: "القسم", key: "departmentId" , width: '20%'},
 
-  { title: "تواصل", key: "contact" },
-  { title: "مستوى الخطوره", key: "impactLevel" },
-  { title: "تاريخ بداية الترخيص", key: "startDate" },
-  { title: "تاريخ نهاية الترخيص", key: "expireDate" },
-  { title: "الحالة", key: "isActive" },
+  // { title: "تواصل", key: "contact" , width: '5%'},
+  { title: "مستوى الخطوره", key: "impactLevel", width: '10%' },
+  { title: "تاريخ بداية الترخيص", key: "startDate", width: '10%' },
+  { title: "تاريخ نهاية الترخيص", key: "expireDate", width: '10%' },
+  { title: "الحالة", key: "isActive", width: '5%' },
   //   { title: "تاريخ الانشاء", key: "createdOn" },
 
-  { title: "الإجراءات", key: "actions" },
+  { title: "الإجراءات", key: "actions" , width: '30%' },
 ]);
 
 const create = () => {

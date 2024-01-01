@@ -4,6 +4,7 @@
   
       const router = useRouter();
       const items = computed(() => (router.currentRoute.value.matched.filter(s => s.name != 'Home').map(a => a.meta)));
+      const identity = useIdentityStore();
 
   
   </script>
@@ -18,7 +19,7 @@
                 </template>
             </v-breadcrumbs>
         <v-spacer></v-spacer>
-        <v-btn prepend-icon="mdi-logout" variant="text" rounded="1">
+        <v-btn prepend-icon="mdi-logout" variant="text" rounded="1" @click="identity.logout()">
   تسجيل خروج
 </v-btn>
     </v-app-bar>

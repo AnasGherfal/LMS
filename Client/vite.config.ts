@@ -42,11 +42,8 @@ export default defineConfig({
     },
     extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
   },
-  build: {
-    outDir: "../wwwroot",
-},
+
   server: {
     port: 5174,
-
   },
 });

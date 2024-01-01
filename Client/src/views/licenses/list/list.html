@@ -64,7 +64,7 @@
           size="small"
         ></v-chip>
       </template>
-      <template v-slot:item.actions="{ item }">
+      <template v-slot:item.actions="{ item }" >
         <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
             <v-btn icon v-bind="props" variant="text" @click="view(item.id)">

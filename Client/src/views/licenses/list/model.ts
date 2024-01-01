@@ -18,7 +18,8 @@ export interface licenseListFilter {
 }
 export interface header {
     title: string,
-    key: string
+    key: string,
+    width: string,
 }
 export interface licenseListResponse {
     content: licenseListItem[];

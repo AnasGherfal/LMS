@@ -1,6 +1,4 @@
 import router from "@/router";
-//import { useIdentityStore } from "@/stores/Identity";
-//import { useWarningStore } from "@/stores/warning";
 import type { AxiosError, AxiosRequestConfig } from "axios";
 import axios from "axios";
 
@@ -19,9 +17,9 @@ httpClient.interceptors.request.use(
         const loading = useLoadingStore();
         loading.start();
         const store = useIdentityStore();
-        // if (config.headers != undefined) {
-        //     config.headers.Authorization = `Bearer ${store.token}`;
-        // }
+        if (config.headers != undefined) {
+            config.headers.Authorization = `Bearer ${store.token}`;
+        }
         return config;
     },
     // (error) => Promise.reject(error)
@@ -56,7 +54,7 @@ httpClient.interceptors.response.use(
             }: { status: any; data: any } = error.response;
 
             if (status === 401) {
-                // identityStore.logout();
+                identityStore.logout();
             } else if (status === 403) {
                 window.location.replace(import.meta.env.VITE_LOGINPAGE);
             } else if (status === 404) {
