@@ -32,7 +32,7 @@ public class VerifiedUser : Attribute, IAuthorizationFilter
     private static bool HasAppPermission(AuthorizationFilterContext context)
     {
         var apps = ParseApps(context.HttpContext.User.FindFirst(nameof(ClaimKey.apps))?.Value ?? "");
-        return apps.Contains("4");
+        return apps.Contains("11");
     }
     
     private bool HasPermission(AuthorizationFilterContext context)
