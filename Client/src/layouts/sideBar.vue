@@ -29,12 +29,11 @@ const side = [
 
 <template>
   <v-navigation-drawer class="sidebar" permanent>
-    <v-list-item
-      class="sidebar__brand"
-      prepend-avatar="/newLogo.png"
-      title="نظام إدارة الرخص"
-    ></v-list-item>
-    <hr class="sidebar__hr" />
+    <v-list-item class="  sidebar__brand">
+      <img src="/whitelogo.png" />
+    </v-list-item>
+    <h3 class="text-center mb-4">نظام إدارة التراخيص</h3>
+    <hr class="sidebar__hr" /> 
     <v-list class="sidebar__nav pa-0">
       <div v-for="(link, i) in links">
         <v-list-item link :key="i" :title="link.meta.title" :to="link.path">
