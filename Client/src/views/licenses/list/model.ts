@@ -8,6 +8,7 @@
       DepartmentName : string | null;
       IsActive : boolean | null;
       CreatedOn : string | null;
+      isExpired: boolean | null;
 }
 
 export interface licenseListFilter {

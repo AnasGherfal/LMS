@@ -14,6 +14,10 @@
     timeType : number | null;
     priceInUSD : string | null;
     priceInLYD : string | null;
+    endOfSupport: string | null;
+    endOfManufacture: string | null;
+    endOfSale: string | null;
+    productType: string | null;
 }
 
 export interface licenseInfoResponse {

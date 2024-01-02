@@ -19,7 +19,6 @@
           ></auto-complete>
         </v-col>
         <v-col md="3">
-
           <auto-complete
             v-model="license.departmentId"
             :items="departments"
@@ -31,18 +30,40 @@
           ></auto-complete>
         </v-col>
 
-        <v-col md="2">
-          <text-field label="عدد الاجهزه" v-model="license.numOfDevices" :rules="rules">
+        <v-col md="3">
+          <select-field
+            label="نوع المنتج"
+            v-model="license.productType"
+            :items="store.productTypesLookup"
+            item-title="name"
+            item-value="id"
+            :rules="rules"
+          >
+          </select-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="عدد الاجهزه"
+            v-model="license.numOfDevices"
+            :rules="rules"
+          >
           </text-field>
         </v-col>
-        <v-col md="4">
-          <text-field label="رقم السيريل" v-model="license.serialKey"
-          :rules="rules">
+        <v-col md="3">
+          <text-field
+            label="رقم السيريل"
+            v-model="license.serialKey"
+            :rules="rules"
+          >
           </text-field>
         </v-col>
 
         <v-col md="3">
-          <date-picker label="تاريخ بداية الترخيص" v-model="license.startDate" :rules="rules">
+          <date-picker
+            label="تاريخ بداية الترخيص"
+            v-model="license.startDate"
+            :rules="rules"
+          >
           </date-picker>
         </v-col>
         <v-col md="3">
@@ -53,18 +74,44 @@
           >
           </date-picker>
         </v-col>
-        <v-col md="2">
-          <select-field
-          label="مستوى الخطر"
-          v-model="license.impactLevel"
-          :items="store.impactLevelLookup"
-          item-title="name"
-          item-value="id"
-          :rules="rules"
-        >
-        </select-field>
+
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء الدعم"
+            v-model="license.endOfSupport"
+            :rules="rules"
+          >
+          </date-picker>
         </v-col>
-        <v-col md="4">
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء التصنيع"
+            v-model="license.endOfManufacture"
+            :rules="rules"
+          >
+          </date-picker>
+        </v-col>
+
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء البيع"
+            v-model="license.endOfSale"
+            :rules="rules"
+          >
+          </date-picker>
+        </v-col>
+        <v-col md="3">
+          <select-field
+            label="مستوى الخطر"
+            v-model="license.impactLevel"
+            :items="store.impactLevelLookup"
+            item-title="name"
+            item-value="id"
+            :rules="rules"
+          >
+          </select-field>
+        </v-col>
+        <v-col md="3">
           <text-area
             label="معلومات عن مستوى الخطر"
             v-model="license.impactDescription"
@@ -83,9 +130,7 @@
           </select-field>
         </v-col>
 
-        <v-col md="3">
-          <text-field label="تواصل" v-model="license.contact"> </text-field>
-        </v-col>
+
         <v-col md="3">
           <text-field
             label=" السعر بالدولار الامريكي"
@@ -105,11 +150,18 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-btn type="submit" rounded="1" class="mx-2" @click="create()" 
+          <v-btn type="submit" rounded="1" class="mx-2" @click="create()"
             >اضافة
           </v-btn>
-          <v-btn type="cancel" color="error" variant="outlined" rounded="1" class="mx-2" @click="router.back()">رجوع</v-btn>
-
+          <v-btn
+            type="cancel"
+            color="error"
+            variant="outlined"
+            rounded="1"
+            class="mx-2"
+            @click="router.back()"
+            >رجوع</v-btn
+          >
         </v-col>
       </v-row>
     </v-form>

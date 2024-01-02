@@ -20,24 +20,42 @@
     <v-form @submit.prevent ref="">
       <v-row>
         <v-col md="3">
-          <text-field
-          label="المنتج"
-          v-model="license.productName"
-          disabled
-        >
-        </text-field>
-       
+          <text-field label="المنتج" v-model="license.productName" disabled>
+          </text-field>
         </v-col>
 
-        <v-col md="3"
-          >
+        <v-col md="3">
           <text-field
             label="القسم"
             :value="getDepartmentNameById(license.departmentId)"
             disabled
           >
           </text-field>
- 
+        </v-col>
+
+        <v-col md="3">
+          <text-field
+            label="اسم المسؤول"
+            :value="getDepartmentOwnerNameById(license.departmentId)"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="البريد الالكتروني"
+            :value="getDepartmentEmailById(license.departmentId)"
+            disabled
+          >
+          </text-field>
+        </v-col>
+        <v-col md="3">
+          <text-field
+            label="رقم الهاتف"
+            :value="getDepartmentPhoneNumberById(license.departmentId)"
+            disabled
+          >
+          </text-field>
         </v-col>
 
         <v-col md="3">
@@ -85,13 +103,45 @@
           </text-field>
         </v-col>
         <v-col md="3">
-          <text-field label="مدة الترخيص" :value="getLicenseTypes(license.timeType)" disabled>
+          <text-field
+            label="نوع المنتج"
+            :value="license.productType"
+            disabled
+          >
           </text-field>
         </v-col>
-        <v-col md="3">
-          <text-field label="تواصل" v-model="license.contact" disabled>
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء الدعم"
+            v-model="license.endOfSupport"
+            disabled
+          >
+          </date-picker>
+        </v-col>
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء التصنيع"
+            v-model="license.endOfManufacture"
+            disabled          >
+          </date-picker>
+        </v-col>
+
+        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+          <date-picker
+            label="تاريخ انتهاء البيع"
+            :value="license.endOfSale"
+            disabled          >
+          </date-picker>
+        </v-col>
+        <v-col md="3">`
+          <text-field
+            label="مدة الترخيص"
+            :value="getLicenseTypes(license.timeType)"
+            disabled
+          >
           </text-field>
         </v-col>
+
         <v-col md="3">
           <text-field
             label=" السعر بالدولار الامريكي"

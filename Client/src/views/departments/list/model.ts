@@ -1,9 +1,10 @@
 export interface departmentListItem {
   id: string | null;
-  icon: string | null;
   name: string | null;
-  isActive: boolean | null;
-  createdOn: string | null;
+  ownerName: string;
+  email: string;
+  phoneNumber: string;
+  domain: string;
 }
 
 export interface departmentsListFilter {

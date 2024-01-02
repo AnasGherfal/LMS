@@ -1,4 +1,4 @@
-import { getToken, removeToken } from "../utils/tokenCookies";
+// import { getToken, removeToken } from "../utils/tokenCookies";
 import { defineStore } from "pinia";
 import httpClient from "@/plugins/http-client";
 
@@ -20,7 +20,7 @@ export const useIdentityStore = defineStore({
         }
     }),
     getters: {
-        token: () => getToken(),
+        // token: () => getToken(),
     },
     actions: {
         // async getUser() {
@@ -37,7 +37,7 @@ export const useIdentityStore = defineStore({
         //     }
         // },
         logout() {
-            removeToken();
+            // removeToken();
             window.location.replace(import.meta.env.VITE_LOGINPAGE);
         },
     },

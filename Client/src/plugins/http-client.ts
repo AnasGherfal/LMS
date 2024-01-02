@@ -3,7 +3,7 @@ import type { AxiosError, AxiosRequestConfig } from "axios";
 import axios from "axios";
 
 const config = {
-    baseURL: "/v1.0/management",
+    baseURL: "http://localhost:5173/v1.0/management",
     timeout: 60000,
     headers: { "Content-type": "Application/json" },
 };
@@ -18,7 +18,7 @@ httpClient.interceptors.request.use(
         loading.start();
         const store = useIdentityStore();
         if (config.headers != undefined) {
-            config.headers.Authorization = `Bearer ${store.token}`;
+            // config.headers.Authorization = `Bearer ${store.token}`;
         }
         return config;
     },

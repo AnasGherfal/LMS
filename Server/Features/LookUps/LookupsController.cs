@@ -52,4 +52,18 @@ public class LookupsController : ManagementController
             }).ToList();
         return new ListResponse<FetchLookUpsQueryResponse>("", data);
     }
+
+    [HttpGet("Product-Types")]
+    public async Task<ListResponse<FetchLookUpsQueryResponse>> GetProductTypes()
+    {
+        var data = Enum.GetValues(typeof(ProductType))
+            .Cast<ProductType>()
+            .ToList()
+            .Select(p => new FetchLookUpsQueryResponse()
+            {
+                Id = (short)p,
+                Name = p.ToString()
+            }).ToList();
+        return new ListResponse<FetchLookUpsQueryResponse>("", data);
+    }
 }

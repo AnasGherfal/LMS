@@ -41,6 +41,27 @@
   </v-card-item>
   <v-card-text>
     <v-data-table :headers="headers" :items="licenses">
+      
+      <template v-slot:item.isExpired="{ item }">
+        <v-tooltip location="top">
+          <template v-slot:activator="{ props }">
+
+        <v-chip v-bind="props" v-show="isExpired(item.expireDate)"
+        :color="isExpired(item.expireDate) == true ? 'red' : 'green'"
+        label
+        size="small"
+      >
+      <v-icon   icon="mdi mdi-alert "></v-icon>
+
+    </v-chip>
+    
+      </template>
+      <span>الرخصة منتهية الصلاحية</span>
+
+      </v-tooltip>
+</template>
+
+
       <template v-slot:item.productName="{ item }">
         <span>{{item.productName}}</span>
       </template>
@@ -53,6 +74,7 @@
       <template v-slot:item.startDate="{ item }">
         <span>{{formatDate(item.startDate)}}</span>
       </template>
+      
       <template v-slot:item.expireDate="{ item }">
         <span>{{formatDate(item.expireDate)}}</span>
       </template>

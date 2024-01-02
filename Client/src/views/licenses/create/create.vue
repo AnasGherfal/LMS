@@ -15,7 +15,6 @@ const products = ref<productListItem>();
 const departmentOwner = ref();
 const store = useLookupStore();
 const loading = useLoadingStore();
-
 const rules = computed(() => [
     (v: any) => !!v || 'مطلوب',
 ]);
@@ -33,7 +32,14 @@ const license = reactive<License>({
   timeType: null,
   priceInUSD: null,
   priceInLYD: null,
+  productType: null,
+  endOfSale: null, 
+  endOfManufacture: null,
+  endOfSupport: null,
+
 });
+
+
 const filter = reactive({
   pageNo: 1,
   pageSize: 10,
@@ -47,6 +53,7 @@ onMounted(() => {
   getDepartments();
   store.getLicenseTypes();
   store.getImpactLevel();
+  store.getProdcutsTypes();
 
 });
 

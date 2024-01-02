@@ -36,6 +36,10 @@ const license = ref<licenseInfo>({
   priceInLYD: null,
   isActive: null,
   createdOn: null,
+  productType: null,
+  endOfSale: null, 
+  endOfManufacture: null,
+  endOfSupport: null,
 });
 
 const getById = async () => {
@@ -67,6 +71,23 @@ const getDepartmentNameById = (departmentId: number | null) => {
   return department ? department.name : "";
 };
 
+const getDepartmentEmailById = (departmentId: number | null) => {
+  const department = departments.value?.find((dep) => dep.id === departmentId);
+
+  return department ? department.email : "";
+};
+
+const getDepartmentPhoneNumberById = (departmentId: number | null) => {
+  const department = departments.value?.find((dep) => dep.id === departmentId);
+
+  return department ? department.phoneNumber : "";
+};
+
+const getDepartmentOwnerNameById = (departmentId: number | null) => {
+  const department = departments.value?.find((dep) => dep.id === departmentId);
+
+  return department ? department.ownerName : "";
+};
 const getImpactLevel = (impactLevelId: number | null) => {
   const impactLevel = store.impactLevelLookup.find(
     (dep) => dep.id === impactLevelId

@@ -11,6 +11,10 @@ export interface License{
     priceInUSD : string | null;
     priceInLYD : string | null;
     departmentId : string | null;
+    endOfSupport: string | null;
+    endOfManufacture: string | null;
+    endOfSale: string | null;
+    productType: string | null;
 
 }
 
