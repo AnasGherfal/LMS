@@ -88,7 +88,13 @@ const getDepartments = async () => {
 const create = async () => {
   const licenseForm = new FormData();
   loading.start();
-
+  for (const [key, value] of Object.entries(license)) {
+    if (key === "endOfSupport" || key === "endOfManufacture" || key === "endOfSale") {
+      if (value === null) {
+        license[key] = "";
+      }
+    }
+  }
   for (const [key, value] of Object.entries(license)) {
     licenseForm.append(`${key}`, value as any);
   }

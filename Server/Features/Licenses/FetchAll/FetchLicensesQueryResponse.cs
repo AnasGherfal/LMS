@@ -9,9 +9,9 @@ public sealed record FetchLicensesQueryResponse : IRequest<PagedResponse<FetchLi
     public ImpactLevel ImpactLevel { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime ExpireDate { get; set; }
-    public DateTime? EndOfSupport { get; set; }
-    public DateTime? EndOfManufacture { get; set; }
-    public DateTime? EndOfSale { get; set; }
+    public DateTime EndOfSupport { get; set; }
+    public DateTime EndOfManufacture { get; set; }
+    public DateTime EndOfSale { get; set; }
     public ProductType ProductType { get; set; }
     public string ProductName { get; set; } = string.Empty;
     public int DepartmentId { get; set; } = default!;

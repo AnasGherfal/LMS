@@ -111,27 +111,27 @@
           </text-field>
         </v-col>
         <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
-          <date-picker
+          <text-field
             label="تاريخ انتهاء الدعم"
-            v-model="license.endOfSupport"
+            :value="license.endOfSupport"
             disabled
           >
-          </date-picker>
+          </text-field>
         </v-col>
         <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
-          <date-picker
+          <text-field
             label="تاريخ انتهاء التصنيع"
-            v-model="license.endOfManufacture"
+            :value="license.endOfManufacture"
             disabled          >
-          </date-picker>
+          </text-field>
         </v-col>
 
         <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
-          <date-picker
+          <text-field
             label="تاريخ انتهاء البيع"
             :value="license.endOfSale"
             disabled          >
-          </date-picker>
+          </text-field>
         </v-col>
         <v-col md="3">`
           <text-field

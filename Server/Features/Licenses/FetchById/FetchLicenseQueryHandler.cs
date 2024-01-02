@@ -27,7 +27,7 @@ public sealed record FetchLicenseQueryHandler(AppDbContext _dbContext) : IReques
                 StartDate=p.StartDate,
                 ExpireDate=p.ExpireDate,
                 EndOfManufacture = p.EndOfManufacture,
-                EndOfSale = p.EndOfSale!,
+                EndOfSale = p.EndOfSale,
                 EndOfSupport = p.EndOfSupport,
                 ProductType = p.ProductType,
                 ImpactLevel =p.ImpactLevel,
