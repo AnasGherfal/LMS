@@ -1,0 +1,48 @@
+    syntax = "proto3";
+    import "google/protobuf/empty.proto";
+    option csharp_namespace = "Management.Protos.LMS";
+
+    service LMSEmpInfo {
+      rpc GetEmpInfo(EmpInfoRequest) returns (EmpInfoResponse);
+      rpc GetDepartments(google.protobuf.Empty) returns (DepartmentResponse);
+      rpc GetDepartmentsLookup(google.protobuf.Empty) returns (LookupResponse);
+    }
+
+    message EmpInfoRequest {
+    	string emp_id = 1;
+    }
+
+    message EmpInfoResponse{
+    	int32 emp_id = 1;
+    	string emp_code = 2;
+    	string full_name = 3;
+    	string user_name = 4;
+    	string job_desc = 5;
+    	string entity = 6;
+    	int32 entity_id = 7;
+    	string act_entity = 8;
+    	int32 act_entity_id = 9;
+    	string act_job_desc = 10;
+    }
+
+
+    message DepartmentResponse {
+    	repeated DepartmentEntity content = 1;
+    }
+
+    message DepartmentEntity {
+    	int32 id = 1;
+    	string name = 2;
+    	string owner_name = 3;
+    	string email = 4;
+    	string phone_number = 5;
+    }
+
+    message LookupResponse {
+    	repeated LookupEntity content = 1;
+    }
+
+    message LookupEntity {
+    	int32 id = 1;
+    	string name = 2;
+    }

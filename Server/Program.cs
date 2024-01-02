@@ -24,7 +24,7 @@ app.UseCors(o => o.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 app.UsePersistence();
 app.UseDefaultFiles();
 app.UseStaticFiles();
-app.UseSwagger(app.Environment.IsDevelopment());
+app.UseSwagger(true);
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();

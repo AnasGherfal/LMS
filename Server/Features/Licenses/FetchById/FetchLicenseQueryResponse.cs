@@ -11,11 +11,15 @@ public sealed record FetchLicenseQueryResponse
     public ImpactLevel ImpactLevel { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime ExpireDate { get; set; }
+    public DateTime? EndOfSupport { get; set; }
+    public DateTime? EndOfManufacture { get; set; }
+    public DateTime? EndOfSale { get; set; }
+    public ProductType ProductType { get; set; }
     public string? ImpactDescription { get; set; }
     public decimal PriceInUSD { get; set; }
     public decimal PriceInLYD { get; set; }
     public string ProductName { get; set; } = string.Empty;
-    public short? DepartmentId  { get; set; }= default!;
+    public int? DepartmentId  { get; set; }= default!;
     public Guid? ProductId { get; set; } = Guid.Empty;
     public bool IsActive { get; set; } = true;
     public DateTime CreatedOn { get; set; }

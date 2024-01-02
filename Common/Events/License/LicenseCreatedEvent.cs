@@ -19,6 +19,10 @@ public class LicenseCreatedEventData : IEventData
     public string SerialKey { get; set; } = string.Empty;
     public TimeType TimeType { get; set; }= default!;
     public string Contact { get; set; } = string.Empty;
+    public DateTime? EndOfSupport { get; set; }
+    public DateTime? EndOfManufacture { get; set; }
+    public DateTime? EndOfSale { get; set; }
+    public ProductType ProductType { get; set; }
     public ImpactLevel ImpactLevel { get; set; } = default!;
     public DateTime StartDate { get; set; } = default!;
     public DateTime ExpireDate { get; set; } = default!;

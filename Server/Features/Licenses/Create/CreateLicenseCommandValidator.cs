@@ -25,6 +25,8 @@ public class CreateLicenseCommandValidator : AbstractValidator<CreateLicenseComm
             .NotEmpty();
         RuleFor(a => a.ImpactLevel)
             .NotEmpty();
+        RuleFor(a => a.ProductType)
+         .NotEmpty();
 
     }
 }

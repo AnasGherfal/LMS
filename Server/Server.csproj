@@ -11,8 +11,68 @@
 	</PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Proto\TMSEmpInfo.proto" />
-    <None Remove="Proto\Users.proto" />
+    <Content Remove="wwwroot\assets\create-2e7876c8.js" />
+    <Content Remove="wwwroot\assets\create-3cdc505a.js" />
+    <Content Remove="wwwroot\assets\create-61131459.js" />
+    <Content Remove="wwwroot\assets\create-6919e0e5.js" />
+    <Content Remove="wwwroot\assets\create-6c5c21d6.js" />
+    <Content Remove="wwwroot\assets\create-8f7dffb4.js" />
+    <Content Remove="wwwroot\assets\create-d857c3ef.js" />
+    <Content Remove="wwwroot\assets\create-dde2f726.js" />
+    <Content Remove="wwwroot\assets\handlers-94f01643.js" />
+    <Content Remove="wwwroot\assets\http-client-0793d2cb.js" />
+    <Content Remove="wwwroot\assets\http-client-f1babb99.js" />
+    <Content Remove="wwwroot\assets\index-6747e731.js" />
+    <Content Remove="wwwroot\assets\index-7a4b5fc4.js" />
+    <Content Remove="wwwroot\assets\index-8e82caf7.js" />
+    <Content Remove="wwwroot\assets\index-9938890c.css" />
+    <Content Remove="wwwroot\assets\index-9f1e0c40.js" />
+    <Content Remove="wwwroot\assets\index-c5c494e8.js" />
+    <Content Remove="wwwroot\assets\index-c895e941.js" />
+    <Content Remove="wwwroot\assets\index-cb64ae17.js" />
+    <Content Remove="wwwroot\assets\index-e4f39889.js" />
+    <Content Remove="wwwroot\assets\index-e5f2338f.js" />
+    <Content Remove="wwwroot\assets\index-f2580fa3.js" />
+    <Content Remove="wwwroot\assets\list-0dea5d0e.js" />
+    <Content Remove="wwwroot\assets\list-15c1dda4.js" />
+    <Content Remove="wwwroot\assets\list-25e375d2.js" />
+    <Content Remove="wwwroot\assets\list-275aab09.js" />
+    <Content Remove="wwwroot\assets\list-3b977fea.js" />
+    <Content Remove="wwwroot\assets\list-9b83c050.js" />
+    <Content Remove="wwwroot\assets\list-a4f8ee27.js" />
+    <Content Remove="wwwroot\assets\list-b3d7f254.js" />
+    <Content Remove="wwwroot\assets\lookup-657a97d1.js" />
+    <Content Remove="wwwroot\assets\lookup-fa8eb5a0.js" />
+    <Content Remove="wwwroot\assets\materialdesignicons-webfont-48d3eec6.woff" />
+    <Content Remove="wwwroot\assets\materialdesignicons-webfont-861aea05.eot" />
+    <Content Remove="wwwroot\assets\materialdesignicons-webfont-bd725a7a.ttf" />
+    <Content Remove="wwwroot\assets\materialdesignicons-webfont-e52d60f6.woff2" />
+    <Content Remove="wwwroot\assets\service-05c01b2f.js" />
+    <Content Remove="wwwroot\assets\service-25765380.js" />
+    <Content Remove="wwwroot\assets\service-28c94a64.js" />
+    <Content Remove="wwwroot\assets\service-370bb7cf.js" />
+    <Content Remove="wwwroot\assets\service-9e6122ac.js" />
+    <Content Remove="wwwroot\assets\service-fd42f1db.js" />
+    <Content Remove="wwwroot\assets\Tajawal-Bold-f92b69ca.ttf" />
+    <Content Remove="wwwroot\assets\Tajawal-Light-e33bbcee.ttf" />
+    <Content Remove="wwwroot\assets\Tajawal-Medium-908276c0.ttf" />
+    <Content Remove="wwwroot\assets\Tajawal-Regular-910e6857.ttf" />
+    <Content Remove="wwwroot\assets\timeFormat-bb625eec.js" />
+    <Content Remove="wwwroot\assets\view-2612980d.js" />
+    <Content Remove="wwwroot\assets\view-26b27246.js" />
+    <Content Remove="wwwroot\assets\view-3972dc55.js" />
+    <Content Remove="wwwroot\assets\view-461f33b9.js" />
+    <Content Remove="wwwroot\assets\view-586e455a.js" />
+    <Content Remove="wwwroot\assets\view-9bc74793.js" />
+    <Content Remove="wwwroot\assets\view-ae29008f.js" />
+    <Content Remove="wwwroot\assets\view-fe5ce6c5.js" />
+    <Content Remove="wwwroot\company_logo.png" />
+    <Content Remove="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\index.html" />
+    <Content Remove="wwwroot\ltt.jpg" />
+    <Content Remove="wwwroot\newLogo.png" />
+    <Content Remove="wwwroot\white.png" />
+    <Content Remove="wwwroot\whitelogo.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
@@ -53,12 +113,72 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Proto\TMSEmpInfo.proto" GrpcServices="Client" />
-    <Protobuf Include="Proto\Users.proto" GrpcServices="Client" />
+	  <Protobuf Include="Proto\LMSEmpInfo.proto" GrpcServices="Client" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\assets\create-2e7876c8.js" />
+    <None Include="wwwroot\assets\create-3cdc505a.js" />
+    <None Include="wwwroot\assets\create-61131459.js" />
+    <None Include="wwwroot\assets\create-6919e0e5.js" />
+    <None Include="wwwroot\assets\create-6c5c21d6.js" />
+    <None Include="wwwroot\assets\create-8f7dffb4.js" />
+    <None Include="wwwroot\assets\create-d857c3ef.js" />
+    <None Include="wwwroot\assets\create-dde2f726.js" />
+    <None Include="wwwroot\assets\handlers-94f01643.js" />
+    <None Include="wwwroot\assets\http-client-0793d2cb.js" />
+    <None Include="wwwroot\assets\http-client-f1babb99.js" />
+    <None Include="wwwroot\assets\index-6747e731.js" />
+    <None Include="wwwroot\assets\index-7a4b5fc4.js" />
+    <None Include="wwwroot\assets\index-8e82caf7.js" />
+    <None Include="wwwroot\assets\index-9938890c.css" />
+    <None Include="wwwroot\assets\index-9f1e0c40.js" />
+    <None Include="wwwroot\assets\index-c5c494e8.js" />
+    <None Include="wwwroot\assets\index-c895e941.js" />
+    <None Include="wwwroot\assets\index-cb64ae17.js" />
+    <None Include="wwwroot\assets\index-e4f39889.js" />
+    <None Include="wwwroot\assets\index-e5f2338f.js" />
+    <None Include="wwwroot\assets\index-f2580fa3.js" />
+    <None Include="wwwroot\assets\list-0dea5d0e.js" />
+    <None Include="wwwroot\assets\list-15c1dda4.js" />
+    <None Include="wwwroot\assets\list-25e375d2.js" />
+    <None Include="wwwroot\assets\list-275aab09.js" />
+    <None Include="wwwroot\assets\list-3b977fea.js" />
+    <None Include="wwwroot\assets\list-9b83c050.js" />
+    <None Include="wwwroot\assets\list-a4f8ee27.js" />
+    <None Include="wwwroot\assets\list-b3d7f254.js" />
+    <None Include="wwwroot\assets\lookup-657a97d1.js" />
+    <None Include="wwwroot\assets\lookup-fa8eb5a0.js" />
+    <None Include="wwwroot\assets\materialdesignicons-webfont-48d3eec6.woff" />
+    <None Include="wwwroot\assets\materialdesignicons-webfont-861aea05.eot" />
+    <None Include="wwwroot\assets\materialdesignicons-webfont-bd725a7a.ttf" />
+    <None Include="wwwroot\assets\materialdesignicons-webfont-e52d60f6.woff2" />
+    <None Include="wwwroot\assets\service-05c01b2f.js" />
+    <None Include="wwwroot\assets\service-25765380.js" />
+    <None Include="wwwroot\assets\service-28c94a64.js" />
+    <None Include="wwwroot\assets\service-370bb7cf.js" />
+    <None Include="wwwroot\assets\service-9e6122ac.js" />
+    <None Include="wwwroot\assets\service-fd42f1db.js" />
+    <None Include="wwwroot\assets\Tajawal-Bold-f92b69ca.ttf" />
+    <None Include="wwwroot\assets\Tajawal-Light-e33bbcee.ttf" />
+    <None Include="wwwroot\assets\Tajawal-Medium-908276c0.ttf" />
+    <None Include="wwwroot\assets\Tajawal-Regular-910e6857.ttf" />
+    <None Include="wwwroot\assets\timeFormat-bb625eec.js" />
+    <None Include="wwwroot\assets\view-2612980d.js" />
+    <None Include="wwwroot\assets\view-26b27246.js" />
+    <None Include="wwwroot\assets\view-3972dc55.js" />
+    <None Include="wwwroot\assets\view-461f33b9.js" />
+    <None Include="wwwroot\assets\view-586e455a.js" />
+    <None Include="wwwroot\assets\view-9bc74793.js" />
+    <None Include="wwwroot\assets\view-ae29008f.js" />
+    <None Include="wwwroot\assets\view-fe5ce6c5.js" />
+    <None Include="wwwroot\company_logo.png" />
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\ltt.jpg" />
+    <None Include="wwwroot\newLogo.png" />
+    <None Include="wwwroot\white.png" />
+    <None Include="wwwroot\whitelogo.png" />
   </ItemGroup>
 
   <ItemGroup>

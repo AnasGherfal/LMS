@@ -10,11 +10,7 @@ public class UpdateLicenseCommandValidator:AbstractValidator<UpdateLicenseComman
         RuleFor(c => c.Id)
           .NotEmpty()
           .IsGuid();
-        When(((p, _) => p.Contact != null), () =>
-        {
-            RuleFor(a => a.Contact)
-                .NotEmpty();
-        });
+       
         When(((p, _) => p.SerialKey != null), () =>
         {
             RuleFor(a => a.SerialKey)

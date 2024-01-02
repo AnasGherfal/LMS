@@ -10,15 +10,18 @@ public class License : Entity
     public int NumOfDevices { get; set; }
     public string? SerialKey { get; set; }
     public TimeType TimeType { get; set; }
-    public string Contact { get; set; } = string.Empty;
     public ImpactLevel ImpactLevel { get; set; }
     public DateTime StartDate { get; set; }
     public DateTime ExpireDate { get; set; }
+    public DateTime? EndOfSupport { get; set; }
+    public DateTime? EndOfManufacture { get; set; }
+    public DateTime? EndOfSale { get; set; }
+    public ProductType ProductType { get; set; }
     public string? ImpactDescription { get; set; }
     public decimal PriceInUSD { get; set; }
     public decimal PriceInLYD { get; set; }
     public EntityStatus Status { get; set; }
-    public short DepartmentId { get; set; }
+    public int DepartmentId { get; set; }
     public Guid ProductId { get; set; }
     public Product Product { get; set; } = default!;
     public void Apply(LicenseCreatedEvent @event)
@@ -30,8 +33,11 @@ public class License : Entity
         NumOfDevices = @event.Data.NumOfDevices;
         ImpactDescription = @event.Data.ImpactDescription;
         DepartmentId = @event.Data.DepartmentId;
+        ProductType=@event.Data.ProductType;
+        EndOfManufacture = @event.Data.EndOfManufacture; 
+        EndOfSale = @event.Data.EndOfSale;
+        EndOfSupport = @event.Data.EndOfSupport;
         ProductId = @event.Data.ProductId;
-        Contact = @event.Data.Contact;
         ImpactLevel = @event.Data.ImpactLevel;
         StartDate = @event.Data.StartDate;
         ExpireDate = @event.Data.ExpireDate;
@@ -49,6 +55,10 @@ public class License : Entity
         ImpactDescription = @event.Data.ImpactDescription??ImpactDescription;
         DepartmentId = @event.Data.DepartmentId ?? DepartmentId;
         ProductId = @event.Data.ProductId ?? ProductId;
+        ProductType = @event.Data.ProductType;
+        EndOfManufacture = @event.Data.EndOfManufacture;
+        EndOfSale = @event.Data.EndOfSale;
+        EndOfSupport = @event.Data.EndOfSupport;
         ImpactLevel = @event.Data.ImpactLevel ?? ImpactLevel;
         StartDate = @event.Data.StartDate ?? StartDate;
         ExpireDate = @event.Data.ExpireDate ?? ExpireDate;
