@@ -34,6 +34,8 @@ for (const [key, value] of Object.entries(category)) {
   
     try {
         const { data } = await categoryService.create(categoryForm);
+        router.push({ name: "CategoriesList" });
+
         router.back();
         // loading.stop();
     } catch {

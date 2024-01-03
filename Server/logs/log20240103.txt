@@ -1,0 +1,1162 @@
+2024-01-03 10:34:54 [INF] User profile is available. Using 'C:\Users\as.gherfal\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-01-03 10:34:54 [INF] Now listening on: http://localhost:5173
+2024-01-03 10:34:54 [INF] Application started. Press Ctrl+C to shut down.
+2024-01-03 10:34:54 [INF] Hosting environment: Development
+2024-01-03 10:34:54 [INF] Content root path: C:\Users\as.gherfal\Documents\cs\LTT\LMS\Server
+2024-01-03 10:34:55 [INF] No SPA development server running at https://localhost:5173 found.
+2024-01-03 10:34:55 [ERR] Failed to launch the SPA development server 'npm run dev'.
+System.ComponentModel.Win32Exception (267): An error occurred trying to start process 'powershell.exe' with working directory 'C:\Users\as.gherfal\Documents\cs\LTT\LMS\Server\..\tms.client'. The directory name is invalid.
+   at System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.LaunchStopScriptWindows(Int32 spaProcessId)
+   at Microsoft.AspNetCore.SpaProxy.SpaProxyLaunchManager.LaunchDevelopmentProxy()
+2024-01-03 10:34:55 [INF] Request starting HTTP/1.1 GET http://localhost:5173/swagger/index.html - null null
+2024-01-03 10:34:55 [INF] Request finished HTTP/1.1 GET http://localhost:5173/swagger/index.html - 200 null text/html;charset=utf-8 194.9881ms
+2024-01-03 10:34:55 [INF] Request starting HTTP/1.1 GET http://localhost:5173/_framework/aspnetcore-browser-refresh.js - null null
+2024-01-03 10:34:55 [INF] Request starting HTTP/1.1 GET http://localhost:5173/_vs/browserLink - null null
+2024-01-03 10:34:55 [INF] Request finished HTTP/1.1 GET http://localhost:5173/_framework/aspnetcore-browser-refresh.js - 200 13748 application/javascript; charset=utf-8 6.7488ms
+2024-01-03 10:34:55 [INF] Request finished HTTP/1.1 GET http://localhost:5173/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.0114ms
+2024-01-03 10:34:55 [INF] Request starting HTTP/1.1 GET http://localhost:5173/swagger/v1/swagger.json - null null
+2024-01-03 10:34:55 [INF] Request finished HTTP/1.1 GET http://localhost:5173/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 155.8383ms
+2024-01-03 10:34:57 [ERR] Couldn't start the SPA development server with command 'npm run dev'.
+2024-01-03 10:34:59 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 10:34:59 [INF] CORS policy execution successful.
+2024-01-03 10:34:59 [WRN] Failed to determine the https port for redirect.
+2024-01-03 10:34:59 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:34:59 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:34:59 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:34:59 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 314.6872ms
+2024-01-03 10:34:59 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:34:59 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 374.0144ms
+2024-01-03 10:35:07 [INF] Request starting HTTP/1.1 POST http://localhost:5173/v1.0/management/categories - multipart/form-data; boundary=----WebKitFormBoundaryooFB5wtIVhFkPaRI 244056
+2024-01-03 10:35:07 [INF] CORS policy execution successful.
+2024-01-03 10:35:07 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Create (Server)'
+2024-01-03 10:35:07 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.MessageResponse] Create(Server.Features.Categories.Create.CreateCategoryCommand) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:35:08 [INF] Saved 3 entities to in-memory store.
+2024-01-03 10:35:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.MessageResponse'.
+2024-01-03 10:35:08 [INF] Executed action Server.Features.Categories.CategoriesController.Create (Server) in 520.2634ms
+2024-01-03 10:35:08 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Create (Server)'
+2024-01-03 10:35:08 [INF] Request finished HTTP/1.1 POST http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 528.9725ms
+2024-01-03 10:37:00 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:37:00 [INF] CORS policy execution successful.
+2024-01-03 10:37:00 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:00 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:37:00 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:00 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 65.755ms
+2024-01-03 10:37:00 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:00 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 71.1608ms
+2024-01-03 10:37:02 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 10:37:02 [INF] CORS policy execution successful.
+2024-01-03 10:37:02 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:37:02 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:37:02 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:02 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 11.7397ms
+2024-01-03 10:37:02 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:37:02 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 12.6837ms
+2024-01-03 10:37:07 [INF] Request starting HTTP/1.1 POST http://localhost:5173/v1.0/management/products - multipart/form-data; boundary=----WebKitFormBoundaryRJr8mrGqeop12KM2 411897
+2024-01-03 10:37:07 [INF] CORS policy execution successful.
+2024-01-03 10:37:07 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Create (Server)'
+2024-01-03 10:37:07 [INF] Route matched with {action = "Create", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.MessageResponse] Create(Server.Features.Products.Create.CreateProductCommand) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:37:07 [INF] Saved 3 entities to in-memory store.
+2024-01-03 10:37:07 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.MessageResponse'.
+2024-01-03 10:37:07 [INF] Executed action Server.Features.Products.ProductsController.Create (Server) in 56.6161ms
+2024-01-03 10:37:07 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Create (Server)'
+2024-01-03 10:37:07 [INF] Request finished HTTP/1.1 POST http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 65.5951ms
+2024-01-03 10:37:07 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:37:07 [INF] CORS policy execution successful.
+2024-01-03 10:37:07 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:07 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:37:07 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:07 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 7.3725ms
+2024-01-03 10:37:07 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:07 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 8.4236ms
+2024-01-03 10:37:07 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - null null
+2024-01-03 10:37:07 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:37:07 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 10:37:07 [INF] Executing FileStreamResult, sending file with download name '919d4217-9297-4d78-97f7-7b1421ee1fad.png' ...
+2024-01-03 10:37:07 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 40.5933ms
+2024-01-03 10:37:07 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:37:07 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - 200 411169 image/png 58.8123ms
+2024-01-03 10:37:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:37:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:37:48 [INF] CORS policy execution successful.
+2024-01-03 10:37:48 [INF] CORS policy execution successful.
+2024-01-03 10:37:48 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:48 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:37:48 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:37:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:37:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:37:48 [INF] CORS policy execution successful.
+2024-01-03 10:37:48 [INF] CORS policy execution successful.
+2024-01-03 10:37:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:37:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:37:48 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:37:48 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:37:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:48 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 4.7888ms
+2024-01-03 10:37:48 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:37:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 5.4442ms
+2024-01-03 10:37:48 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:37:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:48 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 9.9747ms
+2024-01-03 10:37:48 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:37:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 13.1431ms
+2024-01-03 10:37:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:48 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 39.3161ms
+2024-01-03 10:37:48 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:37:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 43.3441ms
+2024-01-03 10:37:49 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:37:49 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 470.3809ms
+2024-01-03 10:37:49 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:37:49 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 476.3818ms
+2024-01-03 10:38:36 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 10:38:36 [INF] CORS policy execution successful.
+2024-01-03 10:38:36 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:38:36 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:38:36 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:36 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 3.2203ms
+2024-01-03 10:38:36 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:38:36 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 4.0574ms
+2024-01-03 10:38:36 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - null null
+2024-01-03 10:38:36 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:38:36 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 10:38:36 [INF] Executing FileStreamResult, sending file with download name 'bdfe7c3c-2446-4e84-88a6-3395775a6133.png' ...
+2024-01-03 10:38:36 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 4.8553ms
+2024-01-03 10:38:36 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:38:36 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - 200 243653 image/png 5.5034ms
+2024-01-03 10:38:42 [INF] Request starting HTTP/1.1 POST http://localhost:5173/v1.0/management/categories - multipart/form-data; boundary=----WebKitFormBoundarylm5kahapeSjp8ixx 324096
+2024-01-03 10:38:42 [INF] CORS policy execution successful.
+2024-01-03 10:38:42 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Create (Server)'
+2024-01-03 10:38:42 [INF] Route matched with {action = "Create", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.MessageResponse] Create(Server.Features.Categories.Create.CreateCategoryCommand) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:38:42 [INF] Saved 3 entities to in-memory store.
+2024-01-03 10:38:42 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.MessageResponse'.
+2024-01-03 10:38:42 [INF] Executed action Server.Features.Categories.CategoriesController.Create (Server) in 14.0525ms
+2024-01-03 10:38:42 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Create (Server)'
+2024-01-03 10:38:42 [INF] Request finished HTTP/1.1 POST http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 14.9976ms
+2024-01-03 10:38:42 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 10:38:42 [INF] CORS policy execution successful.
+2024-01-03 10:38:42 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:38:42 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 10:38:42 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:42 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 2.97ms
+2024-01-03 10:38:42 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 10:38:42 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 3.7687ms
+2024-01-03 10:38:42 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - null null
+2024-01-03 10:38:42 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:38:42 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 10:38:42 [INF] Executing FileStreamResult, sending file with download name '100391f9-64a7-4601-b56e-fd5d160ba5d8.png' ...
+2024-01-03 10:38:42 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 3.9083ms
+2024-01-03 10:38:42 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 10:38:42 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - 200 323709 image/png 4.4838ms
+2024-01-03 10:38:44 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:38:44 [INF] CORS policy execution successful.
+2024-01-03 10:38:44 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:44 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:38:44 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:44 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.8429ms
+2024-01-03 10:38:44 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:44 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 2.6033ms
+2024-01-03 10:38:45 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:38:45 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:38:45 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:38:45 [INF] CORS policy execution successful.
+2024-01-03 10:38:45 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:38:45 [INF] CORS policy execution successful.
+2024-01-03 10:38:45 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:38:45 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:45 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:38:45 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:38:45 [INF] CORS policy execution successful.
+2024-01-03 10:38:45 [INF] CORS policy execution successful.
+2024-01-03 10:38:45 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:38:45 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:38:45 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:45 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:45 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:45 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:45 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.2668ms
+2024-01-03 10:38:45 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:38:45 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.0853ms
+2024-01-03 10:38:45 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 1.3752ms
+2024-01-03 10:38:45 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:45 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.5837ms
+2024-01-03 10:38:45 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:45 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 1.6011ms
+2024-01-03 10:38:45 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:38:45 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 2.2759ms
+2024-01-03 10:38:45 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:45 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 79.9227ms
+2024-01-03 10:38:45 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:38:45 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 81.287ms
+2024-01-03 10:38:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:38:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:38:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:38:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:38:48 [INF] CORS policy execution successful.
+2024-01-03 10:38:48 [INF] CORS policy execution successful.
+2024-01-03 10:38:48 [INF] CORS policy execution successful.
+2024-01-03 10:38:48 [INF] CORS policy execution successful.
+2024-01-03 10:38:48 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:38:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:38:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:38:48 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:38:48 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:48 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:48 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.3706ms
+2024-01-03 10:38:48 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:38:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.7059ms
+2024-01-03 10:38:48 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - null null
+2024-01-03 10:38:48 [INF] CORS policy execution successful.
+2024-01-03 10:38:48 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:38:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:48 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.4273ms
+2024-01-03 10:38:48 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:38:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.9929ms
+2024-01-03 10:38:48 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:48 [INF] Route matched with {action = "GetProductTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetProductTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:38:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:48 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 5.157ms
+2024-01-03 10:38:48 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:38:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 8.6628ms
+2024-01-03 10:38:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:48 [INF] Executed action Server.Features.LookUps.LookupsController.GetProductTypes (Server) in 5.3717ms
+2024-01-03 10:38:48 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:38:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - 200 null application/json; charset=utf-8 8.6499ms
+2024-01-03 10:38:48 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:38:48 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 55.506ms
+2024-01-03 10:38:48 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:38:48 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 56.1333ms
+2024-01-03 10:39:12 [INF] Request starting HTTP/1.1 POST http://localhost:5173/v1.0/management/licenses - multipart/form-data; boundary=----WebKitFormBoundaryeJLU3xtMI3vEYz3y 1717
+2024-01-03 10:39:12 [INF] CORS policy execution successful.
+2024-01-03 10:39:12 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Create (Server)'
+2024-01-03 10:39:12 [INF] Route matched with {action = "Create", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.MessageResponse] Create(Server.Features.Licenses.Create.CreateLicenseCommand) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:12 [INF] Saved 2 entities to in-memory store.
+2024-01-03 10:39:12 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.MessageResponse'.
+2024-01-03 10:39:12 [INF] Executed action Server.Features.Licenses.LicensesController.Create (Server) in 120.2934ms
+2024-01-03 10:39:12 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Create (Server)'
+2024-01-03 10:39:12 [INF] Request finished HTTP/1.1 POST http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 124.1385ms
+2024-01-03 10:39:12 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:39:12 [INF] CORS policy execution successful.
+2024-01-03 10:39:12 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:12 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:39:12 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:12 [INF] CORS policy execution successful.
+2024-01-03 10:39:12 [INF] CORS policy execution successful.
+2024-01-03 10:39:12 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:12 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:12 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:12 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:39:12 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:12 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:12 [INF] CORS policy execution successful.
+2024-01-03 10:39:12 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:12 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:12 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:12 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.3382ms
+2024-01-03 10:39:12 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:12 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.7184ms
+2024-01-03 10:39:12 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:12 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.3556ms
+2024-01-03 10:39:12 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:12 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.6816ms
+2024-01-03 10:39:12 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:12 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 5.3343ms
+2024-01-03 10:39:12 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:12 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 5.9901ms
+2024-01-03 10:39:12 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:12 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 63.2844ms
+2024-01-03 10:39:12 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:12 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 63.7128ms
+2024-01-03 10:39:14 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:39:14 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:14 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:39:14 [INF] CORS policy execution successful.
+2024-01-03 10:39:14 [INF] CORS policy execution successful.
+2024-01-03 10:39:14 [INF] CORS policy execution successful.
+2024-01-03 10:39:14 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:14 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:14 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:14 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:14 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:14 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:14 [INF] CORS policy execution successful.
+2024-01-03 10:39:14 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:14 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:14 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:14 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:14 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.3246ms
+2024-01-03 10:39:14 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.2302ms
+2024-01-03 10:39:14 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:14 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:14 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.5113ms
+2024-01-03 10:39:14 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.8715ms
+2024-01-03 10:39:14 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:14 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:14 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 43.9969ms
+2024-01-03 10:39:14 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:14 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 47.7958ms
+2024-01-03 10:39:14 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:14 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 56.4276ms
+2024-01-03 10:39:14 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:14 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 57.0472ms
+2024-01-03 10:39:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:39:37 [INF] CORS policy execution successful.
+2024-01-03 10:39:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:37 [INF] CORS policy execution successful.
+2024-01-03 10:39:37 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:37 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:37 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:37 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:39:37 [INF] CORS policy execution successful.
+2024-01-03 10:39:37 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:37 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:39:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:37 [INF] CORS policy execution successful.
+2024-01-03 10:39:37 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:37 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:37 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.412ms
+2024-01-03 10:39:37 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.73ms
+2024-01-03 10:39:37 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 2.2447ms
+2024-01-03 10:39:37 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 2.9499ms
+2024-01-03 10:39:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:37 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.5751ms
+2024-01-03 10:39:37 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.9643ms
+2024-01-03 10:39:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:37 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 74.152ms
+2024-01-03 10:39:37 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 74.5718ms
+2024-01-03 10:39:39 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:39:39 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:39 [INF] CORS policy execution successful.
+2024-01-03 10:39:39 [INF] CORS policy execution successful.
+2024-01-03 10:39:39 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:39 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:39 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:39 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:39 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:39:39 [INF] CORS policy execution successful.
+2024-01-03 10:39:39 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:39 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:39 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:39 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1429ms
+2024-01-03 10:39:39 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:39 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.3952ms
+2024-01-03 10:39:39 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:39 [INF] CORS policy execution successful.
+2024-01-03 10:39:39 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:39 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:39 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:39 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0938ms
+2024-01-03 10:39:39 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:39 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.2806ms
+2024-01-03 10:39:39 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:39 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 2.8051ms
+2024-01-03 10:39:39 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:39 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 3.4439ms
+2024-01-03 10:39:39 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:39 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 72.8622ms
+2024-01-03 10:39:39 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:39 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 73.3853ms
+2024-01-03 10:39:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:39:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:39:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:46 [INF] CORS policy execution successful.
+2024-01-03 10:39:46 [INF] CORS policy execution successful.
+2024-01-03 10:39:46 [INF] CORS policy execution successful.
+2024-01-03 10:39:46 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:46 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:46 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:46 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:39:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:46 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:46 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:46 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1504ms
+2024-01-03 10:39:46 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.4453ms
+2024-01-03 10:39:46 [INF] CORS policy execution successful.
+2024-01-03 10:39:46 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:46 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:46 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.597ms
+2024-01-03 10:39:46 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:46 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 1.3192ms
+2024-01-03 10:39:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.9859ms
+2024-01-03 10:39:46 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 2.0182ms
+2024-01-03 10:39:47 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:47 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 68.1402ms
+2024-01-03 10:39:47 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:47 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 68.6728ms
+2024-01-03 10:39:49 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:39:49 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:49 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:49 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:39:49 [INF] CORS policy execution successful.
+2024-01-03 10:39:49 [INF] CORS policy execution successful.
+2024-01-03 10:39:49 [INF] CORS policy execution successful.
+2024-01-03 10:39:49 [INF] CORS policy execution successful.
+2024-01-03 10:39:49 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:49 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:49 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:49 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:49 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:49 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:49 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:49 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:49 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:49 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:49 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1114ms
+2024-01-03 10:39:49 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1441ms
+2024-01-03 10:39:49 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:49 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:49 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.5442ms
+2024-01-03 10:39:49 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.6012ms
+2024-01-03 10:39:49 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:49 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 3.2172ms
+2024-01-03 10:39:49 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:39:49 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 3.6952ms
+2024-01-03 10:39:49 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:49 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 92.1214ms
+2024-01-03 10:39:49 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:49 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 92.5191ms
+2024-01-03 10:39:52 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:39:52 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:39:52 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:52 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:52 [INF] CORS policy execution successful.
+2024-01-03 10:39:52 [INF] CORS policy execution successful.
+2024-01-03 10:39:52 [INF] CORS policy execution successful.
+2024-01-03 10:39:52 [INF] CORS policy execution successful.
+2024-01-03 10:39:52 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:52 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:52 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:52 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:52 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:52 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:52 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:39:52 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:39:52 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:52 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1766ms
+2024-01-03 10:39:52 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:52 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.5464ms
+2024-01-03 10:39:52 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:52 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:52 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.1153ms
+2024-01-03 10:39:52 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 1.1322ms
+2024-01-03 10:39:52 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:52 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:39:52 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.5703ms
+2024-01-03 10:39:52 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 1.6157ms
+2024-01-03 10:39:52 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:52 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 51.4367ms
+2024-01-03 10:39:52 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:52 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 51.8991ms
+2024-01-03 10:39:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:39:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:39:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:39:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:39:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - null null
+2024-01-03 10:39:54 [INF] CORS policy execution successful.
+2024-01-03 10:39:54 [INF] CORS policy execution successful.
+2024-01-03 10:39:54 [INF] CORS policy execution successful.
+2024-01-03 10:39:54 [INF] CORS policy execution successful.
+2024-01-03 10:39:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:54 [INF] CORS policy execution successful.
+2024-01-03 10:39:54 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:54 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:54 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:39:54 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:39:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:54 [INF] Route matched with {action = "GetProductTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetProductTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:54 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:39:54 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1288ms
+2024-01-03 10:39:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:39:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.4871ms
+2024-01-03 10:39:54 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.109ms
+2024-01-03 10:39:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:39:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.4836ms
+2024-01-03 10:39:54 [INF] Executed action Server.Features.LookUps.LookupsController.GetProductTypes (Server) in 0.2192ms
+2024-01-03 10:39:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:39:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - 200 null application/json; charset=utf-8 0.5529ms
+2024-01-03 10:39:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:54 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.2027ms
+2024-01-03 10:39:54 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:39:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.7384ms
+2024-01-03 10:39:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:39:54 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 61.8624ms
+2024-01-03 10:39:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:39:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 62.3242ms
+2024-01-03 10:40:08 [INF] Request starting HTTP/1.1 POST http://localhost:5173/v1.0/management/licenses - multipart/form-data; boundary=----WebKitFormBoundaryIz5LoqH2GHSwDdFH 1691
+2024-01-03 10:40:08 [INF] CORS policy execution successful.
+2024-01-03 10:40:08 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Create (Server)'
+2024-01-03 10:40:08 [INF] Route matched with {action = "Create", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.MessageResponse] Create(Server.Features.Licenses.Create.CreateLicenseCommand) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:40:08 [INF] Saved 2 entities to in-memory store.
+2024-01-03 10:40:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.MessageResponse'.
+2024-01-03 10:40:08 [INF] Executed action Server.Features.Licenses.LicensesController.Create (Server) in 3.1059ms
+2024-01-03 10:40:08 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Create (Server)'
+2024-01-03 10:40:08 [INF] Request finished HTTP/1.1 POST http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 3.4367ms
+2024-01-03 10:40:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:40:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:40:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:40:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:40:08 [INF] CORS policy execution successful.
+2024-01-03 10:40:08 [INF] CORS policy execution successful.
+2024-01-03 10:40:08 [INF] CORS policy execution successful.
+2024-01-03 10:40:08 [INF] CORS policy execution successful.
+2024-01-03 10:40:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:40:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:40:08 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:40:08 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:40:08 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:40:08 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:40:08 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:40:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:08 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:40:08 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1728ms
+2024-01-03 10:40:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:40:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.6028ms
+2024-01-03 10:40:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:08 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.3154ms
+2024-01-03 10:40:08 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 1.2655ms
+2024-01-03 10:40:08 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:40:08 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:40:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.6955ms
+2024-01-03 10:40:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 2.0368ms
+2024-01-03 10:40:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:08 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 66.986ms
+2024-01-03 10:40:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:40:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 67.4168ms
+2024-01-03 10:40:10 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - null null
+2024-01-03 10:40:10 [INF] CORS policy execution successful.
+2024-01-03 10:40:10 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:40:10 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:40:10 [INF] CORS policy execution successful.
+2024-01-03 10:40:10 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:40:10 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:40:10 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:40:10 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:40:10 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:40:10 [INF] CORS policy execution successful.
+2024-01-03 10:40:10 [INF] CORS policy execution successful.
+2024-01-03 10:40:10 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:40:10 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:40:10 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:10 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1553ms
+2024-01-03 10:40:10 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:40:10 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.6394ms
+2024-01-03 10:40:10 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:40:10 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:40:10 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:10 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0793ms
+2024-01-03 10:40:10 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:40:10 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.9033ms
+2024-01-03 10:40:10 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:10 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.5717ms
+2024-01-03 10:40:10 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:40:10 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - 200 null application/json; charset=utf-8 2.0993ms
+2024-01-03 10:40:10 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:40:10 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 89.4615ms
+2024-01-03 10:40:10 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:40:10 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 89.7021ms
+2024-01-03 10:41:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - null null
+2024-01-03 10:41:46 [INF] CORS policy execution successful.
+2024-01-03 10:41:46 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:41:46 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:41:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:41:46 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 3.2736ms
+2024-01-03 10:41:46 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:41:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - 200 null application/json; charset=utf-8 4.2143ms
+2024-01-03 10:41:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:41:46 [INF] CORS policy execution successful.
+2024-01-03 10:41:46 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:41:46 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:41:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:41:46 [INF] CORS policy execution successful.
+2024-01-03 10:41:46 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:41:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:41:46 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:41:46 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 2.3216ms
+2024-01-03 10:41:46 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:41:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 3.0784ms
+2024-01-03 10:41:46 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:41:46 [INF] CORS policy execution successful.
+2024-01-03 10:41:46 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:41:46 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:41:46 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:41:46 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.0894ms
+2024-01-03 10:41:46 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:41:46 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.3006ms
+2024-01-03 10:41:47 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:41:47 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 76.4676ms
+2024-01-03 10:41:47 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:41:47 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 78.8418ms
+2024-01-03 10:43:25 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - null null
+2024-01-03 10:43:25 [INF] CORS policy execution successful.
+2024-01-03 10:43:25 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:25 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:43:25 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:43:25 [INF] CORS policy execution successful.
+2024-01-03 10:43:25 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:43:25 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:25 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:25 [INF] CORS policy execution successful.
+2024-01-03 10:43:25 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:25 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:25 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:43:25 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:25 [INF] CORS policy execution successful.
+2024-01-03 10:43:25 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:25 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:25 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1466ms
+2024-01-03 10:43:25 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:25 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:25 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.3961ms
+2024-01-03 10:43:25 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0744ms
+2024-01-03 10:43:25 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:25 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.2212ms
+2024-01-03 10:43:25 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:25 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.2742ms
+2024-01-03 10:43:25 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:25 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - 200 null application/json; charset=utf-8 1.6804ms
+2024-01-03 10:43:25 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:25 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 67.7307ms
+2024-01-03 10:43:25 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:25 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 68.0444ms
+2024-01-03 10:43:51 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - null null
+2024-01-03 10:43:51 [INF] CORS policy execution successful.
+2024-01-03 10:43:51 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:51 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:43:51 [INF] CORS policy execution successful.
+2024-01-03 10:43:51 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:43:51 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:51 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:51 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:43:51 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:43:51 [INF] CORS policy execution successful.
+2024-01-03 10:43:51 [INF] CORS policy execution successful.
+2024-01-03 10:43:51 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:51 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:51 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:51 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:51 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:51 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:51 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0969ms
+2024-01-03 10:43:51 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1081ms
+2024-01-03 10:43:51 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:51 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:51 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.2981ms
+2024-01-03 10:43:51 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.2528ms
+2024-01-03 10:43:51 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:51 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.8663ms
+2024-01-03 10:43:51 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:51 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/15f183fe-ea1f-4524-bc20-fb6788c28f2f - 200 null application/json; charset=utf-8 2.4626ms
+2024-01-03 10:43:51 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:51 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 53.5668ms
+2024-01-03 10:43:51 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:51 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 53.9057ms
+2024-01-03 10:43:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 10:43:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 10:43:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:43:54 [INF] CORS policy execution successful.
+2024-01-03 10:43:54 [INF] CORS policy execution successful.
+2024-01-03 10:43:54 [INF] CORS policy execution successful.
+2024-01-03 10:43:54 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:43:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:54 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:43:54 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 10:43:54 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:54 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:43:54 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:43:54 [INF] CORS policy execution successful.
+2024-01-03 10:43:54 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:54 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:54 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.097ms
+2024-01-03 10:43:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.2559ms
+2024-01-03 10:43:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:54 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 0.9807ms
+2024-01-03 10:43:54 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.0195ms
+2024-01-03 10:43:54 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 10:43:54 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 10:43:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 1.3656ms
+2024-01-03 10:43:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 1.5507ms
+2024-01-03 10:43:54 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:54 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 55.0014ms
+2024-01-03 10:43:54 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:54 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 55.3865ms
+2024-01-03 10:43:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:43:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:43:57 [INF] CORS policy execution successful.
+2024-01-03 10:43:57 [INF] CORS policy execution successful.
+2024-01-03 10:43:57 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:57 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:43:57 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:43:57 [INF] CORS policy execution successful.
+2024-01-03 10:43:57 [INF] CORS policy execution successful.
+2024-01-03 10:43:57 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:57 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:57 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:43:57 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:57 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1244ms
+2024-01-03 10:43:57 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:43:57 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.3734ms
+2024-01-03 10:43:57 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0729ms
+2024-01-03 10:43:57 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:57 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:43:57 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:43:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.4879ms
+2024-01-03 10:43:57 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:57 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 0.8932ms
+2024-01-03 10:43:57 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:43:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.3309ms
+2024-01-03 10:43:57 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:43:57 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 55.0608ms
+2024-01-03 10:43:57 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:43:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 55.7432ms
+2024-01-03 10:46:13 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:46:13 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:46:13 [INF] CORS policy execution successful.
+2024-01-03 10:46:13 [INF] CORS policy execution successful.
+2024-01-03 10:46:13 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:46:13 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:46:13 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:46:13 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:46:13 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:46:13 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:46:13 [INF] CORS policy execution successful.
+2024-01-03 10:46:13 [INF] CORS policy execution successful.
+2024-01-03 10:46:13 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:46:13 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:46:13 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:46:13 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:46:13 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:46:13 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:46:13 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:46:13 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1027ms
+2024-01-03 10:46:13 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0859ms
+2024-01-03 10:46:13 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:46:13 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:46:13 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 0.991ms
+2024-01-03 10:46:13 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.3423ms
+2024-01-03 10:46:13 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:46:13 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.3482ms
+2024-01-03 10:46:13 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.3ms
+2024-01-03 10:46:13 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:46:13 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 67.4759ms
+2024-01-03 10:46:13 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:46:13 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 67.7571ms
+2024-01-03 10:47:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:47:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:47:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:47:37 [INF] CORS policy execution successful.
+2024-01-03 10:47:37 [INF] CORS policy execution successful.
+2024-01-03 10:47:37 [INF] CORS policy execution successful.
+2024-01-03 10:47:37 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:47:37 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:47:37 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:47:37 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:47:37 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:37 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:37 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1094ms
+2024-01-03 10:47:37 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:47:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.4842ms
+2024-01-03 10:47:37 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:47:37 [INF] CORS policy execution successful.
+2024-01-03 10:47:37 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:47:37 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:37 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0756ms
+2024-01-03 10:47:37 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:47:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.2308ms
+2024-01-03 10:47:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:37 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.5609ms
+2024-01-03 10:47:37 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:47:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.8771ms
+2024-01-03 10:47:37 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:37 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 131.4307ms
+2024-01-03 10:47:37 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:47:37 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 131.8736ms
+2024-01-03 10:47:58 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:47:58 [INF] CORS policy execution successful.
+2024-01-03 10:47:58 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:47:58 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:47:58 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:47:58 [INF] CORS policy execution successful.
+2024-01-03 10:47:58 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:47:58 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:58 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:58 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:47:58 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.0606ms
+2024-01-03 10:47:58 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:47:58 [INF] CORS policy execution successful.
+2024-01-03 10:47:58 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:47:58 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.3944ms
+2024-01-03 10:47:58 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:58 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:58 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:47:58 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1754ms
+2024-01-03 10:47:58 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:47:58 [INF] CORS policy execution successful.
+2024-01-03 10:47:58 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.356ms
+2024-01-03 10:47:58 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:47:58 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:47:58 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:58 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1234ms
+2024-01-03 10:47:58 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:47:58 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.3104ms
+2024-01-03 10:47:58 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:47:58 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 67.3553ms
+2024-01-03 10:47:58 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:47:58 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 67.8233ms
+2024-01-03 10:48:26 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:48:26 [INF] CORS policy execution successful.
+2024-01-03 10:48:26 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:48:26 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:48:26 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:48:26 [INF] CORS policy execution successful.
+2024-01-03 10:48:26 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:48:26 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:48:26 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:26 [INF] CORS policy execution successful.
+2024-01-03 10:48:26 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:48:26 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:26 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:48:26 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:26 [INF] CORS policy execution successful.
+2024-01-03 10:48:26 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:48:26 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.0854ms
+2024-01-03 10:48:26 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:26 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:48:26 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.2992ms
+2024-01-03 10:48:26 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:26 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.0727ms
+2024-01-03 10:48:26 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:48:26 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.234ms
+2024-01-03 10:48:26 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:26 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.0284ms
+2024-01-03 10:48:26 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:48:26 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.8228ms
+2024-01-03 10:48:26 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:26 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 58.9951ms
+2024-01-03 10:48:26 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:48:26 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 59.3847ms
+2024-01-03 10:48:33 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:48:33 [INF] CORS policy execution successful.
+2024-01-03 10:48:33 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:48:33 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:48:33 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:48:33 [INF] CORS policy execution successful.
+2024-01-03 10:48:33 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:48:33 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:33 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:48:33 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:33 [INF] CORS policy execution successful.
+2024-01-03 10:48:33 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:48:33 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:48:33 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:33 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.2595ms
+2024-01-03 10:48:33 [INF] CORS policy execution successful.
+2024-01-03 10:48:33 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:48:33 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:33 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:48:33 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 1.7925ms
+2024-01-03 10:48:33 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:48:33 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.1738ms
+2024-01-03 10:48:33 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:48:33 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:33 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.6844ms
+2024-01-03 10:48:33 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1683ms
+2024-01-03 10:48:33 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:48:33 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.6939ms
+2024-01-03 10:48:33 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:48:33 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 101.7413ms
+2024-01-03 10:48:33 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:48:33 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 102.1326ms
+2024-01-03 10:49:11 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:49:11 [INF] CORS policy execution successful.
+2024-01-03 10:49:11 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:49:11 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:49:11 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:49:11 [INF] CORS policy execution successful.
+2024-01-03 10:49:11 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:49:11 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:49:11 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:49:11 [INF] CORS policy execution successful.
+2024-01-03 10:49:11 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:49:11 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:49:11 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:49:11 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.109ms
+2024-01-03 10:49:11 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:49:11 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:49:11 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 0.4389ms
+2024-01-03 10:49:11 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:49:11 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 3.081ms
+2024-01-03 10:49:11 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:49:11 [INF] CORS policy execution successful.
+2024-01-03 10:49:11 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 3.4941ms
+2024-01-03 10:49:11 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - null null
+2024-01-03 10:49:11 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:49:11 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:49:11 [INF] CORS policy execution successful.
+2024-01-03 10:49:11 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:49:11 [INF] Route matched with {action = "GetProductTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetProductTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:49:11 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:49:11 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1014ms
+2024-01-03 10:49:11 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:49:11 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:49:11 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.386ms
+2024-01-03 10:49:11 [INF] Executed action Server.Features.LookUps.LookupsController.GetProductTypes (Server) in 0.1176ms
+2024-01-03 10:49:11 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:49:11 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - 200 null application/json; charset=utf-8 0.2844ms
+2024-01-03 10:49:11 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:49:11 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 118.5492ms
+2024-01-03 10:49:11 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:49:11 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 119.2221ms
+2024-01-03 10:53:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - null null
+2024-01-03 10:53:08 [INF] CORS policy execution successful.
+2024-01-03 10:53:08 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:53:08 [INF] Route matched with {action = "FetchById", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ContentResponse`1[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse]] FetchById(System.String) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 10:53:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 10:53:08 [INF] CORS policy execution successful.
+2024-01-03 10:53:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:53:08 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:53:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ContentResponse`1[[Server.Features.Licenses.FetchById.FetchLicenseQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:53:08 [INF] Executed action Server.Features.Licenses.LicensesController.FetchById (Server) in 1.769ms
+2024-01-03 10:53:08 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.FetchById (Server)'
+2024-01-03 10:53:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses/9c1d2d32-ea0b-44f5-93b8-1d88db842674 - 200 null application/json; charset=utf-8 2.2463ms
+2024-01-03 10:53:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 10:53:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 10:53:08 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - null null
+2024-01-03 10:53:08 [INF] CORS policy execution successful.
+2024-01-03 10:53:08 [INF] CORS policy execution successful.
+2024-01-03 10:53:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:53:08 [INF] CORS policy execution successful.
+2024-01-03 10:53:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:53:08 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:53:08 [INF] Route matched with {action = "GetProductTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetProductTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:53:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:53:08 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:53:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:53:08 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.1395ms
+2024-01-03 10:53:08 [INF] Executed action Server.Features.LookUps.LookupsController.GetProductTypes (Server) in 0.1269ms
+2024-01-03 10:53:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 10:53:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 10:53:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.4595ms
+2024-01-03 10:53:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - 200 null application/json; charset=utf-8 0.4094ms
+2024-01-03 10:53:08 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 10:53:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:53:08 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.0921ms
+2024-01-03 10:53:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 10:53:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 1.369ms
+2024-01-03 10:53:08 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 10:53:08 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 80.8676ms
+2024-01-03 10:53:08 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 10:53:08 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 81.5248ms
+2024-01-03 11:01:50 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 11:01:50 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 11:01:50 [INF] CORS policy execution successful.
+2024-01-03 11:01:50 [INF] CORS policy execution successful.
+2024-01-03 11:01:50 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:01:50 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 11:01:50 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 11:01:50 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 11:01:50 [INF] CORS policy execution successful.
+2024-01-03 11:01:50 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:01:50 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:01:50 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 11:01:50 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 11:01:50 [INF] CORS policy execution successful.
+2024-01-03 11:01:50 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:01:50 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:01:50 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:50 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.429ms
+2024-01-03 11:01:50 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:01:50 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 1.0217ms
+2024-01-03 11:01:50 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:50 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:50 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 3.2101ms
+2024-01-03 11:01:50 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 3.4112ms
+2024-01-03 11:01:50 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:01:50 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 11:01:50 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 4.7499ms
+2024-01-03 11:01:50 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 3.7753ms
+2024-01-03 11:01:50 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:50 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 98.4111ms
+2024-01-03 11:01:50 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:01:50 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 99.5911ms
+2024-01-03 11:01:56 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 11:01:56 [INF] CORS policy execution successful.
+2024-01-03 11:01:56 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:01:56 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 11:01:56 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:56 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 2.8991ms
+2024-01-03 11:01:56 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:01:56 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 3.4668ms
+2024-01-03 11:01:56 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - null null
+2024-01-03 11:01:56 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:56 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:01:56 [INF] Executing FileStreamResult, sending file with download name '919d4217-9297-4d78-97f7-7b1421ee1fad.png' ...
+2024-01-03 11:01:56 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 6.0342ms
+2024-01-03 11:01:56 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:56 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - 200 411169 image/png 6.6948ms
+2024-01-03 11:01:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 11:01:57 [INF] CORS policy execution successful.
+2024-01-03 11:01:57 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 11:01:57 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 11:01:57 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:57 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 3.024ms
+2024-01-03 11:01:57 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 11:01:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 3.5889ms
+2024-01-03 11:01:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - null null
+2024-01-03 11:01:57 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:57 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:01:57 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - null null
+2024-01-03 11:01:57 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:57 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:01:57 [INF] Executing FileStreamResult, sending file with download name 'bdfe7c3c-2446-4e84-88a6-3395775a6133.png' ...
+2024-01-03 11:01:57 [INF] Executing FileStreamResult, sending file with download name '100391f9-64a7-4601-b56e-fd5d160ba5d8.png' ...
+2024-01-03 11:01:57 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 7.136ms
+2024-01-03 11:01:57 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 5.5933ms
+2024-01-03 11:01:57 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - 200 323709 image/png 6.2647ms
+2024-01-03 11:01:57 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:01:57 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - 200 243653 image/png 8.1801ms
+2024-01-03 11:01:58 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 11:01:58 [INF] CORS policy execution successful.
+2024-01-03 11:01:58 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:01:58 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:01:58 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:01:58 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 58.7806ms
+2024-01-03 11:01:58 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:01:58 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 59.1991ms
+2024-01-03 11:02:04 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - null null
+2024-01-03 11:02:04 [INF] CORS policy execution successful.
+2024-01-03 11:02:04 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 11:02:04 [INF] Executing endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 11:02:04 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 11:02:04 [INF] CORS policy execution successful.
+2024-01-03 11:02:04 [INF] Route matched with {action = "Fetch", controller = "Licenses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse]] Fetch(Server.Features.Licenses.FetchAll.FetchLicensesQuery) on controller Server.Features.Licenses.LicensesController (Server).
+2024-01-03 11:02:04 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:02:04 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 11:02:04 [INF] CORS policy execution successful.
+2024-01-03 11:02:04 [INF] CORS policy execution successful.
+2024-01-03 11:02:04 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:02:04 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:02:04 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 11:02:04 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:02:04 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:02:04 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:02:04 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.2333ms
+2024-01-03 11:02:04 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:02:04 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 0.7956ms
+2024-01-03 11:02:04 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:02:04 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Licenses.FetchAll.FetchLicensesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:02:04 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 1.6556ms
+2024-01-03 11:02:04 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:02:04 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 2.1731ms
+2024-01-03 11:02:04 [INF] Executed action Server.Features.Licenses.LicensesController.Fetch (Server) in 2.1601ms
+2024-01-03 11:02:04 [INF] Executed endpoint 'Server.Features.Licenses.LicensesController.Fetch (Server)'
+2024-01-03 11:02:04 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/licenses - 200 null application/json; charset=utf-8 2.652ms
+2024-01-03 11:02:04 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:02:04 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 61.8154ms
+2024-01-03 11:02:04 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:02:04 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 62.4568ms
+2024-01-03 11:03:18 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 11:03:18 [INF] CORS policy execution successful.
+2024-01-03 11:03:18 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:03:18 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 11:03:18 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - null null
+2024-01-03 11:03:18 [INF] CORS policy execution successful.
+2024-01-03 11:03:18 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:03:18 [INF] Route matched with {action = "FetchDepartments", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse]] FetchDepartments() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:03:18 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - null null
+2024-01-03 11:03:18 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - null null
+2024-01-03 11:03:18 [INF] CORS policy execution successful.
+2024-01-03 11:03:18 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 11:03:18 [INF] CORS policy execution successful.
+2024-01-03 11:03:18 [INF] Route matched with {action = "GetTimeTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetTimeTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:03:18 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:03:18 [INF] Route matched with {action = "GetImpactLevels", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetImpactLevels() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:03:18 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:18 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - null null
+2024-01-03 11:03:18 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:18 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:18 [INF] Executed action Server.Features.LookUps.LookupsController.GetTimeTypes (Server) in 0.3273ms
+2024-01-03 11:03:18 [INF] Executed action Server.Features.LookUps.LookupsController.GetImpactLevels (Server) in 0.3521ms
+2024-01-03 11:03:18 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 3.1483ms
+2024-01-03 11:03:18 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetImpactLevels (Server)'
+2024-01-03 11:03:18 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:03:18 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Impact-Levels - 200 null application/json; charset=utf-8 1.0515ms
+2024-01-03 11:03:18 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetTimeTypes (Server)'
+2024-01-03 11:03:18 [INF] CORS policy execution successful.
+2024-01-03 11:03:18 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 3.9447ms
+2024-01-03 11:03:18 [INF] Executing endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 11:03:18 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/License-Types - 200 null application/json; charset=utf-8 1.2842ms
+2024-01-03 11:03:18 [INF] Route matched with {action = "GetProductTypes", controller = "Lookups"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.ListResponse`1[Server.Features.LookUps.FetchLookUpsQueryResponse]] GetProductTypes() on controller Server.Features.LookUps.LookupsController (Server).
+2024-01-03 11:03:18 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchLookUpsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:18 [INF] Executed action Server.Features.LookUps.LookupsController.GetProductTypes (Server) in 0.2294ms
+2024-01-03 11:03:18 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.GetProductTypes (Server)'
+2024-01-03 11:03:18 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Product-Types - 200 null application/json; charset=utf-8 1.0951ms
+2024-01-03 11:03:18 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.ListResponse`1[[Server.Features.LookUps.FetchDepartments.FetchDepartmentsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:18 [INF] Executed action Server.Features.LookUps.LookupsController.FetchDepartments (Server) in 82.4498ms
+2024-01-03 11:03:18 [INF] Executed endpoint 'Server.Features.LookUps.LookupsController.FetchDepartments (Server)'
+2024-01-03 11:03:18 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Lookups/Departments - 200 null application/json; charset=utf-8 82.999ms
+2024-01-03 11:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/products - null null
+2024-01-03 11:03:27 [INF] CORS policy execution successful.
+2024-01-03 11:03:27 [INF] Executing endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:03:27 [INF] Route matched with {action = "Fetch", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Products.FetchAll.FetchProductsQueryResponse]] Fetch(Server.Features.Products.FetchAll.FetchProductsQuery) on controller Server.Features.Products.ProductsController (Server).
+2024-01-03 11:03:27 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Products.FetchAll.FetchProductsQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:27 [INF] Executed action Server.Features.Products.ProductsController.Fetch (Server) in 2.1227ms
+2024-01-03 11:03:27 [INF] Executed endpoint 'Server.Features.Products.ProductsController.Fetch (Server)'
+2024-01-03 11:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/products - 200 null application/json; charset=utf-8 2.8242ms
+2024-01-03 11:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - null null
+2024-01-03 11:03:27 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:03:27 [INF] Executing FileStreamResult, sending file with download name '919d4217-9297-4d78-97f7-7b1421ee1fad.png' ...
+2024-01-03 11:03:27 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 4.504ms
+2024-01-03 11:03:27 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/919d4217-9297-4d78-97f7-7b1421ee1fad - 200 411169 image/png 5.2399ms
+2024-01-03 11:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - null null
+2024-01-03 11:03:27 [INF] CORS policy execution successful.
+2024-01-03 11:03:27 [INF] Executing endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 11:03:27 [INF] Route matched with {action = "Fetch", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Common.Wrappers.PagedResponse`1[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse]] Fetch(Server.Features.Categories.FetchAll.FetchCategoriesQuery) on controller Server.Features.Categories.CategoriesController (Server).
+2024-01-03 11:03:27 [INF] Executing ObjectResult, writing value of type 'Common.Wrappers.PagedResponse`1[[Server.Features.Categories.FetchAll.FetchCategoriesQueryResponse, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-01-03 11:03:27 [INF] Executed action Server.Features.Categories.CategoriesController.Fetch (Server) in 2.7542ms
+2024-01-03 11:03:27 [INF] Executed endpoint 'Server.Features.Categories.CategoriesController.Fetch (Server)'
+2024-01-03 11:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/categories - 200 null application/json; charset=utf-8 3.3671ms
+2024-01-03 11:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - null null
+2024-01-03 11:03:27 [INF] Request starting HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - null null
+2024-01-03 11:03:27 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Executing endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:03:27 [INF] Route matched with {action = "FetchById", controller = "Files"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.FileStreamResult] FetchById(System.String) on controller Server.Features.Files.FilesController (Server).
+2024-01-03 11:03:27 [INF] Executing FileStreamResult, sending file with download name 'bdfe7c3c-2446-4e84-88a6-3395775a6133.png' ...
+2024-01-03 11:03:27 [INF] Executing FileStreamResult, sending file with download name '100391f9-64a7-4601-b56e-fd5d160ba5d8.png' ...
+2024-01-03 11:03:27 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 3.514ms
+2024-01-03 11:03:27 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/bdfe7c3c-2446-4e84-88a6-3395775a6133 - 200 243653 image/png 4.2715ms
+2024-01-03 11:03:27 [INF] Executed action Server.Features.Files.FilesController.FetchById (Server) in 4.3003ms
+2024-01-03 11:03:27 [INF] Executed endpoint 'Server.Features.Files.FilesController.FetchById (Server)'
+2024-01-03 11:03:27 [INF] Request finished HTTP/1.1 GET http://localhost:5173/v1.0/management/Files/100391f9-64a7-4601-b56e-fd5d160ba5d8 - 200 323709 image/png 5.0179ms

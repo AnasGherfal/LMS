@@ -102,7 +102,7 @@ const create = async () => {
   try {
     const { data } = await licenseService.create(licenseForm);
     router.back();
-    //showNotification(data.msg);
+    router.push({ name: "LicensesList" });
     loading.stop();
   } catch {
     //loading.stop();

@@ -1,7 +1,7 @@
 ﻿<script lang="ts" setup>
 import type { licenseInfo } from "./model.ts";
 import { licenseService } from "../service";
-import {formatDate} from "@/utils/timeFormat"
+import { formatDate } from "@/utils/timeFormat";
 import type { departmentListItem } from "@/views/departments/list/model";
 import { departmentService } from "@/views/departments/service";
 
@@ -14,9 +14,9 @@ const store = useLookupStore();
 onMounted(() => {
   getById();
   getDepartments();
-store.getLicenseTypes()
-store.getImpactLevel()
-
+  store.getLicenseTypes();
+  store.getImpactLevel();
+  store.getProdcutsTypes();
 });
 const departments = ref<departmentListItem[]>();
 
@@ -37,7 +37,7 @@ const license = ref<licenseInfo>({
   isActive: null,
   createdOn: null,
   productType: null,
-  endOfSale: null, 
+  endOfSale: null,
   endOfManufacture: null,
   endOfSupport: null,
 });
@@ -90,6 +90,14 @@ const getDepartmentOwnerNameById = (departmentId: number | null) => {
 };
 const getImpactLevel = (impactLevelId: number | null) => {
   const impactLevel = store.impactLevelLookup.find(
+    (dep) => dep.id === impactLevelId
+  );
+
+  return impactLevel ? impactLevel.name : "";
+};
+
+const getProductTypes = (impactLevelId: number | null) => {
+  const impactLevel = store.productTypesLookup.find(
     (dep) => dep.id === impactLevelId
   );
 

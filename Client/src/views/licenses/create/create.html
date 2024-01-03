@@ -136,6 +136,8 @@
             label=" السعر بالدولار الامريكي"
             v-model="license.priceInUSD"
             :rules="rules"
+            suffix="$"
+
           >
           </text-field>
         </v-col>
@@ -144,6 +146,8 @@
             label="السعر بالدينار الليبي"
             v-model="license.priceInLYD"
             :rules="rules"
+            suffix="د.ل"
+
           >
           </text-field>
         </v-col>

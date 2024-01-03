@@ -67,7 +67,6 @@ const create = async () => {
 
   try {
     const { data } = await productService.create(productForm);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
     router.push({ name: "ProductList" });
 
     //loading.stop();

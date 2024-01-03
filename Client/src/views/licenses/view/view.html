@@ -81,7 +81,7 @@
         <v-col md="3">
           <text-field
             label="معلومات عن مستوى الخطر"
-            v-model="license.impactDescription"
+            :value="license.impactDescription==null ? license.impactDescription : 'لايوجد ملاحظه'"
             disabled
           >
           </text-field>
@@ -105,35 +105,46 @@
         <v-col md="3">
           <text-field
             label="نوع المنتج"
-            :value="license.productType"
+            :value="getProductTypes(license.productType)"
             disabled
           >
           </text-field>
         </v-col>
-        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+        <v-col
+          md="3"
+          v-show="license.productType== 2 | license.productType== 4"
+        >
           <text-field
             label="تاريخ انتهاء الدعم"
-            :value="license.endOfSupport"
+            :value="formatDate(license.endOfSupport)"
             disabled
           >
           </text-field>
         </v-col>
-        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+        <v-col
+          md="3"
+          v-show="license.productType== 2 | license.productType== 4"
+        >
           <text-field
             label="تاريخ انتهاء التصنيع"
-            :value="license.endOfManufacture"
-            disabled          >
+            :value="formatDate(license.endOfManufacture)"
+            disabled
+          >
           </text-field>
         </v-col>
 
-        <v-col md="3" v-show="license.productType== 2 | license.productType== 4">
+        <v-col
+          md="3"
+          v-show="license.productType== 2 | license.productType== 4"
+        >
           <text-field
             label="تاريخ انتهاء البيع"
-            :value="license.endOfSale"
-            disabled          >
+            :value="formatDate(license.endOfSale)"
+            disabled
+          >
           </text-field>
         </v-col>
-        <v-col md="3">`
+        <v-col md="3">
           <text-field
             label="مدة الترخيص"
             :value="getLicenseTypes(license.timeType)"
@@ -147,6 +158,8 @@
             label=" السعر بالدولار الامريكي"
             v-model="license.priceInUSD"
             disabled
+            suffix="$"
+
           >
           </text-field>
         </v-col>
@@ -155,6 +168,8 @@
             label="السعر بالدينار الليبي"
             v-model="license.priceInLYD"
             disabled
+            suffix="د.ل"
+
           >
           </text-field>
         </v-col>
