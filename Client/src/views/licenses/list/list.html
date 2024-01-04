@@ -41,26 +41,24 @@
   </v-card-item>
   <v-card-text>
     <v-data-table :headers="headers" :items="licenses">
-      
       <template v-slot:item.isExpired="{ item }">
         <v-tooltip location="top">
           <template v-slot:activator="{ props }">
+            <v-chip
+              v-bind="props"
+              v-show="isExpired(item.expireDate) | isAboutToExpire(item.expireDate)"
+              :color="isExpired(item.expireDate)  ? 'red' : isAboutToExpire(item.expireDate) ? 'yellow' : ''"
+              label
+              size="small"
+            >
+              <v-icon icon="mdi mdi-alert "></v-icon>
+            </v-chip>
+          </template>
+          <span v-if="isExpired(item.expireDate)">صلاحية الرخصة منتهية </span>
+          <span v-if="isAboutToExpire(item.expireDate)">صلاحية الرخصة على وشك الانتهاء </span>
 
-        <v-chip v-bind="props" v-show="isExpired(item.expireDate)"
-        :color="isExpired(item.expireDate) == true ? 'red' : 'green'"
-        label
-        size="small"
-      >
-      <v-icon   icon="mdi mdi-alert "></v-icon>
-
-    </v-chip>
-    
+        </v-tooltip>
       </template>
-      <span>الرخصة منتهية الصلاحية</span>
-
-      </v-tooltip>
-</template>
-
 
       <template v-slot:item.productName="{ item }">
         <span>{{item.productName}}</span>
@@ -74,7 +72,7 @@
       <template v-slot:item.startDate="{ item }">
         <span>{{formatDate(item.startDate)}}</span>
       </template>
-      
+
       <template v-slot:item.expireDate="{ item }">
         <span>{{formatDate(item.expireDate)}}</span>
       </template>
@@ -85,8 +83,9 @@
           label
           size="small"
         ></v-chip>
+        
       </template>
-      <template v-slot:item.actions="{ item }" >
+      <template v-slot:item.actions="{ item }">
         <v-tooltip location="top" v-if="item.isActive == true">
           <template v-slot:activator="{ props }">
             <v-btn icon v-bind="props" variant="text" @click="view(item.id)">

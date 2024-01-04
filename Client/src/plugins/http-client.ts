@@ -3,7 +3,7 @@ import type { AxiosError, AxiosRequestConfig } from "axios";
 import axios from "axios";
 
 const config = {
-    baseURL: "/v1.0/management",
+    baseURL: "http://localhost:5173/v1.0/management",
     timeout: 60000,
     headers: { "Content-type": "Application/json" },
 };

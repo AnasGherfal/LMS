@@ -71,16 +71,31 @@ const getImpactLevel = (impactLevelId: number | null) => {
   return impactLevel ? impactLevel.name : "";
 };
 
-const isExpired = (expireDate: string): boolean => {
+const isExpired = (expireDate: string | null): boolean => {
+  if (!expireDate) {
+    return false; // If expireDate is null or undefined, consider it as not expired
+  }
 
-  const todayDate = ref(new Date().toISOString().split('T')[0]); 
+  const todayDate = ref(new Date().toISOString().split('T')[0]);
 
-  console.log(expireDate+"pp")
-  console.log(todayDate.value +"yy")
 
   return todayDate.value > expireDate.split('T')[0];
-  
-}
+};
+
+const isAboutToExpire = (expireDate: string | null, thresholdDays: number = 15): boolean => {
+  if (!expireDate) {
+    return false; // If expireDate is null or undefined, consider it as not expired
+  }
+
+  const todayDate = new Date();
+  const expirationDate = new Date(expireDate);
+
+  const timeDiff = expirationDate.getTime() - todayDate.getTime();
+  const daysDiff = timeDiff / (1000 * 3600 * 24); // Difference in days
+
+  return daysDiff <= thresholdDays && daysDiff >= 0;
+};
+
 const licenses = ref<licenseListItem[]>([]);
 const getAll = async (
   pageNo?: number,
@@ -125,7 +140,7 @@ const headers = ref<header[]>([
   { title: "مستوى الخطوره", key: "impactLevel", width: '10%' },
   { title: "تاريخ بداية الترخيص", key: "startDate", width: '10%' },
   { title: "تاريخ نهاية الترخيص", key: "expireDate", width: '10%' },
-  { title: " ", key: "isExpired" , width: '10%'},
+  { title: " التنبيهات", key: "isExpired" , width: '10%'},
 
   { title: "الحالة", key: "isActive", width: '5%' },
   //   { title: "تاريخ الانشاء", key: "createdOn" },

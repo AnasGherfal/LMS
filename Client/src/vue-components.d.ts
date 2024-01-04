@@ -18,5 +18,6 @@ declare module 'vue' {
     Snackbar: typeof import('./components/general/snackbar.vue')['default']
     Textarea: typeof import('./components/form/textarea.vue')['default']
     TextField: typeof import('./components/form/textField.vue')['default']
+    TextFieldwithIcon: typeof import('./components/form/textFieldwithIcon.vue')['default']
   }
 }

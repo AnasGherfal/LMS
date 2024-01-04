@@ -95,12 +95,15 @@
           </text-field>
         </v-col>
         <v-col md="3">
-          <text-field
+          <select-field-icon
+            icon="mdi mdi-alert"
+            :iconColor="isExpired(license.expireDate)? 'error': isAboutToExpire(license.expireDate)? 'warning':'' "
             label="تاريخ انتهاء الترخيص"
+            :alert="isExpired(license.expireDate)? 'صلاحية الرخصة منتهية': isAboutToExpire(license.expireDate)? 'صلاحية الرخصة على وشك الانتهاء ':''"
             :value="formatDate(license.expireDate)"
-            disabled
+            
           >
-          </text-field>
+          </select-field-icon>
         </v-col>
         <v-col md="3">
           <text-field
@@ -114,35 +117,48 @@
           md="3"
           v-show="license.productType== 2 | license.productType== 4"
         >
-          <text-field
+          <select-field-icon
+            v-bind="props"
+            icon="mdi mdi-alert"
+            :iconColor="isExpired(license.endOfSupport)? 'error': isAboutToExpire(license.endOfSupport)? 'warning':'' "
             label="تاريخ انتهاء الدعم"
+            :alert="isExpired(license.endOfSupport)? 'الدعم منتهي': isAboutToExpire(license.endOfSupport)? 'تاريخ الدعم على وشك الانتهاء':''"
+
             :value="formatDate(license.endOfSupport)"
-            disabled
+            
           >
-          </text-field>
+          </select-field-icon>
         </v-col>
         <v-col
           md="3"
           v-show="license.productType== 2 | license.productType== 4"
         >
-          <text-field
+          <select-field-icon
+            icon="mdi mdi-alert"
+            :iconColor="isExpired(license.endOfManufacture)? 'error': isAboutToExpire(license.endOfManufacture)? 'warning':'' "
             label="تاريخ انتهاء التصنيع"
+            :alert="isExpired(license.endOfManufacture)? 'تاريخ التصنيع منتهي': isAboutToExpire(license.endOfManufacture)? 'تاريخ التصنيع على وشك الانتهاء':''"
+
             :value="formatDate(license.endOfManufacture)"
-            disabled
+            
           >
-          </text-field>
+          </select-field-icon>
         </v-col>
 
         <v-col
           md="3"
           v-show="license.productType== 2 | license.productType== 4"
         >
-          <text-field
+          <select-field-icon
+            icon="mdi mdi-alert"
+            :iconColor="isExpired(license.endOfSale)? 'error': isAboutToExpire(license.endOfSale)? 'warning':'' "
             label="تاريخ انتهاء البيع"
+            :alert="isExpired(license.endOfSale)? 'تاريخ البيع منتهي': isAboutToExpire(license.endOfSale)? 'تاريخ انتهاء البيع على وشك ':''"
+
             :value="formatDate(license.endOfSale)"
-            disabled
+            
           >
-          </text-field>
+          </select-field-icon>
         </v-col>
         <v-col md="3">
           <text-field
@@ -159,7 +175,6 @@
             v-model="license.priceInUSD"
             disabled
             suffix="$"
-
           >
           </text-field>
         </v-col>
@@ -169,7 +184,6 @@
             v-model="license.priceInLYD"
             disabled
             suffix="د.ل"
-
           >
           </text-field>
         </v-col>

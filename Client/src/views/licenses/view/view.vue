@@ -111,6 +111,35 @@ const getLicenseTypes = (licenseTypeId: number | null) => {
 
   return licenseType ? licenseType.name : "";
 };
+
+const isExpired = (expireDate: string | null): boolean => {
+  if (!expireDate) {
+    return false; // If expireDate is null or undefined, consider it as not expired
+  }
+
+  const todayDate = ref(new Date().toISOString().split('T')[0]);
+
+  console.log(expireDate + "pp");
+  console.log(todayDate.value + "yy");
+
+  return todayDate.value > expireDate.split('T')[0];
+};
+
+const isAboutToExpire = (expireDate: string | null, thresholdDays: number = 15): boolean => {
+  if (!expireDate) {
+    return false; // If expireDate is null or undefined, consider it as not expired
+  }
+
+  const todayDate = new Date();
+  const expirationDate = new Date(expireDate);
+
+  const timeDiff = expirationDate.getTime() - todayDate.getTime();
+  const daysDiff = timeDiff / (1000 * 3600 * 24); // Difference in days
+
+  return daysDiff <= thresholdDays && daysDiff >= 0;
+};
+
+
 const back = () => router.push({ name: "LicensesList" });
 </script>
 
